@@ -1,0 +1,38 @@
+# music.yaml —— 侧栏音乐播放器配置
+# 覆盖主题的 src/config/musicConfig.ts
+
+# 是否启用侧栏音乐播放器组件
+enable: true
+
+# 播放器工作模式：
+# - "local"：本地模式，读取 data/music.ts 曲目列表，零外部请求，首屏极速加载
+# - "custom"：自定义模式，直接在下方 tracks 字段中编写曲目清单
+# - "meting"：云端歌单模式，通过 Meting 接口按需加载网易云或 QQ 音乐歌单
+# - "mixed"：混合模式，同时加载本地曲目与云端歌单，首屏立即可播且支持网络降级
+provider: "mixed"
+
+# 默认音量，范围 0.0 到 1.0
+defaultVolume: 0.7
+
+# 默认播放循环模式："sequence" 顺序播放，"loop" 单曲循环，"random" 随机播放
+defaultMode: "sequence"
+
+# 云端歌单配置，用于 meting 与 mixed 模式
+meting:
+  # 音乐平台："netease"、"tencent"、"kugou"
+  server: "netease"
+  # 资源类型："playlist"、"song"、"album"、"artist"
+  type: "playlist"
+  # 歌单或歌曲 ID
+  id: "14164869977"
+  # 自建 Meting API 地址，留空使用默认公开接口
+  # api: "https://api.example.com/meting"
+
+# 自定义曲目清单，用于 custom 模式
+# tracks:
+#   - id: "custom-1"
+#     title: "示例曲目"
+#     artist: "艺术家"
+#     cover: "/assets/music/cover/example.webp"
+#     source: "/assets/music/url/example.mp3"
+#     duration: 240

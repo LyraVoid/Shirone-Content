@@ -1,0 +1,23 @@
+# projects.yaml —— 开源项目页配置
+# 覆盖主题的 src/config/projectsConfig.ts
+# 具体项目条目清单请在 data/projects.ts 中维护
+
+# 页面总开关
+enable: true
+
+# 项目分类清单，数组顺序即顶部筛选标签顺序
+categories:
+  - key: "theme"
+    label: "主题"
+    icon: "material-symbols:palette-outline-rounded"
+
+  - key: "app"
+    label: "应用"
+    icon: "material-symbols:apps-rounded"
+
+  - key: "tool"
+    label: "工具"
+    icon: "material-symbols:build-outline-rounded"
+
+# 可选临时禁用的项目 Key 清单
+# disabledKeys: []

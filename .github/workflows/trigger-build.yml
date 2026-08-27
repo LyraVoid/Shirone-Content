@@ -1,0 +1,39 @@
+name: Trigger Theme Build
+
+# 内容推送后自动校验并通知代码仓触发构建
+# 需要在当前仓库 Settings -> Secrets and variables -> Actions 中配置：
+# 1. DISPATCH_TOKEN：具备代码仓写入权限的个人访问令牌
+# 2. EDGEONE_DEPLOY_HOOK：可选的腾讯云 EdgeOne 部署钩子链接
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/**"
+      - "config/**"
+      - "data/**"
+      - "assets/**"
+      - "public/**"
+      - "shirone.content.json"
+  workflow_dispatch: {}
+
+jobs:
+  validate:
+    # 调用代码仓的可复用内容校验工作流，确保合并前校验通过
+    uses: LyraVoid/Shirone/.github/workflows/content-validate.yml@main
+    with:
+      theme_repository: LyraVoid/Shirone
+      theme_ref: main
+
+  dispatch:
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Dispatch build event to theme repository
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.DISPATCH_TOKEN }}
+          repository: LyraVoid/Shirone
+          event-type: content-updated
+          client-payload: '{"sha": "${{ github.sha }}"}'

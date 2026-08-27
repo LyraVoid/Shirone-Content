@@ -1,0 +1,44 @@
+# nav-bar.yaml —— 顶部导航栏配置
+# 覆盖主题的 src/config/navBarConfig.ts 中的 links 列表，采用整体替换模式
+# 支持使用主题内置预设、自定义链接以及包含子菜单的下拉分组
+
+# 常用预设名称：Home, Archive, Friends, Moments, Anime, Compass, Skills, Projects, Devices, Timeline, Albums, Categories, Tags, About
+
+links:
+  # 1. 基础预设项，自动使用内置的多语言名称与标准图标
+  - preset: Home
+  - preset: Archive
+
+  # 2. 下拉子菜单分组
+  - name: "链接"
+    icon: "material-symbols:link-rounded"
+    children:
+      - preset: Friends
+      - preset: Compass
+
+  - name: "我的"
+    icon: "material-symbols:person-outline-rounded"
+    children:
+      - preset: Moments
+      - preset: Anime
+      - preset: Albums
+
+  - name: "关于"
+    icon: "material-symbols:info-outline-rounded"
+    children:
+      - preset: About
+      - preset: Skills
+      - preset: Projects
+      - preset: Devices
+      - preset: Timeline
+
+  - name: "更多"
+    icon: "material-symbols:more-horiz"
+    children:
+      - preset: Categories
+      - preset: Tags
+      # 3. 自定义外部链接示例
+      - name: "GitHub 源码"
+        url: "https://github.com/LyraVoid/Shirone"
+        icon: "fa6-brands:github"
+        external: true

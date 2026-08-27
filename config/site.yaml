@@ -1,0 +1,122 @@
+# site.yaml —— 站点全局基础配置
+# 覆盖主题的 src/config/siteConfig.ts。只写想覆盖的项，未写的项沿用主题默认值。
+
+# 站点发布地址，必须以斜杠结尾
+site: "https://shirone.mysqil.com/"
+
+# 站点子路径，若部署在根目录保持 "/" 即可
+base: "/"
+
+# 站点标题与副标题
+title: "Shirone"
+subtitle: "A Material 3 anime blog"
+
+# 站点语言代码，例如 zh_CN、en、ja
+lang: "zh_CN"
+
+# 顶栏对齐排版
+topAppBar:
+  # 电脑端顶栏标题与导航内容区域对齐方式："left" 靠左对齐，"center" 居中对齐
+  contentAlign: "center"
+
+# 显示设置面板：控制前端访客可调节的显示偏好开关
+displaySettings:
+  colorStyle: true       # 配色风格九宫格选择器
+  colorSpec: true        # 配色规范切换
+  wallpaperMode: true    # 页面背景模式切换
+  layoutMode: true       # 文章列表布局切换
+  reduceMotion: true     # 减弱动效切换
+  texture: true          # 背景纹理切换
+
+# 主题配色系统
+themeColor:
+  # 默认主题色相，范围 0 到 360，默认 315 为粉紫色
+  hue: 315
+  # 是否对访客固定主题色，设为 true 则隐藏前台取色器
+  fixed: false
+  # 配色风格模式：tonalSpot | vibrant | content | expressive | rainbow | fruitSalad | monochrome | neutral | fidelity
+  style: "tonalSpot"
+  # 设计规范版本："2021" | "2025"
+  spec: "2025"
+
+# 默认背景模式
+wallpaperMode:
+  # 初始默认背景："banner" 显示横幅壁纸，"none" 仅使用纯色背景
+  defaultMode: "banner"
+
+# 页面背景纹理系统
+texture:
+  # 是否启用背景纹理系统
+  enable: true
+  # 默认纹理预设："none" | "starlight" | "cyber-dots" | "topography" | "geometric" | "sakura"
+  defaultPreset: "starlight"
+  # 默认纹理浓度，建议范围 0.05 到 0.25
+  defaultOpacity: 0.12
+  # 是否启用背景微动效，开启减弱动效时会自动保持静止
+  allowMotion: true
+
+# 横幅壁纸配置
+banner:
+  # 图片列表，支持相对路径、绝对路径与外部网络链接
+  src:
+    desktop:
+      - "assets/images/banner/desktop/1.webp"
+    mobile:
+      - "assets/images/banner/mobile/1.webp"
+  # 图片裁切焦点："top" | "center" | "bottom"
+  position: "center"
+  # 遮罩配置，覆盖微暗层以提升前景文字对比度
+  dim:
+    enable: true
+    opacity: 0.24
+  # 首页横幅文字
+  homeText:
+    enable: true
+    title: "Shirone"
+    # 副标题列表，支持配置多条用于打字机切换
+    subtitle:
+      - "特別なことはないけど、君がいると十分です"
+      - "今でもあなたは私の光"
+      - "君ってさ、知らないうちに私の毎日になってたよ"
+      - "君と話すと、なんか毎日がちょっと楽しくなるんだ"
+      - "今日はなんでもない日。でも、ちょっとだけいい日"
+    # 打字机动效
+    typewriter:
+      enable: true
+      speed: 100         # 单字键入间隔，单位毫秒
+      deleteSpeed: 50     # 反向删除间隔，单位毫秒
+      pauseTime: 2000     # 键入完成后停留时长，单位毫秒
+      loop: true          # 是否循环播放
+  # 多图自动轮播
+  carousel:
+    enable: true
+    interval: 6000        # 切换间隔，单位毫秒，最小 3000
+    fadeDuration: 1200    # 淡入淡出过渡时长，单位毫秒
+    # 运镜动效："ken-burns" | "zoom-in" | "zoom-out" | "pan-left" | "pan-right" | "none"
+    animation: "ken-burns"
+  # 底部动态波浪
+  waves:
+    enable: true
+
+# 图片优化规则
+imageOptimization:
+  # 需要绕过防盗链的域名列表，会自动添加无引用头属性
+  noReferrerDomains:
+    - "*.hdslb.com"
+
+# 文章目录
+toc:
+  enable: true
+  depth: 2               # 最大目录展示深度，范围 1 到 3
+
+# 页面顶部加载进度条
+progressIndicator:
+  # 进度条样式："dual" 双向扫描，"single" 单向扫描
+  style: "dual"
+
+# 站点图标，留空则使用主题默认图标
+favicon: []
+#  - src: "/favicon/icon-light.png"
+#    theme: "light"
+#  - src: "/favicon/icon-dark.png"
+#    theme: "dark"

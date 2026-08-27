@@ -1,0 +1,29 @@
+# article.yaml —— 文章详情页配置
+# 覆盖主题的 src/config/articleConfig.ts
+
+# 文章最后更新提示
+lastUpdated:
+  # 是否开启长期未更新提示
+  enable: true
+  # 触发提示的最小间隔天数，按世界协调时日历日计算，达到该天数开始提示，0 表示立即提示
+  minimumAgeDays: 90
+
+# 文章底部推荐阅读
+discovery:
+  # 是否开启延伸阅读区域
+  enable: true
+  # 相关文章推荐，基于共享标签或分类
+  related:
+    enable: true
+    count: 3
+  # 随机文章推荐
+  random:
+    enable: true
+    count: 2
+
+# 文章社交分享与海报
+share:
+  # 是否展示文章分享区块
+  enable: true
+  # 生成分享卡片时是否默认包含文章封面
+  includeCover: true

@@ -1,0 +1,19 @@
+# post-list.yaml —— 文章列表页布局配置
+# 覆盖主题的 src/config/postListConfig.ts
+
+# 每页展示文章数量
+pageSize: 8
+
+# 文章列表排版布局
+layout:
+  # 初始排版模式："list" 单列列表，"grid" 多列卡片网格
+  mode: "list"
+
+  # 封面图片放置方向："left" 靠左，"right" 靠右
+  cover: "right"
+
+  # 网格卡片宽度档位，仅在 mode: "grid" 时生效：
+  # - "compact"：紧凑卡片，最小宽度 20rem，适合高密度展示
+  # - "regular"：标准卡片，最小宽度 24rem，默认推荐
+  # - "relaxed"：宽松大卡，最小宽度 28rem，突出大图质感
+  cardWidth: "regular"

@@ -1,0 +1,22 @@
+# profile.yaml —— 博主个人资料配置
+# 覆盖主题的 src/config/profileConfig.ts
+
+# 头像路径，支持以 "/" 开头的绝对路径、相对路径或外部网络链接
+avatar: "assets/images/demo-avatar.webp"
+
+# 昵称与个人签名
+name: "Shirone"
+bio: "The rain remembers what the sky forgot to say."
+
+# 社交平台链接列表
+# 图标支持 Iconify 图标库名称，例如 fa6-brands:xxx、simple-icons:xxx、material-symbols:xxx
+links:
+  - name: "Twitter"
+    icon: "fa6-brands:twitter"
+    url: "https://twitter.com"
+  - name: "Steam"
+    icon: "fa6-brands:steam"
+    url: "https://store.steampowered.com"
+  - name: "GitHub"
+    icon: "fa6-brands:github"
+    url: "https://github.com/LyraVoid/Shirone"

@@ -1,0 +1,7 @@
+{
+	"$schema": "https://shirone.mysqil.com/schemas/content-manifest.v1.json",
+	"schemaVersion": 1,
+	"theme": "shirone",
+	"name": "shirone-content",
+	"description": "Shirone official content template repository"
+}

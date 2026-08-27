@@ -1,0 +1,11 @@
+# license.yaml —— 文章版权协议配置
+# 覆盖主题的 src/config/licenseConfig.ts
+
+# 是否在文章底部展示版权声明卡片
+enable: true
+
+# 协议名称
+name: "CC BY-NC-SA 4.0"
+
+# 协议官方说明链接
+url: "https://creativecommons.org/licenses/by-nc-sa/4.0/"

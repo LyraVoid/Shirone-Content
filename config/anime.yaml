@@ -1,0 +1,74 @@
+# anime.yaml —— 追番与追剧页面配置
+# 覆盖主题的 src/config/animeConfig.ts
+
+# 页面总开关，开启后开放 /anime/ 页面入口与数据渲染
+enable: true
+
+# 主数据源配置
+source:
+  # 数据源模式：
+  # - "local"：读取 data/anime.ts 本地数据，零外部依赖，稳定可控
+  # - "snapshot"：读取同步生成的本地脱敏快照文件
+  kind: "local"
+
+  # 快照提供方，当 kind 为 "snapshot" 时指定："bangumi" | "bilibili"
+  # provider: "bangumi"
+
+  # 快照文件名，如 "bangumi.json" 或 "bilibili.json"
+  # file: "bangumi.json"
+
+  # 开发调试时是否允许读取最新快照
+  fetchOnDev: true
+
+# 降级回退策略，当快照文件不存在或同步失败时触发
+fallback:
+  # - "local"：静默回退至 data/anime.ts 本地数据，确保页面正常渲染不白屏
+  # - "empty"：渲染空状态提示
+  kind: "local"
+
+# 外部数据源提供方配置
+providers:
+  # Bangumi 数据同步
+  bangumi:
+    # 是否启用 Bangumi 同步能力
+    enable: false
+    # 用户 ID 或个性化域名
+    userId: ""
+    # 网络请求调优选项
+    request:
+      pageSize: 30       # 单页抓取数量
+      maxItems: 300      # 最大抓取条目上限
+      minDelayMs: 300    # 请求限流节流间隔，单位毫秒
+
+  # Bilibili 数据同步
+  bilibili:
+    # 是否启用 Bilibili 追番同步能力
+    enable: false
+    # 用户数字 UID
+    vmid: ""
+    # 存放登录凭据的环境变量名称，私密凭证严禁提交至代码仓库
+    sessdataEnv: "BILI_SESSDATA"
+    # 封面处理策略
+    cover:
+      # - "local"：下载封面至本地静态目录，零第三方外链请求
+      # - "remote"：直接加载远端图片链接
+      # - "none"：不使用封面，卡片呈现主题渐变占位
+      mode: "local"
+      # 可选封面镜像加速前缀
+      mirror: ""
+      # 是否使用 WebP 图片压缩格式
+      useWebp: true
+    # 网络请求调优选项
+    request:
+      pageSize: 30
+      maxItems: 300
+      minDelayMs: 300
+
+# 快照存储与健康度策略
+snapshot:
+  # 快照保存目录路径
+  directory: "src/data/anime-snapshots"
+  # 快照过期告警天数，仅在构建日志提示，不发起运行期自动请求
+  staleAfterDays: 30
+  # 外部拉取失败时是否保留上一次成功的有效快照
+  keepLastValid: true

@@ -1,0 +1,31 @@
+# devices.yaml —— 个人设备展示页配置
+# 覆盖主题的 src/config/devicesConfig.ts
+# 具体设备条目清单请在 data/devices.ts 中维护
+
+# 页面总开关，关闭后隐藏导航入口并重定向 404
+enable: true
+
+# 设备分类清单，数组顺序即顶部筛选标签顺序
+categories:
+  - key: "desk"
+    label: "桌面工作站"
+    icon: "material-symbols:desktop-windows-outline-rounded"
+    description: "生产力与开发主力工作台"
+
+  - key: "mobile"
+    label: "移动便携"
+    icon: "material-symbols:phone-iphone"
+    description: "随身电子设备与便携数码"
+
+  - key: "audio"
+    label: "影音音频"
+    icon: "material-symbols:headphones-rounded"
+    description: "耳机、音响与音频器材"
+
+  - key: "peripheral"
+    label: "外设配件"
+    icon: "material-symbols:keyboard-outline-rounded"
+    description: "键盘、鼠标与桌面配件"
+
+# 可选临时禁用的设备 ID 清单
+# disabledIds: []

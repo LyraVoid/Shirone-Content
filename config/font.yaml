@@ -1,0 +1,64 @@
+# font.yaml —— 全站字体配置
+# 覆盖主题的 src/config/fontConfig.ts
+
+# 字体构建模式：
+# - "custom"：启用自定义字体，加载下方 fontFamilies 中配置的字体包与本地字体
+# - "system"：纯系统字体模式，不打包任何字体文件，完全依赖访客设备，极省流量
+mode: "custom"
+
+# 字体角色清单，覆盖 body、cjk、mono 三大角色
+fontFamilies:
+  # 1. 基础正文字体，覆盖英文字母、数字与基础标点
+  - id: "outfit-body"
+    family: "Outfit"
+    role: "body"
+    source: "fontsource"
+    variants:
+      - file: "@fontsource/outfit/400.css"
+        weight: 400
+        style: "normal"
+      - file: "@fontsource/outfit/500.css"
+        weight: 500
+        style: "normal"
+      - file: "@fontsource/outfit/700.css"
+        weight: 700
+        style: "normal"
+    fallback:
+      - "ui-sans-serif"
+      - "system-ui"
+      - "sans-serif"
+    display: "swap"
+    preload: false
+
+  # 2. 中日韩字体，覆盖汉字、日文假名与韩文字符
+  - id: "yozai-cjk"
+    family: "Yozai Medium"
+    role: "cjk"
+    source: "local"
+    variants:
+      - file: "src/assets/fonts/Yozai-Medium.ttf"
+        weight: 500
+        style: "normal"
+    fallback:
+      - "system-ui"
+      - "sans-serif"
+    display: "swap"
+    preload: false
+
+  # 3. 等宽代码字体，用于代码块、行内代码与终端排版
+  - id: "jetbrains-mono"
+    family: "JetBrains Mono"
+    role: "mono"
+    source: "fontsource"
+    variants:
+      - file: "@fontsource/jetbrains-mono/400.css"
+        weight: 400
+        style: "normal"
+      - file: "@fontsource/jetbrains-mono/400-italic.css"
+        weight: 400
+        style: "italic"
+    fallback:
+      - "ui-monospace"
+      - "monospace"
+    display: "swap"
+    preload: false

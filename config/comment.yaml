@@ -1,0 +1,23 @@
+# comment.yaml —— 评论系统配置
+# 覆盖主题的 src/config/commentConfig.ts
+# 遵循零额外负担原则：关闭时不产生外部网络请求、零额外 DOM 占位与零包体积
+
+# 是否全局启用评论系统
+enable: false
+
+# 评论服务提供商："none" 不启用，"twikoo"
+provider: "none"
+
+# 是否开启视口懒加载，滚动至评论区视口时才动态拉取脚本
+lazy: true
+
+# Twikoo 专有配置，当 provider 为 "twikoo" 时填写
+twikoo:
+  # Twikoo 环境 ID，如私有部署地址或云环境 ID
+  envId: ""
+  # 前端脚本资源地址
+  scriptUrl: "https://cdn.jsdelivr.net/npm/twikoo@1.7.19/dist/twikoo.min.js"
+  # 语言："auto" 表示跟随站点，或直接指定 "zh-CN"、"en"、"ja"
+  lang: "auto"
+  # 输入框占位提示文本
+  placeholder: "Share your thoughts..."
