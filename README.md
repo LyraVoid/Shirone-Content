@@ -108,14 +108,26 @@ pnpm content:watch
 
 ### 1. 密钥配置
 
-在当前内容仓库的 **Settings -> Secrets and variables -> Actions** 中添加以下密钥：
+在当前内容仓库的 **Settings -> Secrets and variables -> Actions** 中根据自己的部署拓扑配置以下密钥：
 
-- `DISPATCH_TOKEN`：具备代码仓写入权限的个人访问令牌
-- `EDGEONE_DEPLOY_HOOK`：可选的腾讯云 EdgeOne 部署钩子链接
+#### 方案 A：通过个人访问令牌通知代码仓构建（推荐，全自动化流水线）
+
+适用于由代码仓 GitHub Actions 执行静态打包并发布至 GitHub Pages、Cloudflare Pages、Vercel 等平台：
+
+- `DISPATCH_TOKEN`：具备代码仓写入权限的个人访问令牌。内容推送后自动通知代码仓运行 GitHub Actions 流水线，完成内容拉取、字体压缩、静态打包与全网发布。
+
+#### 方案 B：直接请求托管平台的部署钩子（直连构建模式）
+
+适用于在托管平台中直接绑定代码仓，并在平台的构建命令中通过环境变量拉取本内容仓的场景。只需在当前内容仓中配置对应平台的部署钩子密钥：
+
+- `CLOUDFLARE_DEPLOY_HOOK`：Cloudflare Pages 部署钩子地址（在 Cloudflare Pages 项目设置的 Deploy Hooks 中获取）
+- `VERCEL_DEPLOY_HOOK`：Vercel 部署钩子地址（在 Vercel 项目设置的 Git -> Deploy Hooks 中获取）
+- `EDGEONE_DEPLOY_HOOK`：腾讯云 EdgeOne Pages 部署钩子地址（在 EdgeOne Pages 应用触发器中获取）
+- `NETLIFY_DEPLOY_HOOK`：Netlify 部署钩子地址（在 Netlify 项目设置的 Build hooks 中获取）
 
 ### 2. 工作流触发机制
 
 当向本仓库的 `main` 分支推送变更时：
 1. `.github/workflows/trigger-build.yml` 首先调用主题代码仓的可复用校验工作流，验证 YAML 配置语法与 Markdown 元数据；
-2. 校验通过后，自动向主题代码仓派发构建事件；
-3. 主题代码仓根据预设流水线拉取内容、执行全量静态打包，并发布至云端服务器或边缘网络节点。
+2. 校验通过后，工作流将根据配置的密钥，自动向主题代码仓派发构建事件，或向已配置的 Cloudflare、Vercel、EdgeOne 等平台部署钩子发送网络触发请求；
+3. 目标平台接收请求后，拉取最新内容完成全量静态打包与全球节点更新。

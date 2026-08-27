@@ -1,9 +1,17 @@
 name: Trigger Theme Build
 
-# 内容推送后自动校验并通知代码仓触发构建
-# 需要在当前仓库 Settings -> Secrets and variables -> Actions 中配置：
-# 1. DISPATCH_TOKEN：具备代码仓写入权限的个人访问令牌
-# 2. EDGEONE_DEPLOY_HOOK：可选的腾讯云 EdgeOne 部署钩子链接
+# 内容推送后自动校验，并根据配置触发代码仓构建或托管平台原生部署
+#
+# 密钥配置说明（在当前仓库 Settings -> Secrets and variables -> Actions 中按需配置）：
+#
+# 方式一：派发构建事件至代码仓，由代码仓 GitHub Actions 执行静态打包与部署（推荐）
+#   - DISPATCH_TOKEN：具备代码仓写入权限的个人访问令牌
+#
+# 方式二：直接请求托管平台的部署钩子，适用于由平台构建机拉取内容仓的场景，按需配置：
+#   - CLOUDFLARE_DEPLOY_HOOK：Cloudflare Pages 部署钩子地址
+#   - VERCEL_DEPLOY_HOOK：Vercel 部署钩子地址
+#   - EDGEONE_DEPLOY_HOOK：腾讯云 EdgeOne 部署钩子地址
+#   - NETLIFY_DEPLOY_HOOK：Netlify 部署钩子地址
 
 on:
   push:
@@ -31,9 +39,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Dispatch build event to theme repository
+        if: env.HAS_DISPATCH_TOKEN == 'true'
+        env:
+          HAS_DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN != '' }}
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.DISPATCH_TOKEN }}
           repository: LyraVoid/Shirone
           event-type: content-updated
           client-payload: '{"sha": "${{ github.sha }}"}'
+
+      - name: Trigger Cloudflare Pages deploy hook
+        if: env.HAS_CF_HOOK == 'true'
+        env:
+          HAS_CF_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK != '' }}
+          HOOK_URL: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          curl -s -S -X POST "$HOOK_URL"
+
+      - name: Trigger Vercel deploy hook
+        if: env.HAS_VERCEL_HOOK == 'true'
+        env:
+          HAS_VERCEL_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK != '' }}
+          HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        run: |
+          curl -s -S -X POST "$HOOK_URL"
+
+      - name: Trigger EdgeOne deploy hook
+        if: env.HAS_EDGEONE_HOOK == 'true'
+        env:
+          HAS_EDGEONE_HOOK: ${{ secrets.EDGEONE_DEPLOY_HOOK != '' }}
+          HOOK_URL: ${{ secrets.EDGEONE_DEPLOY_HOOK }}
+        run: |
+          curl -s -S -X POST "$HOOK_URL"
+
+      - name: Trigger Netlify deploy hook
+        if: env.HAS_NETLIFY_HOOK == 'true'
+        env:
+          HAS_NETLIFY_HOOK: ${{ secrets.NETLIFY_DEPLOY_HOOK != '' }}
+          HOOK_URL: ${{ secrets.NETLIFY_DEPLOY_HOOK }}
+        run: |
+          curl -s -S -X POST "$HOOK_URL"
