@@ -4,6 +4,8 @@
 
 采用内容与代码完全解耦的架构，本仓库仅负责存储博主个人的文章、动态、相册、自定义页面数据实体与个性化配置；主题的核心渲染逻辑、样式规范、工程依赖、持续集成与构建部署由主题代码仓库全权负责。
 
+> **新手推荐阅读**：如果你是第一次使用，请直接查阅：[Shirone 完整保姆级教程指南](./docs/README.md)。
+
 ---
 
 ## 目录映射与边界划分
@@ -17,8 +19,9 @@
 | `data/` | `src/data/` | 存放相册、设备、追番、友链、项目、技能等数据实体 |
 | `assets/` | `src/assets/` | 存放参与构建期优化的本地图片 |
 | `public/` | `public/` | 存放直接由 Web 服务器对外分发的静态媒体资源 |
+| `docs/` | 无（自动排除） | 存放使用教程，不参与同步与构建 |
 
-> 注：本仓库根目录的 `README.md`、`LICENSE` 以及 `.github/` 工作流文件属于内容仓专属元数据，同步脚本在物化时会自动跳过，不会影响代码仓结构。
+> 注：本仓库根目录的 `README.md`、`LICENSE`、`docs/` 以及 `.github/` 工作流文件属于内容仓专属元数据，同步脚本在物化时会自动跳过，不会影响代码仓结构。
 
 ---
 
@@ -120,10 +123,10 @@ pnpm content:watch
 
 适用于在托管平台中直接绑定代码仓，并在平台的构建命令中通过环境变量拉取本内容仓的场景。只需在当前内容仓中配置对应平台的部署钩子密钥：
 
-- `CLOUDFLARE_DEPLOY_HOOK`：Cloudflare Pages 部署钩子地址（在 Cloudflare Pages 项目设置的 Deploy Hooks 中获取）
-- `VERCEL_DEPLOY_HOOK`：Vercel 部署钩子地址（在 Vercel 项目设置的 Git -> Deploy Hooks 中获取）
-- `EDGEONE_DEPLOY_HOOK`：腾讯云 EdgeOne Pages 部署钩子地址（在 EdgeOne Pages 应用触发器中获取）
-- `NETLIFY_DEPLOY_HOOK`：Netlify 部署钩子地址（在 Netlify 项目设置的 Build hooks 中获取）
+- `CLOUDFLARE_DEPLOY_HOOK`：Cloudflare Pages 部署钩子地址
+- `VERCEL_DEPLOY_HOOK`：Vercel 部署钩子地址
+- `EDGEONE_DEPLOY_HOOK`：腾讯云 EdgeOne Pages 部署钩子地址
+- `NETLIFY_DEPLOY_HOOK`：Netlify 部署钩子地址
 
 ### 2. 工作流触发机制
 
