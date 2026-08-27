@@ -2,7 +2,7 @@
 title: "欢迎使用 Shirone 内容仓库"
 published: 2026-08-27
 description: "这是一篇示例文章，展示了 Shirone 博客主题的排版样式与元数据配置。"
-image: "https://img.picr2.online/img/2026/05/07/bb90d446b1e698b330e816a5ec0347f1.webp"
+image: "./image.png"
 category: "使用指南"
 tags:
   - "Shirone"

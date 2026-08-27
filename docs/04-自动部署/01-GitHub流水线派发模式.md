@@ -10,23 +10,37 @@
 
 我们需要生成一个专用的小令牌，用来让内容仓库有权限通知代码仓库启动构建。
 
-1. 打开 [GitHub 个人设置页面](https://github.com/settings/profile)；
-2. 点击页面左侧菜单栏最下方的 **Developer Settings**；
-3. 在左侧菜单中展开 **Personal access tokens**，点击 **Fine-grained tokens**；
-4. 点击右上角的 **Generate new token** 按钮；
+1. 打开 [GitHub 个人设置页面](https://github.com/settings/profile)，点击右上角头像选择 **Settings**：
+
+   ![主页点击Settings](../images/04-deploy/01-1-settings-click.png)
+
+2. 在左侧菜单栏滑动到最下方，找到并点击 **Developer Settings**：
+
+   ![找到Developer Settings](../images/04-deploy/01-2-developer-settings.png)
+   ![Developer Settings界面](../images/04-deploy/01-3-developer-settings.png)
+
+3. 在左侧菜单中展开 **Personal access tokens**，点击 **Fine-grained tokens**：
+
+   ![Fine-grained tokens](../images/04-deploy/01-4-fine-grained-tokens.png)
+
+4. 点击右上角的 **Generate new token** 按钮：
+
+   ![Generate new token](../images/04-deploy/01-5-generate-new-token.png)
+
 5. 按以下步骤填写配置：
    - **Token name**：填写 `Shirone Content Dispatch`；
    - **Expiration**：选择过期时间（建议选择 90 天或自定义更长时间）；
-   - **Repository access**：**务必选择 Only select repositories**，然后在下拉列表中选中你的**主题代码仓库**（例如 `yourname/Shirone`）；
-   - **Permissions**：展开 **Repository permissions**，找到 **Contents**，将其权限由 No access 改为 **Access: Read and write**（其他所有权限保持默认不选）；
-6. 滑动到页面最底部，点击绿色按钮 **Generate token**；
-7. **立即复制生成的令牌字符串**（以 `github_pat_` 开头）。请妥善保管，离开页面后将无法再次查看。
+   - **Repository access**：**务必选择 Only select repositories**，并在下拉列表中选中你的**主题代码仓库**（例如 `yourname/Shirone`）：
 
-> 配图说明：
-> - 建议截图内容：GitHub 创建 Fine-grained token 表单，重点框选选中的目标代码仓库与 Contents: Read and write 权限行
-> - 对应保存路径：`docs/images/04-deploy/01-generate-pat-token.png`
+     ![Repository access](../images/04-deploy/01-6-repository-access.png)
 
-![创建 GitHub 个人访问令牌](../images/04-deploy/01-generate-pat-token.png)
+   - **Permissions**：展开 **Repository permissions**，找到 **Contents**，将其权限由 No access 改为 **Access: Read and write**（其他所有权限保持默认不选）：
+
+     ![Contents权限设置](../images/04-deploy/01-7-contents-permission.png)
+
+6. 滑动到页面最底部，点击绿色按钮 **Generate token**，**立即复制生成的令牌字符串**（以 `github_pat_` 开头）。请妥善保管，离开页面后将无法再次查看：
+
+   ![创建 GitHub 个人访问令牌](../images/04-deploy/01-8-generate-pat-token.png)
 
 ---
 
@@ -44,8 +58,6 @@
 > 配图说明：
 > - 建议截图内容：内容仓库 Settings -> Secrets and variables -> Actions 中成功添加 DISPATCH_TOKEN 后的密钥列表界面
 > - 对应保存路径：`docs/images/04-deploy/02-add-dispatch-token-secret.png`
-
-![内容仓库添加 DISPATCH_TOKEN 密钥界面](../images/04-deploy/02-add-dispatch-token-secret.png)
 
 ---
 
@@ -66,5 +78,3 @@ git push origin main
 > 配图说明：
 > - 建议截图内容：GitHub Actions 页面中显示 Trigger Theme Build 与 Deploy 工作流全部绿色打勾成功的运行记录
 > - 对应保存路径：`docs/images/04-deploy/03-actions-success-run.png`
-
-![GitHub Actions 自动化流水线运行成功记录](../images/04-deploy/03-actions-success-run.png)
