@@ -22,6 +22,12 @@
 6. 滑动到页面最底部，点击绿色按钮 **Generate token**；
 7. **立即复制生成的令牌字符串**（以 `github_pat_` 开头）。请妥善保管，离开页面后将无法再次查看。
 
+> 配图说明：
+> - 建议截图内容：GitHub 创建 Fine-grained token 表单，重点框选选中的目标代码仓库与 Contents: Read and write 权限行
+> - 对应保存路径：`docs/images/04-deploy/01-generate-pat-token.png`
+
+![创建 GitHub 个人访问令牌](../images/04-deploy/01-generate-pat-token.png)
+
 ---
 
 ## 第二步：在内容仓库中配置密钥
@@ -34,6 +40,12 @@
    - **Name**：必须填入 `DISPATCH_TOKEN`（注意全大写）；
    - **Secret**：粘贴第一步中复制的个人访问令牌字符串；
 6. 点击底部的 **Add secret** 保存。
+
+> 配图说明：
+> - 建议截图内容：内容仓库 Settings -> Secrets and variables -> Actions 中成功添加 DISPATCH_TOKEN 后的密钥列表界面
+> - 对应保存路径：`docs/images/04-deploy/02-add-dispatch-token-secret.png`
+
+![内容仓库添加 DISPATCH_TOKEN 密钥界面](../images/04-deploy/02-add-dispatch-token-secret.png)
 
 ---
 
@@ -50,3 +62,9 @@ git push origin main
 1. 打开内容仓库的 **Actions** 页面，你将看到 `Trigger Theme Build` 工作流被自动触发；
 2. 随后打开代码仓库的 **Actions** 页面，你将看到主题代码仓正在全自动拉取内容并完成编译部署；
 3. 构建完成后，刷新你的博客网站，新文章即可瞬间呈现在全网。
+
+> 配图说明：
+> - 建议截图内容：GitHub Actions 页面中显示 Trigger Theme Build 与 Deploy 工作流全部绿色打勾成功的运行记录
+> - 对应保存路径：`docs/images/04-deploy/03-actions-success-run.png`
+
+![GitHub Actions 自动化流水线运行成功记录](../images/04-deploy/03-actions-success-run.png)
