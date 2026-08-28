@@ -27,7 +27,7 @@ export interface AnimeItem {
 export const animeData: AnimeItem[] = [
 	{
 		title: "Lycoris Recoil",
-		cover: "https://img.picr2.online/img/2026/08/11/53e434940500fedf026d87082def639a.webp",
+		cover: "/assets/anime/sample-cover.webp",
 		link: "https://www.bilibili.com/bangumi/media/md28338623",
 		status: "completed",
 		rating: 9.8,
@@ -40,7 +40,7 @@ export const animeData: AnimeItem[] = [
 	},
 	{
 		title: "BanG Dream! It's MyGO!!!!!",
-		cover: "https://img.picr2.online/img/2026/08/11/53e434940500fedf026d87082def639a.webp",
+		cover: "/assets/anime/sample-cover.webp",
 		link: "https://bangumi.tv/subject/424740",
 		status: "completed",
 		rating: 9.6,

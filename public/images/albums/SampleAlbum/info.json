@@ -1,5 +1,4 @@
 {
-  "mode": "external",
   "title": "示例相册",
   "description": "相册演示与结构样例",
   "date": "2026-08-27",
@@ -7,14 +6,5 @@
   "tags": ["展示", "相册"],
   "layout": "masonry",
   "columns": 3,
-  "cover": "https://img.picr2.online/img/2026/05/07/bb90d446b1e698b330e816a5ec0347f1.webp",
-  "photos": [
-    {
-      "src": "https://img.picr2.online/img/2026/05/07/bb90d446b1e698b330e816a5ec0347f1.webp",
-      "title": "示例壁纸",
-      "description": "精美二次元横幅壁纸",
-      "width": 1920,
-      "height": 1080
-    }
-  ]
+  "cover": "01.webp"
 }
