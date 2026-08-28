@@ -33,3 +33,4 @@
 | `timeline.yaml` | `timelineConfig` | 大事记时间线分类与排序方向 |
 | `image-bloom.yaml` | `imageBloomConfig` | 图片色彩辉光占位动画参数 |
 | `expressive-code.yaml` | `expressiveCodeConfig` | 文章代码块语法高亮主题 |
+| `llms.yaml` | `llmsConfig` | 大语言模型与 AI 检索端点（/llms.txt 与 /llms-full.txt）、排除标签与核心引导页 |

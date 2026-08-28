@@ -56,6 +56,7 @@
 - `expressive-code.yaml`：代码高亮深浅主题
 - `license.yaml`：文章版权协议声明
 - `announcement.yaml`：首页公告栏文案与链接
+- `llms.yaml`：大语言模型与 AI 检索端点生成（/llms.txt 与 /llms-full.txt）、排除标签与核心页面引导
 - `footer.yaml` 与 `footer.html`：页脚自定义 HTML 注入
 
 ---

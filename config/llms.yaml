@@ -1,0 +1,38 @@
+# llms.yaml —— 覆盖主题的 src/config/llmsConfig.ts
+# 只写想改的键，其余保持主题默认值（主题升级后新默认值会自动生效）。
+# 契约说明见：docs/content-separation.md
+
+# 是否启用 /llms.txt 与 /llms-full.txt 静态端点生成（默认为 true）
+enable: true
+
+# 是否同时生成全量正文汇编 /llms-full.txt（默认为 true）
+generateFull: true
+
+# 站点在大模型眼中的自我介绍（可选，留空时自动回退继承 site.subtitle 或 profile.bio）
+# siteSummary: ""
+
+# 单篇文章在 /llms.txt 目录索引中的摘要截断字数上限（默认 200 字）
+# descriptionMaxLength: 200
+
+# 敏感标签黑名单过滤（命中任意标签的文章绝不暴露给大模型检索）
+# excludeTags:
+#   - "secret"
+#   - "private"
+
+# 敏感分类黑名单过滤（属于该分类的文章彻底从 LLM 产物中排除）
+# excludeCategories: []
+
+# 核心引导页面清单（提示：数组整体替换）
+# corePages:
+#   - title: "Home"
+#     url: "/"
+#     description: "Main blog entrance and latest post stream."
+#   - title: "About"
+#     url: "/about/"
+#     description: "Author profile, technical stack, and background."
+#   - title: "Archive"
+#     url: "/archive/"
+#     description: "Chronological index of all published writings."
+
+# 自定义扩展章节（可选，用于向 AI Agent 额外推荐外部开源项目或衍生资源）
+# customSections: []
