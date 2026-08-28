@@ -1,11 +1,3 @@
-# expressive-code.yaml —— 代码高亮主题配置
-# 覆盖主题的 src/config/expressiveCodeConfig.ts
-
-# 代码块默认高亮主题
 theme: "github-dark"
-
-# 浅色模式下的高亮主题
 lightTheme: "github-light"
-
-# 深色模式下的高亮主题
 darkTheme: "github-dark"

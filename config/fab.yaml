@@ -1,44 +1,40 @@
-# fab.yaml —— 悬浮操作按钮栏配置
-# 覆盖主题的 src/config/fabConfig.ts
-
-# 是否启用右下角悬浮控制按钮
 enable: true
-
-# 按钮对齐位置："start" 靠左，"end" 靠右
 align: "end"
-
-# 按钮尺寸规格："small", "regular", "large"
-size: "regular"
-
-# 边距偏移量
 offset:
-  bottom: "var(--m3e-space-8)"
-  right: "var(--m3e-space-6)"
-
-# 操作按钮清单，按数组顺序自上而下渲染
-# 按钮类型说明：
-# - "top"：返回顶部按钮，滚过横幅后自动浮现
-# - "toc"：文章目录抽屉按钮
-# - "comment"：直达评论区按钮
-# - "home"：返回首页按钮，onlySubPages: true 表示仅在子页面显示
+  bottom: "2rem"
+  right: "2rem"
+size: "regular"
 items:
   - type: "top"
     enable: true
-    devices: ["mobile", "tablet", "desktop"]
-
+    devices:
+      - "mobile"
+      - "tablet"
+      - "desktop"
+    pages: []
+    scrollThresholdRatio: 0.3
   - type: "toc"
     enable: true
-    devices: ["mobile", "tablet"]
-    pages: ["post"]
+    devices:
+      - "mobile"
+    pages:
+      - "post"
     depth: 3
     closeOnSelect: true
-
   - type: "comment"
     enable: true
-    devices: ["mobile", "tablet"]
-    pages: ["post"]
-
+    devices:
+      - "mobile"
+      - "tablet"
+      - "desktop"
+    pages:
+      - "post"
+    targetSelector: "#comment-container"
   - type: "home"
     enable: true
-    devices: ["mobile", "tablet"]
+    devices:
+      - "mobile"
+      - "tablet"
+      - "desktop"
+    pages: []
     onlySubPages: true

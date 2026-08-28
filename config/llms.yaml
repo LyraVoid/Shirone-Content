@@ -1,38 +1,56 @@
-# llms.yaml —— 覆盖主题的 src/config/llmsConfig.ts
-# 只写想改的键，其余保持主题默认值（主题升级后新默认值会自动生效）。
-# 契约说明见：docs/content-separation.md
-
-# 是否启用 /llms.txt 与 /llms-full.txt 静态端点生成（默认为 true）
 enable: true
-
-# 是否同时生成全量正文汇编 /llms-full.txt（默认为 true）
 generateFull: true
-
-# 站点在大模型眼中的自我介绍（可选，留空时自动回退继承 site.subtitle 或 profile.bio）
-# siteSummary: ""
-
-# 单篇文章在 /llms.txt 目录索引中的摘要截断字数上限（默认 200 字）
-# descriptionMaxLength: 200
-
-# 敏感标签黑名单过滤（命中任意标签的文章绝不暴露给大模型检索）
-# excludeTags:
-#   - "secret"
-#   - "private"
-
-# 敏感分类黑名单过滤（属于该分类的文章彻底从 LLM 产物中排除）
-# excludeCategories: []
-
-# 核心引导页面清单（提示：数组整体替换）
-# corePages:
-#   - title: "Home"
-#     url: "/"
-#     description: "Main blog entrance and latest post stream."
-#   - title: "About"
-#     url: "/about/"
-#     description: "Author profile, technical stack, and background."
-#   - title: "Archive"
-#     url: "/archive/"
-#     description: "Chronological index of all published writings."
-
-# 自定义扩展章节（可选，用于向 AI Agent 额外推荐外部开源项目或衍生资源）
-# customSections: []
+siteSummary: "Shirone 是一个基于 Astro 7、Svelte 5 与 Material 3 Expressive (M3E) 设计体系构建的现代化二次元风格博客主题，采用完全解耦的内容与配置分离架构。"
+descriptionMaxLength: 250
+excludeTags:
+  - "secret"
+  - "private"
+  - "draft"
+excludeCategories: []
+corePages:
+  - title: "Home"
+    url: "/"
+    description: "Main blog entrance and latest post stream."
+  - title: "About"
+    url: "/about/"
+    description: "Author profile, technical stack, and background."
+  - title: "Archive"
+    url: "/archive/"
+    description: "Chronological index of all published writings."
+  - title: "Moments"
+    url: "/moments/"
+    description: "Short timeline status updates and daily photo logs."
+  - title: "Anime"
+    url: "/anime/"
+    description: "Bangumi / Bilibili anime collection and ratings."
+  - title: "Albums"
+    url: "/albums/"
+    description: "Visual photo galleries and album collections."
+  - title: "Projects"
+    url: "/projects/"
+    description: "Open source software and community projects."
+  - title: "Skills"
+    url: "/skills/"
+    description: "Technical skills and expertise radar."
+  - title: "Timeline"
+    url: "/timeline/"
+    description: "Major milestone timeline and career records."
+  - title: "Devices"
+    url: "/devices/"
+    description: "Personal digital setup and workstation gear."
+  - title: "Compass"
+    url: "/compass/"
+    description: "Curated web navigation and developer bookmarks."
+  - title: "Friends"
+    url: "/friends/"
+    description: "Friend links and fellow bloggers network."
+customSections:
+  - title: "Featured Projects"
+    description: "Core repositories in the Shirone ecosystem."
+    items:
+      - title: "Shirone Theme"
+        url: "https://github.com/LyraVoid/Shirone"
+        description: "A Material 3 Expressive anime blog theme."
+      - title: "Shirone Content Template"
+        url: "https://github.com/LyraVoid/Shirone-Content"
+        description: "Official standalone content & config repository template for Shirone."

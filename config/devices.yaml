@@ -7,25 +7,33 @@ enable: true
 
 # 设备分类清单，数组顺序即顶部筛选标签顺序
 categories:
-  - key: "desk"
-    label: "桌面工作站"
-    icon: "material-symbols:desktop-windows-outline-rounded"
-    description: "生产力与开发主力工作台"
+  - key: LapTop
+    label: "笔记本"
+    icon: "material-symbols:laptop-chromebook-outline-rounded"
 
-  - key: "mobile"
-    label: "移动便携"
-    icon: "material-symbols:phone-iphone"
-    description: "随身电子设备与便携数码"
+  - key: RedMi
+    label: "手机"
+    icon: "material-symbols:phone-android-outline-rounded"
 
-  - key: "audio"
-    label: "影音音频"
-    icon: "material-symbols:headphones-rounded"
-    description: "耳机、音响与音频器材"
+  - key: Tablet
+    label: "平板"
+    icon: "material-symbols:tablet-android-outline-rounded"
 
-  - key: "peripheral"
-    label: "外设配件"
+  - key: Band
+    label: "手环"
+    icon: "material-symbols:watch-outline-rounded"
+
+  - key: Keyboard
+    label: "键盘"
     icon: "material-symbols:keyboard-outline-rounded"
-    description: "键盘、鼠标与桌面配件"
+
+  - key: Mouse
+    label: "鼠标"
+    icon: "material-symbols:mouse"
+
+  - key: Shoes
+    label: "跑鞋"
+    icon: "material-symbols:directions-run-rounded"
 
 # 可选临时禁用的设备 ID 清单
 # disabledIds: []

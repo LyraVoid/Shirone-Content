@@ -1,45 +1,26 @@
 /**
- * 大事记时间线数据源
- * 用于 /timeline/ 页面展示
+ * 时间线页数据源（纯内容）。
+ * 页面展示与筛选规则由 src/config/timelineConfig.ts 控制。
  */
-
-export interface TimelineLink {
-	label: string;
-	url: string;
-	icon?: string;
-}
-
-export interface TimelineItem {
-	enable?: boolean;
-	title: string;
-	date: string;
-	category?: string;
-	subtitle?: string;
-	location?: string;
-	description?: string;
-	highlights?: string[];
-	tags?: string[];
-	links?: TimelineLink[];
-	icon?: string;
-	featured?: boolean;
-}
+import type { TimelineItem } from "@/types/timelineConfig";
 
 export const timelineData: TimelineItem[] = [
 	{
-		title: "Shirone 主题内容分离架构上线",
+		title: "Shirone Theme M3E Major Architecture Upgrade",
 		date: "2026.08",
 		category: "milestone",
-		subtitle: "开源主题升级",
-		description: "重构内容与主题代码解耦机制，实现纯数据驱动的内容外置、无缝合并与强类型校验。",
+		subtitle: "Open Source Project",
+		description:
+			"Refactored the entire blog theme into a Material 3 Expressive atomic component system with token-driven styling, complete keyboard navigation, and full accessibility compliance.",
 		highlights: [
-			"代码仓与私有内容仓完全分离",
-			"对象递归合并与 TypeScript 编译期拦截",
-			"自动化多端部署与全量静态资源生成",
+			"Implemented dynamic HCT palette calculation and state layer tokens",
+			"Added multi-page capabilities: Timeline, Skills, Projects, and Protected Albums",
+			"Zero-error strict type-checking and automated visual regression locks",
 		],
-		tags: ["Astro", "TypeScript", "架构升级"],
+		tags: ["Astro", "Svelte 5", "M3E", "Tailwind 4"],
 		links: [
 			{
-				label: "主题源码",
+				label: "GitHub Repository",
 				url: "https://github.com/LyraVoid/Shirone",
 				icon: "fa6-brands:github",
 			},
@@ -47,4 +28,64 @@ export const timelineData: TimelineItem[] = [
 		icon: "material-symbols:rocket-launch-rounded",
 		featured: true,
 	},
+	{
+		title: "Senior Frontend Engineer",
+		date: "2025.03 – Present",
+		category: "career",
+		subtitle: "Technology Lab",
+		location: "Tokyo, Japan",
+		description:
+			"Leading frontend architecture, web performance optimization, and interactive design system development for modern web platforms.",
+		highlights: [
+			"Spearheaded design system unification across web products",
+			"Reduced core bundle load times by 40% using modern SSR and asset pipelines",
+		],
+		tags: ["TypeScript", "Architecture", "Performance", "Design System"],
+		icon: "material-symbols:work-rounded",
+		featured: true,
+	},
+	{
+		title: "Full-Stack Web Application Launch",
+		date: "2024.11",
+		category: "project",
+		subtitle: "Independent Creation",
+		description:
+			"Designed and built an end-to-end creative workflow application with real-time collaboration and cloud synchronization.",
+		highlights: [
+			"Designed intuitive fluid canvas interface with low-latency interaction",
+			"Built serverless backend APIs with edge caching and relational persistence",
+		],
+		tags: ["Svelte", "Node.js", "PostgreSQL", "Cloudflare"],
+		icon: "material-symbols:deployed-code-outline-rounded",
+	},
+	{
+		title: "Computer Science & Engineering Degree",
+		date: "2020.09 – 2024.06",
+		category: "education",
+		subtitle: "University of Technology",
+		location: "Hangzhou, China",
+		description:
+			"Focused on computer systems, software engineering, human-computer interaction, and distributed architectures.",
+		highlights: [
+			"Graduated with honors and outstanding graduate thesis award",
+			"Led university open source student community and hackathons",
+		],
+		tags: ["Computer Science", "Algorithms", "Software Engineering"],
+		icon: "material-symbols:school-rounded",
+	},
+	{
+		title: "Started Personal Blog & Tech Notes",
+		date: "2022.04",
+		category: "life",
+		subtitle: "First Step into Tech Writing",
+		description:
+			"Published my first article online and began documenting frontend exploration, creative coding, and personal reflections.",
+		tags: ["Blogging", "Writing", "Open Web"],
+		icon: "material-symbols:edit-note-rounded",
+	},
 ];
+
+/** 获取所有时间线数据列表 */
+export function getTimelineList(): TimelineItem[] {
+	return timelineData;
+}

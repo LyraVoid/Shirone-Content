@@ -1,57 +1,133 @@
-/**
- * 个人设备展示页数据源
- * 行为与分类规则由 config/devices.yaml 控制
- */
-
-export type DeviceStatus = "active" | "backup" | "archived" | "wishlist";
-
-export interface DeviceSpecItem {
-	key: string;
-	label: string;
-	value: string;
-}
-
-export interface DeviceItem {
-	enable?: boolean;
-	id: string;
-	name: string;
-	brand: string;
-	category: string;
-	status: DeviceStatus;
-	specs: string;
-	specDetails?: DeviceSpecItem[];
-	description: string;
-	image?: string;
-	icon?: string;
-	link?: string;
-	featured?: boolean;
-	year?: string;
-}
+import type { DeviceItem } from "@/types/devicesConfig";
 
 export const devicesData: DeviceItem[] = [
 	{
-		id: "macbook-pro",
-		name: "MacBook Pro 16",
-		brand: "Apple",
-		category: "desk",
+		id: "redmi-k60",
+		name: "RedMi K60",
+		brand: "RedMi",
+		category: "RedMi",
 		status: "active",
-		specs: "M3 Max / 64GB / 2TB",
-		description: "主力开发与设计工作站，提供强劲性能与优秀的视网膜屏幕表现。",
-		icon: "material-symbols:laptop-mac-rounded",
+		specs: "晴雪 / 12G + 512GB",
+		description: "主力手机，晴雪配色，配备 2K 120Hz OLED 直屏、5500mAh 电池、67W 有线快充和 30W 无线充电。日常使用、拍照、刷视频和轻度游戏都很稳。",
+		image: "/images/device/redmik60.png",
+		link: "https://www.mi.com/redmi-k60",
 		featured: true,
-		year: "2024",
-		link: "https://www.apple.com/macbook-pro/",
+		year: "2023",
 	},
 	{
-		id: "iphone",
-		name: "iPhone 16 Pro",
-		brand: "Apple",
-		category: "mobile",
+		id: "xiaomi-band-9",
+		name: "Xiaomi Smart Band 9 NFC",
+		brand: "Xiaomi",
+		category: "Band",
 		status: "active",
-		specs: "原色钛金属 / 256GB",
-		description: "主力随身移动设备，高刷新率屏幕与优秀的色彩管理。",
-		icon: "material-symbols:phone-iphone",
+		specs: "NFC / 1.62\" AMOLED / 5ATM",
+		description: "日常健康和通知设备，1.62\" AMOLED 屏幕，最高 1200 nits 亮度，支持 5ATM 防水和 NFC。续航长，适合记录运动、睡眠和通勤刷卡。",
+		image: "/images/device/xiaomismartband9nfc.png",
+		link: "https://www.mi.com/prod/xiaomi-shouhuan-9-nfc",
+		featured: false,
+		year: "2024",
+	},
+	{
+		id: "legion-y9000p-2022",
+		name: "LEGION Y9000P 2022",
+		brand: "Lenovo",
+		category: "LapTop",
+		status: "active",
+		specs: "16\" 2.5K / 165Hz / RTX 30",
+		description: "主要生产力和游戏笔记本，16\" 2.5K 165Hz 屏幕，12th Gen Intel Core H 系列处理器，NVIDIA GeForce RTX 30 系列显卡，搭配 DDR5 内存和 PCIe 4.0 SSD。适合开发、剪辑和游戏。",
+		image: "/images/device/LegionY9000P2022.png",
+		link: "https://item.lenovo.com.cn/product/1020769.html",
+		featured: true,
+		year: "2022",
+	},
+	{
+		id: "razer-mamba-elite",
+		name: "Razer Mamba Elite",
+		brand: "Razer",
+		category: "Mouse",
+		status: "active",
+		specs: "5G optical sensor / 16000 DPI / 9 buttons / 96g",
+		description: "经典右手人体工学有线游戏鼠标，搭载 Razer 5G optical sensor，最高 16000 DPI，9 个可编程按键和可倾斜滚轮。Chroma RGB 侧边灯带很有辨识度，适合大手用户和 FPS/MOBA 场景。",
+		image: "/images/device/mt3000.png",
+		link: "https://www.razer.com/gaming-mice/razer-mamba-elite",
+		year: "2022",
+	},
+	{
+		id: "rapoo-vt3-max",
+		name: "雷柏 VT3 MAX 双8K版 树莓粉",
+		brand: "Rapoo",
+		category: "Mouse",
+		status: "active",
+		specs: "PAW3950 Ultimate / dual 8K / 53-54g / 800mAh",
+		description: "大手型轻量化无线电竞鼠标，树莓粉配色，搭载 PAW3950 Ultimate 传感器，支持有线/无线 dual 8K 回报率。约 53-54g，800mAh 电池，兼顾性能、续航和握持舒适度。",
+		image: "/images/device/oneplus13t.png",
+		link: "https://www.rapoo.cn/",
+		year: "2024",
+	},
+	{
+		id: "ikbc-c200",
+		name: "IKBC C200 87键 樱桃青轴粉红色",
+		brand: "IKBC",
+		category: "Keyboard",
+		status: "active",
+		specs: "87-key TKL / Cherry MX Blue / PBT keycaps",
+		description: "经典 87 键 TKL 有线机械键盘，粉色外观，Cherry MX Blue 青轴，搭配 PBT 键帽和钢板结构。段落感清脆，打字反馈明确，适合喜欢青轴声音和手感的人。",
+		image: "/images/device/redmik60.png",
+		link: "https://www.ikbc.com.cn/",
+		year: "2021",
+	},
+	{
+		id: "atk-vxe-v75x",
+		name: "ATK VXE V75X 80键 三模机械键盘 拼色 黑曜石轴",
+		brand: "ATK",
+		category: "Keyboard",
+		status: "active",
+		specs: "80-key 75% / tri-mode / gasket / Obsidian switches",
+		description: "75% 配列三模机械键盘，半铝 Gasket 结构，黑曜石线性轴，PBT 双色键帽，全键 RGB，多层填充和 4000mAh 电池。手感厚实，适合桌面办公和游戏切换使用。",
+		image: "/images/device/LegionY9000P2022.png",
+		link: "https://www.atk.store/",
 		featured: true,
 		year: "2024",
 	},
+	{
+		id: "rk987a",
+		name: "Royal Kludge RK987A 87键 茶轴 白色",
+		brand: "Royal Kludge",
+		category: "Keyboard",
+		status: "backup",
+		specs: "87-key TKL / Brown switches / white LED",
+		description: "白色 87 键 TKL 机械键盘，茶轴手感比较均衡，支持有线和 Bluetooth 连接，带白色背光。外观简洁，适合日常办公、打字和轻度游戏。",
+		image: "/images/device/xiaomismartband9nfc.png",
+		link: "https://rkgamingstore.com/",
+		year: "2020",
+	},
+	{
+		id: "matepad-11-5-s",
+		name: "HUAWEI MatePad 11.5\"S 柔光版 羽砂紫",
+		brand: "HUAWEI",
+		category: "Tablet",
+		status: "active",
+		specs: "11.5\" PaperMatte / 2.8K 144Hz / HarmonyOS / 8800mAh",
+		description: "轻薄生产力平板，羽砂紫配色，11.5\" PaperMatte 柔光屏，2.8K 144Hz，搭载 Kirin 9000WL 和 HarmonyOS。支持手写笔与磁吸键盘，适合阅读、笔记、学习和轻办公。",
+		image: "/images/device/oneplus13t.png",
+		link: "https://consumer.huawei.com/cn/tablets/",
+		featured: true,
+		year: "2024",
+	},
+	{
+		id: "chaoqing-22",
+		name: "超轻22 棉花糖男子轻质缓震跑鞋ARBV001-25",
+		brand: "Li-Ning",
+		category: "Shoes",
+		status: "active",
+		specs: "䨻 midsole / 天波 outsole / TPU arch",
+		description: "轻质缓震跑鞋，使用加厚 䨻 midsole，搭配天波 outsole 和 TPU arch 支撑。脚感轻弹，透气性不错，适合日常通勤、慢跑和长时间走路。",
+		image: "/images/device/chaoqing22.png",
+		link: "https://store.lining.com/goods/detail?spuId=11504641l",
+		year: "2025",
+	},
 ];
+
+export function getDevicesList(): DeviceItem[] {
+	return devicesData;
+}

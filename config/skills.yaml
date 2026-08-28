@@ -1,23 +1,12 @@
-# skills.yaml —— 技能图谱页配置
-# 覆盖主题的 src/config/skillsConfig.ts
-# 具体技能条目清单请在 data/skills.ts 中维护
-
-# 页面总开关
 enable: true
-
-# 技能分类清单，数组顺序即顶部筛选标签顺序
 categories:
   - key: "frontend"
-    label: "前端"
+    label: "前端开发"
     icon: "material-symbols:web-rounded"
-
   - key: "backend"
-    label: "后端"
+    label: "后端工程"
     icon: "material-symbols:dns-rounded"
-
-  - key: "tooling"
-    label: "工具"
-    icon: "material-symbols:construction-rounded"
-
-# 可选临时禁用的技能名称清单
-# disabledNames: []
+  - key: "devops"
+    label: "云原生与运维"
+    icon: "material-symbols:cloud-done-outline-rounded"
+disabledNames: []

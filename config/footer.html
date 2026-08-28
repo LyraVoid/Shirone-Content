@@ -1,10 +1,57 @@
-<!-- footer.html —— 页脚自定义 HTML 注入片段 -->
-<!-- 当 footer.yaml 中 enable: true 时，本文件内容将被安全注入到页脚版权上方 -->
-<!-- 示例：备案号徽标、统计徽章、网站安全声明等 -->
-<!--
-<div class="custom-footer flex flex-wrap justify-center items-center gap-3 text-xs opacity-75">
-  <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
-    粤ICP备XXXXXXXX号
+<div class="icp-terminal-bar">
+  <a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer" class="bar-node">
+    <span class="node-dot"></span>某ICP备12345678号-1
+  </a>
+  <span class="bar-split"></span>
+  <a href="https://icp.gov.moe/" target="_blank" rel="noopener noreferrer" class="bar-node">
+    萌ICP备12345678号
   </a>
 </div>
--->
+
+<style>
+.icp-terminal-bar {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  background: color-mix(in srgb, currentColor 3%, transparent);
+  border: 1px solid color-mix(in srgb, currentColor 8%, transparent);
+  border-radius: 4px;
+  font-family: ui-monospace, monospace;
+  font-size: 11px;
+}
+
+.bar-node {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: color-mix(in srgb, currentColor 55%, transparent);
+  transition: all 0.2s ease;
+}
+
+.bar-node:hover {
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 6%, transparent);
+}
+
+.node-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: color-mix(in srgb, currentColor 30%, transparent);
+  transition: all 0.2s ease;
+}
+
+.bar-node:hover .node-dot {
+  background: var(--primary);
+  box-shadow: 0 0 6px var(--primary);
+}
+
+.bar-split {
+  width: 1px;
+  height: 10px;
+  background: color-mix(in srgb, currentColor 10%, transparent);
+}
+</style>

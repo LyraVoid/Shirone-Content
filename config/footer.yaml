@@ -1,5 +1,1 @@
-# footer.yaml —— 页脚自定义内容配置
-# 覆盖主题的 src/config/footerConfig.ts
-
-# 是否在页脚版权上方注入自定义 HTML 内容，开启后读取当前目录下的 footer.html
-enable: false
+enable: true

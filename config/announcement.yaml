@@ -1,18 +1,12 @@
-# announcement.yaml —— 首页公告栏配置
-# 覆盖主题的 src/config/announcementConfig.ts
-
-# 公告标题，留空时使用本地化语言文件默认标题
-title: ""
-
-# 公告正文内容
-content: "The only way to do great work is to love what you do."
-
-# 是否允许访客手动关闭公告
+title: "欢迎光临"
+content: "Shirone 内容与配置分离测试站点已接入官方完整示例数据与 Markdown 扩展生态！"
+text: "Shirone 内容与配置分离测试站点已接入官方完整示例数据与 Markdown 扩展生态！"
+icon: "material-symbols:campaign-outline-rounded"
+type: "info"
 closable: true
-
-# 公告附加链接
+closeDuration: 86400
 link:
   enable: true
-  text: "GitHub"
-  url: "https://github.com"
-  external: true
+  text: "查看说明"
+  url: "/about/"
+  external: false

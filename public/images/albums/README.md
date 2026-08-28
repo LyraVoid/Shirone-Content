@@ -1,50 +1,30 @@
-# 相册目录说明
+# Albums
 
-在 `public/images/albums/<相册标识>/` 下为每个相册建立一个独立目录。
+Create one directory per album under `public/images/albums/<id>/`.
 
-每个相册目录下需要包含一个 `info.json` 元数据配置文件：
+Each directory needs an `info.json` file. Local albums use `cover.webp` or `cover.jpg` and automatically scan the remaining image files; keep the cover file out of the numbered photo sequence. If a basename has both a WebP and another image extension, the WebP file is selected. Filenames such as `sunset_beach.webp` expose `beach` as a photo tag.
 
-## 本地相册配置示例
+For predictable local ordering and readable generated metadata, use zero-padded numeric names such as `01.webp`, `02.webp`, and `03.webp`. The scanner sorts names with numeric-aware `localeCompare`, and the basename contributes to the generated photo `alt`/`title`, tags, and public image URL. Avoid hashes or mixed prefixes unless they are intentional. When renaming an existing album, preserve the scanner order and run the album regression test afterward.
 
 ```json
 {
-  "title": "示例相册",
-  "description": "相册描述说明",
-  "date": "2026-08-01",
-  "location": "北京",
-  "tags": ["摄影", "日常"],
+  "title": "Local album",
+  "description": "Album description",
+  "date": "2025-08-01",
+  "location": "Tokyo",
+  "tags": ["travel"],
   "layout": "masonry",
   "columns": 3,
   "hidden": false
 }
 ```
 
-本地相册直接在相册目录下放置 `cover.webp` 封面图以及按序号命名的照片文件，例如 `01.webp`、`02.webp`。
+For remote media, set `mode` to `external` and provide `cover` plus a `photos` array. Each photo requires `src`; `thumbnail`, `alt`, `title`, `description`, `tags`, `width`, `height`, `camera`, `lens`, and `settings` are optional. Prefer supplying `width` and `height`: the gallery uses them to preserve the source aspect ratio and to order masonry photos by orientation. If omitted, dimensions are measured after the image loads.
 
-## 远端外链相册配置示例
+`hidden: true` removes an album from `/albums/` but keeps its static detail route. A `password` creates a protected album. The build emits only an encrypted photo manifest to the protected page; the browser decrypts it after a successful password entry. The password itself is never sent to the browser. This is a static-site access gate, not server-side authorization. Remote URLs remain directly controlled by their host, and local files under `public/` remain directly addressable if their URL is known.
 
-```json
-{
-  "mode": "external",
-  "title": "远端相册",
-  "description": "通过网络外链加载的相册",
-  "date": "2026-08-01",
-  "cover": "https://example.com/cover.webp",
-  "tags": ["风景"],
-  "layout": "masonry",
-  "columns": 3,
-  "photos": [
-    {
-      "src": "https://example.com/photo1.webp",
-      "title": "照片标题",
-      "description": "照片描述",
-      "width": 1920,
-      "height": 1080
-    }
-  ]
-}
-```
+Protected albums use the same `layout` and `columns` contract as regular albums. Set `layout` to `masonry` when the album should use the left-to-right masonry gallery; unlocking must not require a separate layout configuration.
 
-## 加密相册
+The included examples demonstrate local, external, hidden, and protected modes. The sample images are copied from the research fixture for development and are not claimed as generally redistributable media.
 
-在 `info.json` 中配置 `"password": "你的密码"` 即可启用相册访问密码锁。
+After changing an album's `info.json` or image files, run `npx.cmd playwright test tests/site/albums.spec.ts` from the project root.

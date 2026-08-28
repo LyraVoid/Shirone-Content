@@ -1,30 +1,13 @@
-# timeline.yaml —— 大事记时间线页配置
-# 覆盖主题的 src/config/timelineConfig.ts
-# 具体时间线节点清单请在 data/timeline.ts 中维护
-
-# 页面总开关
 enable: true
-
-# 时间线分类清单
 categories:
   - key: "milestone"
     label: "里程碑"
     icon: "material-symbols:flag-rounded"
-
   - key: "project"
-    label: "项目"
+    label: "项目发布"
     icon: "material-symbols:code-rounded"
-
-  - key: "career"
-    label: "经历"
-    icon: "material-symbols:work-rounded"
-
   - key: "life"
-    label: "生活"
+    label: "日常记录"
     icon: "material-symbols:favorite-rounded"
-
-# 排序方向："desc" 时间倒序，最新在前，默认；"asc" 时间正序
 order: "desc"
-
-# 可选临时禁用的事件标题清单
-# disabledTitles: []
+disabledTitles: []

@@ -1,14 +1,4 @@
-# image-bloom.yaml —— 图片色调辉光占位配置
-# 覆盖主题的 src/config/imageBloomConfig.ts
-
-# 是否开启图片加载时的色彩辉光防抖占位
 enable: true
-
-# 模糊半径，单位像素
 blurRadius: 20
-
-# 辉光不透明度，范围 0.0 到 1.0
 opacity: 0.7
-
-# 过渡动画时长，单位毫秒
 transitionDuration: 300
