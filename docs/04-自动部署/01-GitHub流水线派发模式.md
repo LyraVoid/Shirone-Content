@@ -10,46 +10,51 @@
 
 我们需要生成一个专用的小令牌，用来让内容仓库有权限通知代码仓库启动构建。
 
-1. 打开 [GitHub 个人设置页面](https://github.com/settings/profile)，点击右上角头像选择 **Settings**：
+1. **前往个人设置**：
+   点击 GitHub 页面右上角头像，进入设置页面。
 
-   ![主页点击Settings](../images/04-deploy/01-1-settings-click.png)
-   *图 1-1：进入 GitHub 个人账户设置*
+   ![主页点击Settings](../images/04-deploy/01-dispatch/01-settings-click.png)
+   *图 1-1：GitHub 个人菜单中的 Settings 入口*
 
-2. 在左侧菜单栏滑动到最下方，找到并点击 **Developer Settings**：
+2. **进入开发者设置**：
+   在左侧导航栏滑到底部，点击开发者设置。
 
-   ![找到Developer Settings](../images/04-deploy/01-2-developer-settings.png)
-   *图 1-2：进入开发者设置*
+   ![找到Developer Settings](../images/04-deploy/01-dispatch/02-developer-settings.png)
+   *图 1-2：左侧底部 Developer Settings 入口*
 
-   ![Developer Settings界面](../images/04-deploy/01-3-developer-settings.png)
-   *图 1-3：开发者设置导航菜单*
+   ![Developer Settings界面](../images/04-deploy/01-dispatch/03-developer-settings-menu.png)
+   *图 1-3：Developer Settings 页面概览*
 
-3. 在左侧菜单中展开 **Personal access tokens**，点击 **Fine-grained tokens**：
+3. **进入细粒度个人访问令牌**：
+   依次点击左侧的个人访问令牌下的细粒度令牌。
 
-   ![Fine-grained tokens](../images/04-deploy/01-4-fine-grained-tokens.png)
-   *图 1-4：选择细粒度访问令牌*
+   ![Fine-grained tokens](../images/04-deploy/01-dispatch/04-fine-grained-tokens.png)
+   *图 1-4：Fine-grained tokens 选项*
 
-4. 点击右上角的 **Generate new token** 按钮：
+4. **新建令牌**：
+   点击右上角的生成新令牌按钮。
 
-   ![Generate new token](../images/04-deploy/01-5-generate-new-token.png)
-   *图 1-5：生成新的细粒度令牌*
+   ![Generate new token](../images/04-deploy/01-dispatch/05-generate-new-token.png)
+   *图 1-5：生成新令牌按钮*
 
-5. 按以下步骤填写配置：
-   - **Token name**：填写 `Shirone Content Dispatch`；
-   - **Expiration**：选择过期时间（建议选择 90 天或自定义更长时间）；
-   - **Repository access**：**务必选择 Only select repositories**，并在下拉列表中选中你的**主题代码仓库**（例如 `yourname/Shirone`）：
+5. **配置令牌属性与权限**：
+   - **Token name**：填入 `DISPATCH_TOKEN`（或自定义名称）；
+   - **Expiration**：选择过期时间（建议选择 90 天或根据需求设置）；
+   - **Repository access**：**务必选择“Only select repositories”**，并在下拉菜单中**只勾选你的主题代码仓库**；
 
-     ![Repository access](../images/04-deploy/01-6-repository-access.png)
-     *图 1-6：授权指定的主题代码仓库*
+     ![Repository access](../images/04-deploy/01-dispatch/06-repository-access.png)
+     *图 1-6：指定生效的主题代码仓库*
 
-   - **Permissions**：展开 **Repository permissions**，找到 **Contents**，将其权限由 No access 改为 **Access: Read and write**（其他所有权限保持默认不选）：
+   - **Permissions -> Repository permissions**：展开仓库权限列表，找到 **Contents**，将其权限由只读修改为 **Read and write**（用于触发工作流派发）；
 
-     ![Contents权限设置](../images/04-deploy/01-7-contents-permission.png)
-     *图 1-7：赋予代码仓 Contents 读写权限*
+     ![Contents权限设置](../images/04-deploy/01-dispatch/07-contents-permission.png)
+     *图 1-7：赋予 Contents 读写权限*
 
-6. 滑动到页面最底部，点击绿色按钮 **Generate token**，**立即复制生成的令牌字符串**（以 `github_pat_` 开头）。请妥善保管，离开页面后将无法再次查看：
+6. **生成并妥善复制令牌**：
+   滑动至页面最底部，点击绿色按钮生成令牌。**立即复制生成的令牌字符串并妥善保存**。
 
-   ![创建 GitHub 个人访问令牌](../images/04-deploy/01-8-generate-pat-token.png)
-   *图 1-8：成功生成个人访问令牌并复制*
+   ![创建 GitHub 个人访问令牌](../images/04-deploy/01-dispatch/08-generate-pat-token.png)
+   *图 1-8：创建成功并复制令牌密钥*
 
 ---
 
