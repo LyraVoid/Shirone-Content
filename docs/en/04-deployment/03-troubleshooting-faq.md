@@ -116,7 +116,6 @@ The theme automatically appends anti-hotlinking bypass attributes to images from
 
 ---
 
-## 8. Does editing documentation under `docs/` consume build quota?
+## 8. Does modifying the `docs/` directory trigger builds?
 
-**No, absolutely not.**
-The `docs/` directory and root `README.md` files are excluded in both the GitHub Actions workflow path filters and local synchronization scripts. Committing changes to `docs/` never triggers remote builds or consumes hosting quotas.
+No. The `docs/` directory and root `README` files are excluded from workflow path filters and synchronization scripts, so committing documentation changes will not trigger builds.

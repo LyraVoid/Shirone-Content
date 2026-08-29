@@ -6,10 +6,8 @@
 
 Welcome to the Shirone documentation. Choose your preferred language above to read the full guide, or browse chapters directly using the table of contents below.
 
-> 提示：`docs/` 目录已被构建和同步脚本排除，阅读或修改文档不会触发线上构建。
+> `docs/` 目录已被构建与同步排除。 / The `docs/` directory is excluded from builds and synchronization.
 >
-> Note: The `docs/` directory is excluded from builds and synchronization pipelines.
-
 ---
 
 ## 目录导航 / Table of Contents

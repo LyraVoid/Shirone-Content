@@ -18,7 +18,7 @@ When content is pushed, automated workflows trigger a rebuild with your latest c
 
 ## Documentation Index
 
-Comprehensive documentation is provided in the `docs/` directory (excluded from automated builds and synchronization pipelines; editing documentation never triggers remote build costs):
+Documentation is available in the `docs/` directory (excluded from builds and synchronization):
 
 | Section | Link | Summary |
 | :--- | :--- | :--- |
