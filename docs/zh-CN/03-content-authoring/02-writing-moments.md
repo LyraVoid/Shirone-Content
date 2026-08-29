@@ -1,4 +1,4 @@
-﻿# 动态说说发布指南
+# 动态说说发布指南
 
 动态说说用于记录博主的即时想法、短篇随笔、生活记录或拍摄瞬间，展示在 `/moments/` 页面中。
 
@@ -53,7 +53,7 @@ images:
 
 说说时间轴与多图展示效果：
 
-![说说时间轴与多图效果](../images/03-content/02-moments/01-moments-timeline-preview.png)
+![说说时间轴与多图效果](../../images/03-content/02-moments/01-moments-timeline-preview.png)
 *图 1-1：说说时间流与多图卡片展示效果*
 
 ---

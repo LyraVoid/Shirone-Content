@@ -1,4 +1,4 @@
-﻿# 托管平台部署钩子模式
+# 云托管平台 Deploy Hook 部署
 
 如果你习惯将主题代码仓直接托管在 Cloudflare Pages、Vercel、腾讯云 EdgeOne 或 Netlify 等平台，并由平台自身的构建机拉取内容进行静态打包，你可以使用**部署钩子触发模式**。
 
@@ -34,7 +34,7 @@ sequenceDiagram
    - **Build command**：`pnpm run build`
    - **Build output directory**：`dist`
 
-![Cloudflare Pages 创建与设置](../images/04-deploy/02-hook/02-pages-deploy.png)
+![Cloudflare Pages 创建与设置](../../images/04-deploy/02-hook/02-pages-deploy.png)
 *图 1-1：Cloudflare Pages 构建参数配置*
 
 ### 第二步：配置构建环境变量
@@ -47,7 +47,7 @@ sequenceDiagram
 | `CONTENT_REPO_URL` | `https://x-access-token:你的令牌@github.com/用户名/内容仓名.git` | **私有内容仓必填**，附带访问令牌的克隆地址 |
 | `BILI_SESSDATA` | `你的凭证` | *可选*，用于追番私密列表同步 |
 
-![Cloudflare 环境变量配置](../images/04-deploy/02-hook/06-env-config.png)
+![Cloudflare 环境变量配置](../../images/04-deploy/02-hook/06-env-config.png)
 *图 1-2：配置构建环境变量*
 
 ### 第三步：创建 Deploy Hook
@@ -56,7 +56,7 @@ sequenceDiagram
 3. 填写名称（如 `content-update`），分支选择 `main`，点击 **Add hook**；
 4. 复制生成的 Webhook URL。
 
-![Cloudflare Deploy Hook 配置](../images/04-deploy/02-hook/07-deploy-hook-config.png)
+![Cloudflare Deploy Hook 配置](../../images/04-deploy/02-hook/07-deploy-hook-config.png)
 *图 1-3：创建并复制 Deploy Hook 地址*
 
 ### 第四步：在 GitHub 内容仓库中配置 Secret
@@ -113,7 +113,7 @@ sequenceDiagram
 2. 新建 **部署钩子**，选择分支为 `main`；
 3. 保存并复制生成的触发 URL。
 
-![EdgeOne 钩子创建位置](../images/04-deploy/02-hook/12-edgeone-deploy-hook.png)
+![EdgeOne 钩子创建位置](../../images/04-deploy/02-hook/12-edgeone-deploy-hook.png)
 *图 3-1：腾讯云 EdgeOne 部署钩子配置*
 
 ### 第四步：在 GitHub 内容仓库中配置 Secret
@@ -147,11 +147,11 @@ sequenceDiagram
 
 ## 自动化工作流与密钥对照总结
 
-内容仓自动化触发工作流 [`.github/workflows/trigger-build.yml`](.github/workflows/trigger-build.yml) 中支持的部署密钥对照：
+内容仓自动化触发工作流 [`.github/workflows/trigger-build.yml`](../../../.github/workflows/trigger-build.yml) 中支持的部署密钥对照：
 
 | 托管平台 | GitHub Secret 变量名（严格匹配） | 触发机制说明 |
 | :--- | :--- | :--- |
-| **代码仓派发模式** | `DISPATCH_TOKEN` | 派发 `content-updated` 事件至主题代码仓由 GitHub Actions 统一构建（推荐） |
+| **跨仓联动构建（推荐）** | `DISPATCH_TOKEN` | 通知主题代码仓通过 GitHub Actions 执行拉取、编译与发布 |
 | **Cloudflare Pages** | `CLOUDFLARE_DEPLOY_HOOK` | 推送后向 Cloudflare Deploy Hook 发送 POST 请求触发重新拉取与构建 |
 | **Vercel** | `VERCEL_DEPLOY_HOOK` | 推送后向 Vercel Deploy Hook 发送 POST 请求触发重新部署 |
 | **腾讯云 EdgeOne** | `EDGEONE_DEPLOY_HOOK` | 推送后向 EdgeOne 部署钩子发送 POST 请求触发构建发布 |

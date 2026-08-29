@@ -1,4 +1,4 @@
-﻿# 初始化私有内容仓库
+# 初始化私有内容仓库
 
 搭建个人内容仓库有两种便捷途径：
 
@@ -48,7 +48,7 @@ pnpm.cmd content:eject --yes --out "D:\Code\my-blog-content"
    - **Initialize this repository with**：**不要勾选**任何初始化选项（保持完全空白）；
 4. 点击底部的 **Create repository** 创建仓库。
 
-![GitHub 新建私有仓库界面](../images/01-quickstart/02-init/01-github-create-repo.png)
+![GitHub 新建私有仓库界面](../../images/01-quickstart/02-init/01-github-create-repo.png)
 *图 1-1：GitHub 新建私有仓库选项配置*
 
 ---
@@ -82,7 +82,7 @@ git push -u origin main
 ### 第一步：在 GitHub 上创建空白私有仓库
 按照上述步骤在 GitHub 上创建一个空白的 Private 私有仓库（不要勾选任何初始化文件）。
 
-![GitHub 空白仓库指引页面](../images/01-quickstart/02-init/02-repo-initial-page.png)
+![GitHub 空白仓库指引页面](../../images/01-quickstart/02-init/02-repo-initial-page.png)
 *图 1-2：GitHub 空白仓库克隆指引页面*
 
 ### 第二步：克隆官方内容模板到本地
@@ -96,7 +96,7 @@ git clone https://github.com/LyraVoid/Shirone-Content.git my-blog-content
 cd my-blog-content
 ```
 
-![终端运行克隆命令输出](../images/01-quickstart/02-init/03-git-clone-output.png)
+![终端运行克隆命令输出](../../images/01-quickstart/02-init/03-git-clone-output.png)
 *图 1-3：克隆官方模板仓库到本地*
 
 ### 第三步：将远程地址重定向为你自己的私有仓库
@@ -109,7 +109,7 @@ git remote set-url origin git@github.com:你的用户名/my-blog-content.git
 git remote -v
 ```
 
-![个人仓库地址](../images/01-quickstart/02-init/04-git-remote-output.png)
+![个人仓库地址](../../images/01-quickstart/02-init/04-git-remote-output.png)
 *图 1-4：验证远程仓库地址重定向*
 
 ### 第四步：推送首次提交到你的私有仓库
@@ -119,12 +119,12 @@ git remote -v
 git push -u origin main
 ```
 
-![终端运行推送命令输出](../images/01-quickstart/02-init/05-git-push-output.png)
+![终端运行推送命令输出](../../images/01-quickstart/02-init/05-git-push-output.png)
 *图 1-5：推送模板内容到个人私有仓库*
 
 刷新 GitHub 页面，你将看到完整的目录结构已经全部准备就绪：
 
-![GitHub 私有仓库最终页面](../images/01-quickstart/02-init/06-repo-final-page.png)
+![GitHub 私有仓库最终页面](../../images/01-quickstart/02-init/06-repo-final-page.png)
 *图 1-6：私有仓库初始化就绪页面*
 
 ---
@@ -154,5 +154,5 @@ my-blog-content/
 ## 下一步
 
 内容仓库创建完成后，请继续阅读：
-- [03. 本地预览与实时调试](./03-本地预览与实时调试.md) —— 在个人电脑上启动开发服务器，进行边写边看实时预览；
-- [04. 命令行工具与协同工作流](./04-命令行工具与协同工作流.md) —— 掌握日常写作、配置预检与导出的 CLI 命令行工具。
+- [03. 本地预览与实时调试](./03-local-preview.md) —— 在个人电脑上启动开发服务器，进行边写边看实时预览；
+- [04. 命令行工具与协同工作流](./04-cli-workflows.md) —— 掌握日常写作、配置预检与导出的 CLI 命令行工具。

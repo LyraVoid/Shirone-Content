@@ -1,4 +1,4 @@
-﻿# 本地预览与实时调试
+# 本地预览与实时调试
 
 在将文章或配置推送到线上之前，你可以在自己的电脑上启动本地开发服务器，实时查看渲染效果。
 
@@ -35,12 +35,12 @@ pnpm.cmd dev
 
 设置内容路径并执行同步：
 
-![设置内容仓库路径与执行同步](../images/01-quickstart/03-preview/01-local-preview-content.png)
+![设置内容仓库路径与执行同步](../../images/01-quickstart/03-preview/01-local-preview-content.png)
 *图 1-1：设置内容仓库路径与执行内容同步*
 
 启动开发服务器并在终端查看输出：
 
-![终端启动开发服务器输出界面](../images/01-quickstart/03-preview/02-local-preview-terminal.png)
+![终端启动开发服务器输出界面](../../images/01-quickstart/03-preview/02-local-preview-terminal.png)
 *图 1-2：终端启动本地开发服务器输出*
 
 ### 2. 在 macOS / Linux 系统中（使用 Bash / Zsh）
@@ -66,7 +66,7 @@ pnpm dev
 
 在浏览器中打开 `http://localhost:4321/`，即可看到完全由你私有内容仓库驱动的博客页面：
 
-![本地浏览器预览博客效果](../images/01-quickstart/03-preview/03-local-preview-browser.png)
+![本地浏览器预览博客效果](../../images/01-quickstart/03-preview/03-local-preview-browser.png)
 *图 1-3：本地浏览器预览博客渲染效果*
 
 ---
@@ -94,7 +94,7 @@ pnpm dev
 ## 进阶命令行工具
 
 除了 `content:sync` 和 `content:watch` 之外，Shirone 还提供了内存预检（`content:validate`）、差异导出（`content:export`）、安全清理（`content:clean`）以及状态查询（`content:status`）等丰富工具。
-详细使用指南请参阅：[04. 命令行工具与协同工作流](./04-命令行工具与协同工作流.md)。
+详细使用指南请参阅：[04. 命令行工具与协同工作流](./04-cli-workflows.md)。
 
 ---
 

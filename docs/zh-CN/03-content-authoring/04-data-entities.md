@@ -1,4 +1,4 @@
-﻿# 页面数据实体维护
+# 页面数据实体维护
 
 除了常规的文章和说说，博客中还有很多展示特定内容的独立页面（如设备清单、友链、项目、技能、时间线、罗盘、番剧与音乐）。
 这些页面的数据全部存放在内容仓库的 `data/` 目录下，采用纯 TypeScript 格式维护，结构简单明了，只需模仿模板填入自己的数据即可。
@@ -29,7 +29,7 @@ export const devicesData = [
 
 个人设备展示页排版效果：
 
-![个人设备展示页排版效果](../images/03-content/04-data/01-devices-page-preview.png)
+![个人设备展示页排版效果](../../images/03-content/04-data/01-devices-page-preview.png)
 *图 1-1：个人设备展示页卡片排版*
 
 ---
@@ -120,7 +120,7 @@ export const timelineData = [
 
 大事记时间线页面节点展示：
 
-![大事记时间线页面节点展示](../images/03-content/04-data/02-timeline-page-preview.png)
+![大事记时间线页面节点展示](../../images/03-content/04-data/02-timeline-page-preview.png)
 *图 1-2：大事记时间线节点排版*
 
 ---

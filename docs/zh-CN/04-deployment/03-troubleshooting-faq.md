@@ -1,4 +1,4 @@
-﻿# 常见问题与排错手册
+# 常见问题与排查指南
 
 本篇文档汇总了在内容分离架构使用、日常写作与自动化部署过程中可能遇到的常见疑问与排错指南。
 
@@ -79,7 +79,7 @@ Caught error rendering /about: Error: Failed to prerender ...: __dirname is not 
 ### 解决方法
 1. 打开**内容仓库**的 **Actions** 页面，查看 `Trigger Theme Build` 工作流中对应平台的触发步骤是否被跳过；
 2. 检查内容仓库 **Settings** -> **Secrets and variables** -> **Actions** 中的 Secret 变量名称是否严格匹配：
-   - 代码仓派发模式：`DISPATCH_TOKEN`
+   - GitHub Actions 跨仓构建：`DISPATCH_TOKEN`
    - Cloudflare Pages：`CLOUDFLARE_DEPLOY_HOOK`
    - Vercel：`VERCEL_DEPLOY_HOOK`
    - 腾讯云 EdgeOne：`EDGEONE_DEPLOY_HOOK`

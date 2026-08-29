@@ -1,4 +1,4 @@
-﻿# 评论系统配置
+# 评论系统配置
 
 Shirone 遵循**零额外负担原则**：当评论系统未启用（`enable: false` 或省略）时，系统绝不发起任何外部网络请求，客户端不加载任何第三方 JS 脚本，保持纯净性能。
 
@@ -6,7 +6,7 @@ Shirone 遵循**零额外负担原则**：当评论系统未启用（`enable: fa
 
 评论系统在文章底部的展示效果：
 
-![Twikoo 评论系统在文章底部的展示界面](../images/02-config/06-comment/01-twikoo-comment-preview.png)
+![Twikoo 评论系统在文章底部的展示界面](../../images/02-config/06-comment/01-twikoo-comment-preview.png)
 *图 1-1：Twikoo 评论系统在文章底部的展示界面*
 
 ---

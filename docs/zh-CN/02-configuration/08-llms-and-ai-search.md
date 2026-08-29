@@ -1,4 +1,4 @@
-﻿# 大模型与 AI 检索端点配置
+# 大模型与 AI 检索端点配置
 
 遵循 [llms.txt 规范](https://llmstxt.org/) 与「零额外负担」原则，Shirone 主题在纯服务端静态生成 `/llms.txt`（精简索引）与 `/llms-full.txt`（全量正文汇编），为大语言模型提供结构化的 Markdown 索引，且对前台读者的浏览体验与客户端 JS 体积 0 影响。
 

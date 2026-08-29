@@ -1,4 +1,4 @@
-﻿# 侧栏音乐播放器配置
+# 侧栏音乐播放器配置
 
 `config/music.yaml` 负责控制博客侧边栏内置的音乐播放器。
 
@@ -15,7 +15,7 @@
 
 播放器展开状态与播放列表展示：
 
-![侧栏音乐播放器展开与播放列表界面](../images/02-config/05-music/01-music-player-preview.png)
+![侧栏音乐播放器展开与播放列表界面](../../images/02-config/05-music/01-music-player-preview.png)
 *图 1-1：侧栏音乐播放器展开与播放列表界面*
 
 ---

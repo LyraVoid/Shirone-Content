@@ -1,4 +1,4 @@
-﻿# 顶栏导航与侧边栏编排
+# 顶栏导航与侧边栏编排
 
 ## 一、顶部导航栏配置：`config/nav-bar.yaml`
 
@@ -59,7 +59,7 @@ links:
       - preset: Timeline
 ```
 
-![顶部导航栏下拉子菜单效果](../images/02-config/03-navbar/01-navbar-dropdown.png)
+![顶部导航栏下拉子菜单效果](../../images/02-config/03-navbar/01-navbar-dropdown.png)
 *图 1-1：顶部导航栏多级下拉子菜单效果*
 
 ---

@@ -1,8 +1,8 @@
-﻿# GitHub Actions 派发模式
+# GitHub Actions 跨仓自动构建
 
-这是官方**最强烈推荐**的自动化部署方案。
+这是官方**最推荐**的自动化部署方案。
 
-在这种模式下，内容仓库每次推送更新，会自动通知主题代码仓库。代码仓库的 GitHub Actions 会执行完整的配置验证、中文字体切片压缩、全量静态构建，并自动发布上线。
+在这种模式下，内容仓库每次推送更新，会自动通知主题代码仓库。代码仓库的 GitHub Actions 会执行配置验证、中文字体切片、全量静态构建，并自动发布上线。
 
 ```mermaid
 sequenceDiagram
@@ -29,28 +29,28 @@ sequenceDiagram
 1. **前往个人设置**：
    点击 GitHub 页面右上角头像，进入设置页面。
 
-   ![主页点击Settings](../images/04-deploy/01-dispatch/01-settings-click.png)
+   ![主页点击Settings](../../images/04-deploy/01-dispatch/01-settings-click.png)
    *图 1-1：GitHub 个人菜单中的 Settings 入口*
 
 2. **进入开发者设置**：
    在左侧导航栏滑到底部，点击开发者设置。
 
-   ![找到Developer Settings](../images/04-deploy/01-dispatch/02-developer-settings.png)
+   ![找到Developer Settings](../../images/04-deploy/01-dispatch/02-developer-settings.png)
    *图 1-2：左侧底部 Developer Settings 入口*
 
-   ![Developer Settings界面](../images/04-deploy/01-dispatch/03-developer-settings-menu.png)
+   ![Developer Settings界面](../../images/04-deploy/01-dispatch/03-developer-settings-menu.png)
    *图 1-3：Developer Settings 页面概览*
 
 3. **进入细粒度个人访问令牌**：
    依次点击左侧的个人访问令牌下的细粒度令牌。
 
-   ![Fine-grained tokens](../images/04-deploy/01-dispatch/04-fine-grained-tokens.png)
+   ![Fine-grained tokens](../../images/04-deploy/01-dispatch/04-fine-grained-tokens.png)
    *图 1-4：Fine-grained tokens 选项*
 
 4. **新建令牌**：
    点击右上角的生成新令牌按钮。
 
-   ![Generate new token](../images/04-deploy/01-dispatch/05-generate-new-token.png)
+   ![Generate new token](../../images/04-deploy/01-dispatch/05-generate-new-token.png)
    *图 1-5：生成新令牌按钮*
 
 5. **配置令牌属性与权限**：
@@ -58,18 +58,18 @@ sequenceDiagram
    - **Expiration**：选择过期时间（建议选择 90 天或根据需求设置）；
    - **Repository access**：**务必选择“Only select repositories”**，并在下拉菜单中**只勾选你的主题代码仓库**；
 
-     ![Repository access](../images/04-deploy/01-dispatch/06-repository-access.png)
+     ![Repository access](../../images/04-deploy/01-dispatch/06-repository-access.png)
      *图 1-6：指定生效的主题代码仓库*
 
    - **Permissions -> Repository permissions**：展开仓库权限列表，找到 **Contents**，将其权限由只读修改为 **Read and write**（用于触发工作流派发）；
 
-     ![Contents权限设置](../images/04-deploy/01-dispatch/07-contents-permission.png)
+     ![Contents权限设置](../../images/04-deploy/01-dispatch/07-contents-permission.png)
      *图 1-7：赋予 Contents 读写权限*
 
 6. **生成并妥善复制令牌**：
    滑动至页面最底部，点击绿色按钮生成令牌。**立即复制生成的令牌字符串并妥善保存**。
 
-   ![创建 GitHub 个人访问令牌](../images/04-deploy/01-dispatch/08-generate-pat-token.png)
+   ![创建 GitHub 个人访问令牌](../../images/04-deploy/01-dispatch/08-generate-pat-token.png)
    *图 1-8：创建成功并复制令牌密钥*
 
 ---
@@ -86,7 +86,7 @@ sequenceDiagram
 6. 点击底部的 **Add secret** 保存。
 
 > **自动化原理解析**：
-> 内容仓推送新提交时，[`.github/workflows/trigger-build.yml`](.github/workflows/trigger-build.yml) 工作流会读取 `secrets.DISPATCH_TOKEN` 向你的主题代码仓派发 `content-updated` 事件。
+> 内容仓推送新提交时，[`.github/workflows/trigger-build.yml`](../../../.github/workflows/trigger-build.yml) 工作流会读取 `secrets.DISPATCH_TOKEN` 向你的主题代码仓派发 `content-updated` 事件。
 
 ---
 
