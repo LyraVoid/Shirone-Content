@@ -27,6 +27,7 @@
 - [06. 评论系统配置](./02-configuration/06-comment-system.md) —— 零额外负担原则与 Twikoo 评论系统接入
 - [07. 全站字体与排版配置](./02-configuration/07-typography-and-fonts.md) —— 自定义字体包加载、纯系统字体模式与全自动字体子集裁剪流水线
 - [08. 大模型与 AI 检索端点配置](./02-configuration/08-llms-and-ai-search.md) —— /llms.txt 与 /llms-full.txt 静态生成、摘要截断与私密内容脱敏
+- [09. Umami 网站统计配置](./02-configuration/09-umami-analytics.md) —— 零额外负担原则、访问统计与公开分享链接接入
 
 ### 第三部分：内容撰写与数据管理
 - [01. 文章发布与排版指南](./03-content-authoring/01-writing-posts.md) —— 文章元数据字段详解、草稿置顶与加密保护

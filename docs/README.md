@@ -33,6 +33,7 @@ Welcome to the Shirone documentation. Choose your preferred language above to re
 | 06 | [评论系统配置](./zh-CN/02-configuration/06-comment-system.md) | [Comment System](./en/02-configuration/06-comment-system.md) | 零额外负担原则与 Twikoo 评论接入 |
 | 07 | [全站字体配置](./zh-CN/02-configuration/07-typography-and-fonts.md) | [Typography & Fonts](./en/02-configuration/07-typography-and-fonts.md) | 自定义字体与全自动中文字体裁剪 |
 | 08 | [大模型与 AI 检索配置](./zh-CN/02-configuration/08-llms-and-ai-search.md) | [LLMs & AI Search](./en/02-configuration/08-llms-and-ai-search.md) | `/llms.txt` 静态生成与隐私脱敏过滤 |
+| 09 | [Umami 统计配置](./zh-CN/02-configuration/09-umami-analytics.md) | [Umami Analytics](./en/02-configuration/09-umami-analytics.md) | 访问统计、在线人数与分享链接接入 |
 
 ### 内容撰写 / Content Authoring
 

@@ -138,6 +138,7 @@ pnpm.cmd content:watch
 - `font.yaml`：全站中文字体、西文字体与全自动字体子集裁剪流水线
 - `llms.yaml`：大语言模型与 AI 检索端点（/llms.txt 与 /llms-full.txt）及私密内容脱敏
 - `footer.yaml` 与 `footer.html`：页脚自定义 HTML 片段注入
+- `umami.yaml`：Umami 网站访问量与在线访客统计
 
 ---
 
