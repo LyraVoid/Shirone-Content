@@ -1,0 +1,13 @@
+# umami.yaml —— Umami 网站统计配置
+# 覆盖主题的 src/config/umamiConfig.ts
+# 遵循零额外负担原则：关闭时不产生外部网络请求、零额外 DOM 占位与零包体积
+
+# 是否全局启用 Umami 统计
+enable: false
+
+# Umami 分享链接（启用时必填）
+# 支持格式：
+# - https://umami.example.com/share/<shareId>
+# - https://cloud.umami.is/analytics/us/share/<shareId>
+# - https://umami.example.com/analytics/share/<shareId>
+shareUrl: ""
