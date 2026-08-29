@@ -2,9 +2,9 @@
 
 [简体中文](../zh-CN/README.md) | [Documentation Index](../README.md)
 
-Welcome to the Shirone Blog Theme Content Separation Documentation.
+Welcome to the Shirone Content Separation Documentation.
 
-This guide is designed for creators who wish to decouple their **personal blog content** from the **theme frontend codebase**. Structured progressively from fundamental concepts to automated pipelines, it covers content repository setup, configuration tuning, article authoring, typography extensions, and continuous deployment.
+This guide explains how to manage your blog content and theme code in separate repositories. It covers content repository setup, configuration overlays, post authoring, typography extensions, and automated deployment.
 
 > Important Notice: The `docs/` directory is excluded from automated build triggers and synchronization scripts. Browsing, adding, or modifying documentation in this directory will never trigger remote production builds or sync files into the theme codebase.
 

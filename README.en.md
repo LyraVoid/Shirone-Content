@@ -6,9 +6,13 @@
 [![Theme](https://img.shields.io/badge/Theme-Shirone-pink.svg)](https://github.com/LyraVoid/Shirone)
 [![Schema](https://img.shields.io/badge/Schema-content--manifest.v1-purple.svg)](shirone.content.json)
 
-This is the official content template repository for the Shirone blog theme, specifically engineered for the **Content Separation Architecture** (Dual-Repository Architecture).
+This is the official content template repository for the Shirone blog theme, designed for decoupled content and code repositories.
 
-Under this architecture, your original blog articles, moments, photo albums, custom page data entities, and site configurations are maintained independently within this private repository. The theme's core rendering engine, visual styles, project dependencies, and continuous integration workflows are maintained in the upstream theme code repository. Connected through automated GitHub Actions pipelines, this model ensures **strict content privacy**, **zero upstream upgrade conflicts**, and a **focus on content creation**.
+In this setup:
+- **Content repository** (this repo): Stores your markdown posts, moments, albums, page data, and site configurations (recommended to keep private);
+- **Code repository**: Maintains the theme source code, styles, and build pipelines.
+
+When content is pushed, automated workflows trigger a rebuild with your latest content. This avoids merge conflicts during upstream theme upgrades and keeps private drafts and data secure.
 
 ---
 
