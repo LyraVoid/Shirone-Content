@@ -1,5 +1,7 @@
 ﻿# Shirone 官方内容模板仓库
 
+**简体中文** | [English](./README.en.md) | [文档中心](./docs/README.md)
+
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Theme](https://img.shields.io/badge/Theme-Shirone-pink.svg)](https://github.com/LyraVoid/Shirone)
 [![Schema](https://img.shields.io/badge/Schema-content--manifest.v1-purple.svg)](shirone.content.json)
@@ -16,11 +18,12 @@
 
 | 教程模块 | 入口链接 | 核心内容说明 |
 | :--- | :--- | :--- |
-| **快速入门** | [01-快速入门/](./docs/01-快速入门/) | 概念理解、`content:eject` 一键解耦迁出、本地预览与 CLI 工作流 |
-| **全站配置** | [02-全站配置/](./docs/02-全站配置/) | 最小化配置覆盖原理、站点基础、导航侧栏、追番音乐、字体与评论 |
-| **内容撰写** | [03-内容撰写/](./docs/03-内容撰写/) | 文章发布、动态说说、相册管理、数据实体维护与 Markdown 扩展排版语法 |
-| **自动部署** | [04-自动部署/](./docs/04-自动部署/) | GitHub Actions 派发模式、托管平台部署钩子与常见排错手册 |
-| **教程全景** | [完整使用指南](./docs/README.md) | 所有模块的全景导览与速查索引 |
+| **快速入门** | [01-quickstart/](./docs/zh-CN/01-quickstart/01-concepts.md) | 概念理解、`content:eject` 一键解耦迁出、本地预览与 CLI 工作流 |
+| **全站配置** | [02-configuration/](./docs/zh-CN/02-configuration/01-overlay-principles.md) | 最小化配置覆盖原理、站点基础、导航侧栏、追番音乐、字体与评论 |
+| **内容撰写** | [03-content-authoring/](./docs/zh-CN/03-content-authoring/01-writing-posts.md) | 文章发布、动态说说、相册管理、数据实体维护与 Markdown 扩展排版语法 |
+| **自动部署** | [04-deployment/](./docs/zh-CN/04-deployment/01-github-actions-dispatch.md) | GitHub Actions 跨仓自动构建、云平台 Deploy Hook 与常见问题排查 |
+| **中文全景** | [中文教程全景](./docs/zh-CN/README.md) | 所有模块的全景导览与速查索引 |
+| **English** | [English Docs](./docs/en/README.md) | Complete documentation in English |
 
 ---
 
@@ -140,9 +143,9 @@ pnpm.cmd content:watch
 
 在当前内容仓库的 **Settings -> Secrets and variables -> Actions** 中配置对应密钥：
 
-- **方案 A（推荐，GitHub Actions 派发模式）**：
-  配置 `DISPATCH_TOKEN`（个人访问令牌，需对主题代码仓拥有 Contents 读写权限）。内容推送后自动通知代码仓完成字体子集切片压缩、全量静态构建与发布上线。
-- **方案 B（托管平台部署钩子模式）**：
+- **方案 A（推荐：GitHub Actions 跨仓自动构建）**：
+  配置 `DISPATCH_TOKEN`（个人访问令牌，需对主题代码仓拥有 Contents 读写权限）。内容推送后自动通知代码仓拉取最新内容、完成字体子集裁剪、静态编译与全球发布。
+- **方案 B（云托管平台 Deploy Hook 触发）**：
   在 Cloudflare Pages、Vercel、腾讯云 EdgeOne 或 Netlify 等平台中配置部署钩子，并在本内容仓中配置对应的 Secret（如 `CLOUDFLARE_DEPLOY_HOOK`）。
 
 ### 2. 自动化触发机制

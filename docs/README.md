@@ -1,39 +1,55 @@
-﻿# Shirone 博客内容分离使用指南
+﻿# Shirone 官方文档 / Documentation
 
-欢迎阅读 Shirone 博客主题的内容分离使用手册。
+[简体中文](./zh-CN/README.md) | [English](./en/README.md)
 
-本指南专为希望将**个人创作内容**与**主题前端代码**完全解耦的博主编写，采用循序渐进的结构，从零开始指导你完成内容仓库的搭建、参数配置、文章撰写、排版扩展以及自动化发布流水线。
+欢迎查阅 Shirone 博客主题使用文档。你可以点击上方链接进入对应语言的完整手册，也可以直接通过下方目录浏览各章节。
 
-> 重要提示：`docs/` 目录已被自动化触发流水线和同步脚本双重排除。在本文档目录下阅读、新增或修改教程文档，绝不会触发线上生产环境重新构建，也不会被同步到代码仓。
+Welcome to the Shirone documentation. Choose your preferred language above to read the full guide, or browse chapters directly using the table of contents below.
+
+> 提示：`docs/` 目录已被构建和同步脚本排除，阅读或修改文档不会触发线上构建。
+>
+> Note: The `docs/` directory is excluded from builds and synchronization pipelines.
 
 ---
 
-## 教程全景导览
+## 目录导航 / Table of Contents
 
-### 第一部分：快速入门
-- [01. 什么是内容分离架构](./01-快速入门/01-概念理解.md) —— 用通俗的语言理解双仓架构与核心优势
-- [02. 初始化私有内容仓库](./01-快速入门/02-初始化私有仓库.md) —— 使用 content:eject 一键解耦迁出或从模板克隆初始化私有仓库
-- [03. 本地预览与实时调试](./01-快速入门/03-本地预览与实时调试.md) —— 在个人电脑上启动开发服务器与边写边看实时监听
-- [04. 命令行工具与协同工作流](./01-快速入门/04-命令行工具与协同工作流.md) —— 实时监听、安全预检、状态检查、反向导出与安全清理完整命令体系
+### 快速入门 / Quickstart
 
-### 第二部分：全站配置
-- [01. 配置覆盖核心原理](./02-全站配置/01-配置覆盖核心原理.md) —— 最小化覆盖原则、对象层级合并与数组整体替换规则
-- [02. 站点基础与视觉定制](./02-全站配置/02-站点基础与视觉定制.md) —— 网站标题、横幅壁纸、多图轮播、打字机动效与背景纹理系统
-- [03. 顶栏导航与侧边栏编排](./02-全站配置/03-顶栏导航与侧边栏编排.md) —— 导航链接、预设清单、下拉子菜单、侧栏单双栏与组件摆放
-- [04. 追番与追剧页面配置](./02-全站配置/04-追番与追剧配置.md) —— 本地手写模式与 Bilibili、Bangumi 数据同步策略
-- [05. 侧栏音乐播放器配置](./02-全站配置/05-侧栏音乐播放器配置.md) —— 混合增强模式、本地独立模式、自定义列表与网易云歌单
-- [06. 评论系统配置](./02-全站配置/06-评论系统配置.md) —— 零额外负担原则与 Twikoo 评论系统接入
-- [07. 全站字体与排版配置](./02-全站配置/07-全站字体配置.md) —— 自定义字体包加载、纯系统字体模式与全自动字体子集裁剪流水线
-- [08. 大模型与 AI 检索端点配置](./02-全站配置/08-大语言模型与AI检索配置.md) —— /llms.txt 与 /llms-full.txt 静态生成、摘要截断与私密内容脱敏
+| 篇目 | 简体中文 | English | 简介 / Summary |
+| :--- | :--- | :--- | :--- |
+| 01 | [概念理解](./zh-CN/01-quickstart/01-concepts.md) | [Concepts](./en/01-quickstart/01-concepts.md) | 双仓分离架构的核心理念与优势 |
+| 02 | [初始化私有仓库](./zh-CN/01-quickstart/02-init-private-repo.md) | [Initialize Private Repo](./en/01-quickstart/02-init-private-repo.md) | `content:eject` 一键抽离与模板初始化 |
+| 03 | [本地预览与实时调试](./zh-CN/01-quickstart/03-local-preview.md) | [Local Preview](./en/01-quickstart/03-local-preview.md) | 本地预览服务与实时监听编写 |
+| 04 | [命令行工具与工作流](./zh-CN/01-quickstart/04-cli-workflows.md) | [CLI Workflows](./en/01-quickstart/04-cli-workflows.md) | 校验、同步、导出与清理命令速查 |
 
-### 第三部分：内容撰写与数据管理
-- [01. 文章发布与排版指南](./03-内容撰写/01-文章发布指南.md) —— 文章元数据字段详解、草稿置顶与加密保护
-- [02. 动态说说发布指南](./03-内容撰写/02-动态说说发布指南.md) —— 记录日常瞬间、心情图标与多图展示
-- [03. 相册管理指南](./03-内容撰写/03-相册管理指南.md) —— 本地照片相册、网络外链相册与加密相册
-- [04. 页面数据实体维护](./03-内容撰写/04-页面数据实体维护.md) —— 个人设备、友情链接、开源项目、技能图谱、时间线与罗盘
-- [05. 扩展排版语法速查](./03-内容撰写/05-扩展排版语法速查.md) —— 容器指令、代码树、代码标签页、步骤条、数学公式、流程图与 GitHub 卡片
+### 全站配置 / Site Configuration
 
-### 第四部分：自动化部署与流水线
-- [01. GitHub Actions 派发模式](./04-自动部署/01-GitHub流水线派发模式.md) —— 推荐方案：全自动拉取、字体切片与构建发布
-- [02. 托管平台部署钩子模式](./04-自动部署/02-托管平台部署钩子模式.md) —— Cloudflare Pages、Vercel、EdgeOne、Netlify 部署钩子配置
-- [03. 常见问题与排错手册](./04-自动部署/03-常见问题与排错手册.md) —— 令牌权限排查、草稿状态、日期格式、语法报错与防盗链处理
+| 篇目 | 简体中文 | English | 简介 / Summary |
+| :--- | :--- | :--- | :--- |
+| 01 | [配置覆盖核心原理](./zh-CN/02-configuration/01-overlay-principles.md) | [Overlay Principles](./en/02-configuration/01-overlay-principles.md) | 最小化覆盖与对象合并/数组替换规则 |
+| 02 | [站点基础与视觉定制](./zh-CN/02-configuration/02-site-and-visuals.md) | [Site & Visuals](./en/02-configuration/02-site-and-visuals.md) | 站点信息、主题色彩、横幅壁纸与纹理 |
+| 03 | [顶栏导航与侧边栏编排](./zh-CN/02-configuration/03-navbar-and-sidebar.md) | [Navbar & Sidebar](./en/02-configuration/03-navbar-and-sidebar.md) | 导航预设、下拉菜单与单/双侧栏布局 |
+| 04 | [追番与追剧配置](./zh-CN/02-configuration/04-anime-tracking.md) | [Anime Tracking](./en/02-configuration/04-anime-tracking.md) | 本地清单与 Bilibili / Bangumi 数据同步 |
+| 05 | [侧栏音乐播放器配置](./zh-CN/02-configuration/05-music-player.md) | [Music Player](./en/02-configuration/05-music-player.md) | 本地音乐、自定义曲目与网易云歌单 |
+| 06 | [评论系统配置](./zh-CN/02-configuration/06-comment-system.md) | [Comment System](./en/02-configuration/06-comment-system.md) | 零额外负担原则与 Twikoo 评论接入 |
+| 07 | [全站字体配置](./zh-CN/02-configuration/07-typography-and-fonts.md) | [Typography & Fonts](./en/02-configuration/07-typography-and-fonts.md) | 自定义字体与全自动中文字体裁剪 |
+| 08 | [大模型与 AI 检索配置](./zh-CN/02-configuration/08-llms-and-ai-search.md) | [LLMs & AI Search](./en/02-configuration/08-llms-and-ai-search.md) | `/llms.txt` 静态生成与隐私脱敏过滤 |
+
+### 内容撰写 / Content Authoring
+
+| 篇目 | 简体中文 | English | 简介 / Summary |
+| :--- | :--- | :--- | :--- |
+| 01 | [文章发布指南](./zh-CN/03-content-authoring/01-writing-posts.md) | [Writing Posts](./en/03-content-authoring/01-writing-posts.md) | 文章元数据、置顶、草稿与文章加密 |
+| 02 | [动态说说发布指南](./zh-CN/03-content-authoring/02-writing-moments.md) | [Writing Moments](./en/03-content-authoring/02-writing-moments.md) | 日常动态随笔、心情图标与多图展示 |
+| 03 | [相册管理指南](./zh-CN/03-content-authoring/03-album-management.md) | [Album Management](./en/03-content-authoring/03-album-management.md) | 本地照片、外链相册与加密相册维护 |
+| 04 | [页面数据实体维护](./zh-CN/03-content-authoring/04-data-entities.md) | [Data Entities](./en/03-content-authoring/04-data-entities.md) | 设备、友链、项目、技能与时间线数据 |
+| 05 | [扩展排版语法速查](./zh-CN/03-content-authoring/05-markdown-syntax-guide.md) | [Markdown Syntax Guide](./en/03-content-authoring/05-markdown-syntax-guide.md) | 提示容器、代码树、标签页与图表组件 |
+
+### 自动部署 / Deployment
+
+| 篇目 | 简体中文 | English | 简介 / Summary |
+| :--- | :--- | :--- | :--- |
+| 01 | [GitHub Actions 跨仓自动构建](./zh-CN/04-deployment/01-github-actions-dispatch.md) | [GitHub Actions Cross-Repo Trigger](./en/04-deployment/01-github-actions-dispatch.md) | 推荐方案：PAT 联动与全自动编译发布 |
+| 02 | [云托管平台 Deploy Hook 部署](./zh-CN/04-deployment/02-hosting-deploy-hooks.md) | [Hosting Platform Deploy Hooks](./en/04-deployment/02-hosting-deploy-hooks.md) | Cloudflare / Vercel / EdgeOne / Netlify |
+| 03 | [常见问题与排查指南](./zh-CN/04-deployment/03-troubleshooting-faq.md) | [Troubleshooting & FAQ](./en/04-deployment/03-troubleshooting-faq.md) | 令牌权限、日期格式与常见构建问题排查 |
