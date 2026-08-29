@@ -25,7 +25,13 @@ enable: true
 
 # 2. Enter your Umami share URL from Step 1
 shareUrl: "https://your-umami.com/share/<shareId>"
+
+# 3. Optional: set both values only when this site should send visits to Umami
+# websiteId: "your-website-id"
+# scriptUrl: "https://your-umami.com/script.js"
 ```
+
+`websiteId` and `scriptUrl` are optional paired fields. When both are omitted, Shirone only reads public shared statistics. To enable visit tracking, set both fields; setting either field alone does not load the Umami tracking script.
 
 ---
 

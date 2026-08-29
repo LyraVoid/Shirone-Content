@@ -94,7 +94,7 @@ All configuration files reside in the content repository's `config/` directory:
 | `config/license.yaml` | Article footer copyright license statements | Recursive object merge |
 | `config/announcement.yaml` | Homepage top announcement banner copy, type, and call-to-action link | Recursive object merge |
 | `config/llms.yaml` | LLM discovery endpoints (/llms.txt), tag exclusion, core pages index | Object merge (`corePages` array replaced) |
-| `config/umami.yaml` | Umami analytics master toggle and share URL | Recursive object merge |
+| `config/umami.yaml` | Umami public analytics and optional visit tracking (`websiteId` and `scriptUrl` are paired) | Recursive object merge |
 | `config/footer.yaml` | Custom HTML injection master toggle for site footer | Recursive object merge |
 | `config/footer.html` | Custom HTML snippet source code for site footer | Direct 1:1 file mapping |
 

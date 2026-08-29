@@ -25,7 +25,13 @@ enable: true
 
 # 2. 填入第一步获取到的 Umami 分享链接
 shareUrl: "https://your-umami.com/share/<shareId>"
+
+# 3. 可选：只有需要向 Umami 上报访问时才同时填写以下两项
+# websiteId: "your-website-id"
+# scriptUrl: "https://your-umami.com/script.js"
 ```
+
+`websiteId` 与 `scriptUrl` 都是可选字段。两项同时省略时，Shirone 只读取公开分享统计；需要访问采集时必须同时填写两项，单独填写任一字段都不会加载 Umami 采集脚本。
 
 ---
 

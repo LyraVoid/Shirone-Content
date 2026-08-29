@@ -11,3 +11,10 @@ enable: false
 # - https://cloud.umami.is/analytics/us/share/<shareId>
 # - https://umami.example.com/analytics/share/<shareId>
 shareUrl: ""
+
+# 可选：只有需要让站点向 Umami 上报访问时，才同时填写以下两项。
+# 两项都留空时，仍可通过上方 shareUrl 读取公开统计；只填写其中一项不会加载采集脚本。
+# Umami Website ID
+# websiteId: "your-website-id"
+# Umami 采集脚本地址
+# scriptUrl: "https://your-umami-instance.com/script.js"

@@ -138,7 +138,7 @@ YAML files in `config/` correspond to specific functional domains and follow the
 - `font.yaml`: CJK fonts, Latin body fonts, and automated font subsetting pipeline
 - `llms.yaml`: LLM discovery endpoints (/llms.txt and /llms-full.txt) and privacy filtering
 - `footer.yaml` & `footer.html`: Custom footer HTML snippet injection
-- `umami.yaml`: Umami analytics master toggle and share URL
+- `umami.yaml`: Umami public analytics and optional official visit tracking (`websiteId` and `scriptUrl` must be set together)
 
 ---
 

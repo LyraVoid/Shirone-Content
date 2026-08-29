@@ -94,7 +94,7 @@ Shirone 内置了严格的格式检查机制。在运行 `pnpm content:validate`
 | `config/license.yaml` | 文章底部版权协议声明 | 对象递归合并 |
 | `config/announcement.yaml` | 首页顶部公告栏文案、类型与行动链接 | 对象递归合并 |
 | `config/llms.yaml` | 大语言模型与 AI 检索端点生成（/llms.txt）、排除标签与核心页面引导 | 对象合并（`corePages` 数组替换） |
-| `config/umami.yaml` | Umami 网站统计总开关与分享链接 | 对象递归合并 |
+| `config/umami.yaml` | Umami 公开统计与可选访问采集（`websiteId`、`scriptUrl` 成对填写） | 对象递归合并 |
 | `config/footer.yaml` | 页脚自定义 HTML 注入功能总开关 | 对象递归合并 |
 | `config/footer.html` | 页脚自定义 HTML 片段源码 | 原样复制映射 |
 
