@@ -1,14 +1,30 @@
-# GitHub Actions 派发模式
+﻿# GitHub Actions 派发模式
 
 这是官方**最强烈推荐**的自动化部署方案。
 
-在这种模式下，内容仓库每次推送更新，会自动通知主题代码仓库。代码仓库的 GitHub Actions 会执行完整的字体切片压缩、全量静态构建，并自动发布上线。
+在这种模式下，内容仓库每次推送更新，会自动通知主题代码仓库。代码仓库的 GitHub Actions 会执行完整的配置验证、中文字体切片压缩、全量静态构建，并自动发布上线。
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor Author as 博主
+    participant ContentRepo as 个人内容仓库
+    participant ThemeRepo as 主题代码仓库
+    participant DeployHost as 托管部署平台
+
+    Author->>ContentRepo: git push 提交新文章或配置修改
+    ContentRepo->>ContentRepo: 触发 trigger-build.yml 执行内容语法预检
+    ContentRepo->>ThemeRepo: 携带 DISPATCH_TOKEN 派发 content-updated 事件
+    ThemeRepo->>ContentRepo: 拉取最新内容并合并配置覆盖
+    ThemeRepo->>ThemeRepo: 运行字体子集裁剪与 Astro 静态打包
+    ThemeRepo->>DeployHost: 部署构建产物至 GitHub Pages / Cloudflare / Vercel
+```
 
 ---
 
 ## 第一步：创建 GitHub 个人访问令牌
 
-我们需要生成一个专用的小令牌，用来让内容仓库有权限通知代码仓库启动构建。
+我们需要生成一个专用令牌，用来让内容仓库有权限通知代码仓库启动构建。
 
 1. **前往个人设置**：
    点击 GitHub 页面右上角头像，进入设置页面。
@@ -60,7 +76,7 @@
 
 ## 第二步：在内容仓库中配置派发密钥
 
-1. 打开你的**个人内容仓库**（例如 `shirone-content`）；
+1. 打开你的**个人内容仓库**（例如 `my-blog-content`）；
 2. 点击顶部导航栏的 **Settings**；
 3. 在左侧菜单中找到 **Secrets and variables**，点击展开并选择 **Actions**；
 4. 点击页面右侧的绿色按钮 **New repository secret**；
@@ -84,8 +100,8 @@
 4. 修改文件开头的环境变量配置：
    ```yaml
    env:
-     # 替换为你的内容仓库路径（如 yourname/shirone-content）
-     CONTENT_REPOSITORY: yourname/shirone-content
+     # 替换为你的内容仓库路径（如 yourname/my-blog-content）
+     CONTENT_REPOSITORY: yourname/my-blog-content
      CONTENT_WORKING_COPY: .content-src
    ```
 5. **如果内容仓是私有仓库**：
@@ -107,4 +123,4 @@ git push origin main
 
 1. 打开内容仓库的 **Actions** 页面，你将看到 `Trigger Theme Build` 工作流被自动触发并成功派发事件；
 2. 随后打开代码仓库的 **Actions** 页面，你将看到主题代码仓正在全自动拉取内容并完成编译部署；
-3. 构建完成后，刷新你的博客网站，新文章即可瞬间呈现在全网。
+3. 构建完成后，刷新你的博客网站，新文章即可完成全网发布。
