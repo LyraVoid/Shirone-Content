@@ -23,6 +23,11 @@ subtitle: "Quietly documenting traces of life and code."
 # Also: ko (Korean) | es (Spanish) | th (Thai) | vi (Vietnamese) | tr (Turkish) | id (Indonesian)
 lang: "en"
 
+# Site timezone (IANA time zone identifier, e.g. "Asia/Shanghai", "Asia/Tokyo", "America/New_York")
+# Used to interpret exact post/moment publication timestamps (publishedAt / updatedAt) and order articles
+# Timezone is independent of lang: switching display language never shifts archive calendar dates or article order
+timeZone: "Asia/Shanghai"
+
 # 2. Desktop Top App Bar Layout
 topAppBar:
   # Content alignment: "center" (centered, recommended) | "left" (left-aligned)

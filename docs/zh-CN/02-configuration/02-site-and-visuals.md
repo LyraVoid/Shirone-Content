@@ -23,6 +23,11 @@ subtitle: "在这个小小的地方，悄悄堆叠生活过的痕迹。"
 # 以及：ko（韩语）| es（西班牙语）| th（泰语）| vi（越南语）| tr（土耳其语）| id（印尼语）
 lang: "zh_CN"
 
+# 站点时区（IANA 时区名，例如 "Asia/Shanghai"、"Asia/Tokyo"、"America/New_York"）
+# 用于统一解析文章与说说的精确发布/更新时间（publishedAt / updatedAt）并决定同日文章排序
+# 时区独立于 lang：切换展示语言绝不会导致归档日期或文章排序发生偏移
+timeZone: "Asia/Shanghai"
+
 # 2. 电脑端顶栏排版
 topAppBar:
   # 标题与导航菜单的对齐方式："center"（居中，推荐）| "left"（靠左）

@@ -35,11 +35,18 @@ Every post begins with a YAML frontmatter block enclosed by triple dashes `---`:
 # Article title (required)
 title: "My First Blog Post"
 
-# Publication date (required; strictly YYYY-MM-DD or YYYY-MM-DD HH:mm:ss)
+# Publication date (required; recommended format: YYYY-MM-DD)
 published: 2026-08-27
 
-# Last modified date (optional)
+# Exact publication timestamp (optional; ISO 8601 format with timezone offset)
+# Enables precise second-level ordering for posts published on the same day; must match published date under configured timeZone
+publishedAt: 2026-08-27T10:30:00+08:00
+
+# Last modified date (optional; recommended format: YYYY-MM-DD)
 updated: 2026-08-28
+
+# Exact modification timestamp (optional; ISO 8601 format with timezone offset)
+updatedAt: 2026-08-28T15:45:00+08:00
 
 # Excerpt / description (optional, used in cards and SEO metadata; falls back to leading text)
 description: "A comprehensive summary of modern frontend architecture and content separation."
@@ -68,6 +75,16 @@ comment: true
 ```
 
 ---
+
+## Publication Timestamps and Timezone-Aware Ordering
+
+When publishing multiple posts on the same date, or when you wish to record exact minute-level timestamps, use `publishedAt` and `updatedAt`:
+
+1. **Timezone Independence**: The build system interprets and formats article timestamps using `timeZone` in `config/site.yaml` (defaults to `"Asia/Shanghai"`). It is independent of the site UI language (`lang`); switching languages never shifts archive calendar dates or sorting order;
+2. **Calendar Consistency Verification**: If both `published` and `publishedAt` are specified, the build pipeline verifies that the timestamp falls within the exact calendar day of `published` under the site timeZone;
+3. **Same-Day Ordering Rule**:
+   - Posts published on the same date are ordered chronologically by `publishedAt` in descending order (newest first);
+   - Posts without `publishedAt` fall back to date-level sorting with a stable deterministic order.
 
 ## Post Encryption and Privacy Protection
 

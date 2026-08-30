@@ -219,3 +219,78 @@ export const siteConfig = {
 };
 ```
 ````
+
+---
+
+## 12. Video Embed Components
+
+Shirone provides responsive, lazy-loaded video embedding directives for major platforms and custom video playback:
+
+### Bilibili Video Embed
+```markdown
+::bilibili{bvid="BV1fK4y1s7Qf" title="Bilibili Sample Video" p=1}
+```
+
+### YouTube Video Embed
+```markdown
+::youtube{id="5gIf0_xpFPI" title="YouTube Sample Video"}
+```
+
+### AcFun Video Embed
+```markdown
+::acfun{acid="ac48649632" title="AcFun Sample Video"}
+```
+
+### ArtPlayer Custom HTML5 Video Player
+Ideal for local MP4/WebM videos placed under `public/` or external HTTPS CDN URLs:
+```markdown
+::artplayer{src="/videos/example.mp4" title="Sample Demo Video"}
+```
+
+---
+
+## 13. Inline Audio Reader and Pronunciation Player
+
+Embed lightweight inline audio chips into flowing prose:
+
+```markdown
+Listen to the audio pronunciation sample: :audio-reader[Daily Greeting]{src="/assets/audio/Ciallo.wav"}
+```
+
+---
+
+## 14. Markdown Includes and Snippet Reuse
+
+Reuse shared Markdown snippets across articles with support for line ranges and named regions:
+
+```markdown
+<!-- Full file include -->
+<!-- @include: ../snippets/common-notice.md -->
+
+<!-- Line range include (lines 2 to 8) -->
+<!-- @include: ../snippets/api-example.md{2-8} -->
+
+<!-- Named region include (#public-api) -->
+<!-- @include: ../snippets/api-example.md#public-api -->
+```
+
+---
+
+## 15. Abbreviations and Content Annotations
+
+### Abbreviations (Hover tooltip expansion)
+Define abbreviations anywhere in your document (typically at the bottom):
+```markdown
+*[SSR]: Server-Side Rendering
+*[AST]: Abstract Syntax Tree
+
+Both SSR and AST transformations take place during static build.
+```
+
+### Inline Content Annotations
+```markdown
+Astro leverages an Islands architecture [+islands].
+
+[+islands]:
+  Islands are interactive UI components embedded within purely static HTML.
+```

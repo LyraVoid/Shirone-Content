@@ -219,3 +219,78 @@ export const siteConfig = {
 };
 ```
 ````
+
+---
+
+## 12. 视频嵌入组件
+
+主题内置了常见视频平台嵌入与自建播放器指令，支持懒加载与响应式宽高比适配：
+
+### Bilibili 视频嵌入
+```markdown
+::bilibili{bvid="BV1fK4y1s7Qf" title="B站示例视频" p=1}
+```
+
+### YouTube 视频嵌入
+```markdown
+::youtube{id="5gIf0_xpFPI" title="YouTube 示例视频"}
+```
+
+### AcFun 视频嵌入
+```markdown
+::acfun{acid="ac48649632" title="AcFun 示例视频"}
+```
+
+### ArtPlayer 自建/直链视频播放器
+适用于存放在本地 `public/` 或对象存储外链的 MP4/WebM 视频：
+```markdown
+::artplayer{src="/videos/example.mp4" title="示例视频演示"}
+```
+
+---
+
+## 13. 行内语音与音频朗读组件
+
+支持在正文中插入轻量的行内音频/语音播放器：
+
+```markdown
+点击试听日语日常发音：:audio-reader[日常问候语]{src="/assets/audio/Ciallo.wav"}
+```
+
+---
+
+## 14. Markdown 片段包含与复用
+
+支持跨文章引入公共 Markdown 片段或代码示例，支持行号范围与区域选择：
+
+```markdown
+<!-- 全量引入指定片段文件 -->
+<!-- @include: ../snippets/common-notice.md -->
+
+<!-- 仅引入指定行号区间（第 2 至 8 行） -->
+<!-- @include: ../snippets/api-example.md{2-8} -->
+
+<!-- 仅引入指定命名区域（#public-api） -->
+<!-- @include: ../snippets/api-example.md#public-api -->
+```
+
+---
+
+## 15. 缩略词悬浮解释与内容注解
+
+### 缩略词定义（鼠标悬浮提示全称）
+在文章任意位置（通常放于文末）定义缩略词：
+```markdown
+*[SSR]: Server-Side Rendering
+*[AST]: Abstract Syntax Tree
+
+SSR 与 AST 转换均在构建期完成，生成静态 HTML。
+```
+
+### 内容悬浮注解
+```markdown
+Astro 采用了独特的孤岛架构 [+islands]。
+
+[+islands]:
+  孤岛是由静态 HTML 包围的独立可交互组件，按需加载 JavaScript。
+```

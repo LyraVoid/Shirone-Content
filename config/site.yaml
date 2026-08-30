@@ -14,6 +14,10 @@ subtitle: "A Material 3 anime blog"
 # 站点语言代码，例如 zh_CN、en、ja
 lang: "zh_CN"
 
+# 站点时区（IANA 时区名称，例如 Asia/Shanghai、Asia/Tokyo、America/New_York）
+# 用于解析文章精确发布时间（publishedAt / updatedAt）并统一文章排序与归档日期，独立于 lang
+timeZone: "Asia/Shanghai"
+
 # 顶栏对齐排版
 topAppBar:
   # 电脑端顶栏标题与导航内容区域对齐方式："left" 靠左对齐，"center" 居中对齐
