@@ -74,7 +74,10 @@ Generate a personal access token so the content repository has permission to dis
 
 ---
 
-## Step 2: Configure Secret in Content Repository
+## Step 2: Enable Trigger Workflow and Configure Secret
+
+1. **Enable trigger workflow**: In your content repository, rename `.github/workflows/trigger-build.yml.example` to `.github/workflows/trigger-build.yml` (dropping `.example` enables GitHub Actions);
+2. **Open Secret Settings**:
 
 1. Open your **personal content repository** (e.g., `my-blog-content`);
 2. Click **Settings** in the top tab bar;
@@ -86,7 +89,7 @@ Generate a personal access token so the content repository has permission to dis
 6. Click **Add secret** to save.
 
 > **Automated Pipeline Mechanism**:
-> Upon new pushes, the [`.github/workflows/trigger-build.yml`](../../../.github/workflows/trigger-build.yml) workflow reads `secrets.DISPATCH_TOKEN` to send a `content-updated` dispatch event to your theme code repository.
+> Upon new pushes, the [`.github/workflows/trigger-build.yml.example`](../../../.github/workflows/trigger-build.yml.example) workflow reads `secrets.DISPATCH_TOKEN` to send a `content-updated` dispatch event to your theme code repository.
 
 ---
 
@@ -124,3 +127,16 @@ git push origin main
 1. Open your content repository's **Actions** tab to confirm that the `Trigger Theme Build` workflow ran and dispatched the event;
 2. Switch to your theme code repository's **Actions** tab to watch the build pipeline pull content, subset fonts, and compile static pages;
 3. Once completed, refresh your blog to verify the newly published article.
+
+---
+
+## Concurrency Control and Race Prevention
+
+In a dual-repository architecture, if you push changes to your content repository and theme code repository simultaneously, or make multiple rapid pushes to your content repository, Shirone provides robust **concurrency preemption and automatic cancellation**:
+
+1. **Automatic Cancellation of Outdated Builds (Superseding)**:
+   The theme repository deployment workflow (`deploy.yml`) is bound to a shared concurrency group (`concurrency: group: deploy, cancel-in-progress: true`). When a newer build request arrives, GitHub Actions **immediately terminates in-progress older builds**, seamlessly switching to the newest run;
+2. **Guaranteed Freshness of Code and Content**:
+   When the newer build begins, it checks out the **latest theme codebase + latest content posts and configuration overlays**, re-materializing them prior to static compilation and completely eliminating race conditions;
+3. **Content Repository Dispatch Debouncing**:
+   The content repository's `trigger-build.yml` also configures `group: trigger-build`, automatically canceling redundant in-progress dispatches during rapid consecutive commits to save GitHub Actions runner minutes.

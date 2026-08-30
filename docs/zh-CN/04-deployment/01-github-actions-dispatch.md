@@ -74,7 +74,10 @@ sequenceDiagram
 
 ---
 
-## 第二步：在内容仓库中配置派发密钥
+## 第二步：启用触发工作流并配置派发密钥
+
+1. **启用触发工作流**：在内容仓库中，将 `.github/workflows/trigger-build.yml.example` 重命名为 `.github/workflows/trigger-build.yml`（去掉 `.example` 后缀后 Actions 才会识别并执行）；
+2. **进入密钥设置**：
 
 1. 打开你的**个人内容仓库**（例如 `my-blog-content`）；
 2. 点击顶部导航栏的 **Settings**；
@@ -86,7 +89,7 @@ sequenceDiagram
 6. 点击底部的 **Add secret** 保存。
 
 > **自动化原理解析**：
-> 内容仓推送新提交时，[`.github/workflows/trigger-build.yml`](../../../.github/workflows/trigger-build.yml) 工作流会读取 `secrets.DISPATCH_TOKEN` 向你的主题代码仓派发 `content-updated` 事件。
+> 内容仓推送新提交时，[`.github/workflows/trigger-build.yml.example`](../../../.github/workflows/trigger-build.yml.example) 工作流会读取 `secrets.DISPATCH_TOKEN` 向你的主题代码仓派发 `content-updated` 事件。
 
 ---
 
@@ -124,3 +127,16 @@ git push origin main
 1. 打开内容仓库的 **Actions** 页面，你将看到 `Trigger Theme Build` 工作流被自动触发并成功派发事件；
 2. 随后打开代码仓库的 **Actions** 页面，你将看到主题代码仓正在全自动拉取内容并完成编译部署；
 3. 构建完成后，刷新你的博客网站，新文章即可完成全网发布。
+
+---
+
+## 并发构建与防冲突机制
+
+在双仓架构下，如果你在推送内容仓库的同时又推送了主题代码仓库，或者短时间内连续多次向内容仓提交文章，系统具备完善的**并发抢占与自动截断保障**：
+
+1. **自动取消旧构建（后发先至）**：
+   代码仓的部署流水线（`deploy.yml`）配置了全局并发控制（`concurrency: group: deploy, cancel-in-progress: true`）。当有新的构建请求到达时，GitHub Actions 会**立即自动打断并取消正在进行中的旧构建**，无缝切换到最新一次构建；
+2. **状态自动保持最新**：
+   后一次构建启动时，会自动拉取**最新代码仓源码 + 最新内容仓文章与配置**，两者在打包前重新执行增量物化，彻底杜绝并发冲突或旧文章覆盖新内容；
+3. **内容仓防抖截断**：
+   内容仓的 `trigger-build.yml` 同样配置了 `group: trigger-build`，多次连续 Push 只会保留最新一次派发，避免浪费 GitHub Actions 运行分钟数。

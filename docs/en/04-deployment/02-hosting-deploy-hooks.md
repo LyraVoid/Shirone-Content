@@ -147,7 +147,7 @@ In your content repository under **Settings** -> **Secrets and variables** -> **
 
 ## Deployment Workflow Secrets Quick Reference
 
-Secrets supported by the content repository workflow [`.github/workflows/trigger-build.yml`](../../../.github/workflows/trigger-build.yml):
+Secrets supported by the content repository workflow [`.github/workflows/trigger-build.yml.example`](../../../.github/workflows/trigger-build.yml.example):
 
 | Platform / Method | GitHub Secret Variable Name (Strict Match) | Trigger Mechanism |
 | :--- | :--- | :--- |

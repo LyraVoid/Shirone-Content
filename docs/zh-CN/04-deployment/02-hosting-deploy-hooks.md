@@ -147,7 +147,7 @@ sequenceDiagram
 
 ## 自动化工作流与密钥对照总结
 
-内容仓自动化触发工作流 [`.github/workflows/trigger-build.yml`](../../../.github/workflows/trigger-build.yml) 中支持的部署密钥对照：
+内容仓自动化触发工作流 [`.github/workflows/trigger-build.yml.example`](../../../.github/workflows/trigger-build.yml.example) 中支持的部署密钥对照：
 
 | 托管平台 | GitHub Secret 变量名（严格匹配） | 触发机制说明 |
 | :--- | :--- | :--- |

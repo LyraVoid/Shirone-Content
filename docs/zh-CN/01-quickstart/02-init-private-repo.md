@@ -136,7 +136,7 @@ git push -u origin main
 ```text
 my-blog-content/
 ├── .github/workflows/       # 自动触发构建的 GitHub Actions 脚本
-│   └── trigger-build.yml
+│   └── trigger-build.yml.example # 跨仓触发工作流模板（去掉 .example 启用）
 ├── config/                  # 全站个性化配置 YAML 文件
 │   ├── site.yaml            # 站点基本信息、色彩与横幅壁纸
 │   └── profile.yaml         # 博主头像、昵称与社交链接

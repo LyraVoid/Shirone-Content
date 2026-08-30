@@ -1,0 +1,72 @@
+name: Trigger Theme Build
+
+# 启用说明：
+# 本文件默认带有 .example 后缀，以防止在上游模板仓库中产生无意义的构建消耗。
+# 在你自己的独立内容仓库中启用自动化构建：
+#   1. 将本文件重命名为 .github/workflows/trigger-build.yml（去掉 .example 后缀）；
+#   2. 在内容仓库 Settings -> Secrets and variables -> Actions 中按需配置密钥：
+#      - 方式一（推荐）：配置 DISPATCH_TOKEN（对主题代码仓授予 Contents: Read and write 权限的 PAT）
+#      - 方式二：配置托管平台部署钩子（如 CLOUDFLARE_DEPLOY_HOOK、EDGEONE_DEPLOY_HOOK、VERCEL_DEPLOY_HOOK 等）
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "content/**"
+      - "config/**"
+      - "data/**"
+      - "assets/**"
+      - "public/**"
+      - "shirone.content.json"
+  workflow_dispatch: {}
+
+# 并发控制：当短时间内多次高频推送内容时，自动取消正在进行的旧派发作业，仅保留最新一次触发，避免重复派发
+concurrency:
+  group: trigger-build
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    # 调用代码仓的可复用内容校验工作流，确保内容在合并与触发前通过格式与类型安全检查
+    uses: LyraVoid/Shirone/.github/workflows/content-validate.yml@main
+    with:
+      theme_repository: LyraVoid/Shirone
+      theme_ref: main
+
+  dispatch:
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 5 # 设置超时时间，防止网络异常导致请求挂起消耗 Actions 额度
+    steps:
+      # 方式一：向主题代码仓派发 repository_dispatch 触发事件
+      - name: Dispatch build event to theme repository
+        if: ${{ secrets.DISPATCH_TOKEN != '' }}
+        uses: peter-evans/repository-dispatch@v4
+        with:
+          token: ${{ secrets.DISPATCH_TOKEN }}
+          repository: LyraVoid/Shirone # TODO: 使用者请替换为自己的主题代码仓
+          event-type: content-updated
+          # 传递当前提交 SHA，使代码仓能精准按版本拉取内容，杜绝连续推送时的版本错乱
+          client-payload: '{"sha": "${{ github.sha }}"}'
+
+      # 方式二：触发各托管平台的 Deploy Hook（未配置对应 Secret 时自动跳过）
+      - name: Trigger Cloudflare Pages deploy hook
+        if: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK != '' }}
+        run: |
+          curl -s -S -X POST "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}"
+
+      - name: Trigger Vercel deploy hook
+        if: ${{ secrets.VERCEL_DEPLOY_HOOK != '' }}
+        run: |
+          curl -s -S -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+
+      - name: Trigger EdgeOne deploy hook
+        if: ${{ secrets.EDGEONE_DEPLOY_HOOK != '' }}
+        run: |
+          curl -s -S -X POST "${{ secrets.EDGEONE_DEPLOY_HOOK }}"
+
+      - name: Trigger Netlify deploy hook
+        if: ${{ secrets.NETLIFY_DEPLOY_HOOK != '' }}
+        run: |
+          curl -s -S -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK }}"

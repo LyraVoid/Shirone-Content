@@ -136,7 +136,7 @@ Regardless of the initialization method chosen, your content repository contains
 ```text
 my-blog-content/
 ├── .github/workflows/       # GitHub Actions automated build trigger workflow
-│   └── trigger-build.yml
+│   └── trigger-build.yml.example # Workflow template (drop .example to enable)
 ├── config/                  # Site customization YAML files
 │   ├── site.yaml            # Basic site identity, color system, and banner
 │   └── profile.yaml         # Author avatar, nickname, bio, and social links

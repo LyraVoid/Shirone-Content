@@ -156,7 +156,7 @@ pnpm.cmd content:watch
 ### 2. 自动化触发机制
 
 当向本仓库的 `main` 分支推送提交时：
-1. `.github/workflows/trigger-build.yml` 首先调用主题代码仓的可复用校验工作流，验证 YAML 配置语法与 Markdown 元数据；
+1. 启用触发流后（将 `.github/workflows/trigger-build.yml.example` 重命名为 `trigger-build.yml`），工作流首先调用主题代码仓的可复用校验工作流，验证 YAML 配置语法与 Markdown 元数据；
 2. 校验通过后，工作流自动向主题代码仓派发构建事件或请求云平台部署钩子；
 3. 目标平台拉取最新内容，完成全量静态打包与全球节点更新。
 

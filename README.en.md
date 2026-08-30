@@ -156,7 +156,7 @@ Under **Settings -> Secrets and variables -> Actions** in this content repositor
 ### 2. Automated Pipeline Trigger
 
 When pushing commits to the `main` branch:
-1. `.github/workflows/trigger-build.yml` validates YAML syntax and Markdown frontmatter using the theme's reusable validation workflow;
+1. Upon enabling the trigger workflow (rename `.github/workflows/trigger-build.yml.example` to `trigger-build.yml`), it validates YAML syntax and Markdown frontmatter using the theme's reusable validation workflow;
 2. Upon successful validation, the workflow dispatches a build event or invokes the configured deploy hook;
 3. The hosting runner pulls the latest content, compiles static assets, and deploys globally.
 
