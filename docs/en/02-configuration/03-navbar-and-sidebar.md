@@ -143,3 +143,43 @@ components:
 - **Page Filter (`pages`)**:
   - Omitting or supplying an empty array renders the component across all pages;
   - Supported page identifiers: `"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"post"`, `"rss"`, `"atom"`.
+
+---
+
+## 3. Desktop Context Menu: `config/context-menu.yaml`
+
+Shirone features a Material 3 Expressive desktop context menu with zero extra burden: when disabled, zero DOM footprint, zero client runtime listeners, and zero external requests are produced.
+
+### Configuration Example
+
+```yaml
+# Master toggle: whether to enable desktop context menu
+# When set to false, zero DOM nodes and zero client scripts are injected
+enable: true
+
+# Page filters: omit or leave empty to enable on all pages
+# Restrict to specific pages if desired
+pages:
+  - home
+  - post
+  - moments
+
+# Actions list rendered in top-to-bottom array order
+actions:
+  - copySelection
+  - backToTop
+  - sharePageLink
+```
+
+### Actions and Trigger Rules
+
+| Action ID | Action Label | Availability Criteria | Effect |
+| :--- | :--- | :--- | :--- |
+| `copySelection` | Copy Selection | Non-empty text selection intersecting target | Copies selected plain text to clipboard |
+| `backToTop` | Back to Top | Page has scrolled down | Smoothly scrolls viewport back to page top |
+| `sharePageLink` | Copy Page Link | Always available on allowed pages | Copies full current page URL to clipboard |
+
+### Interaction and Accessibility Features
+- **Context-Aware Visibility**: Irrelevant actions are hidden rather than disabled (e.g. Copy is absent when no text is selected);
+- **Keyboard Navigation**: Use Arrow keys to cycle items, Home/End to jump to bounds, and Escape to close;
+- **Client-Side Routing Resilience**: Managed at the persistent layout layer, automatically closing and reconnecting across Swup page transitions.

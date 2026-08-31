@@ -22,6 +22,7 @@
 | `post-list.yaml` | `postListConfig` | 文章列表分页大小与排版布局模式 |
 | `article.yaml` | `articleConfig` | 文章详情页阅读时间、过期提示与推荐阅读 |
 | `comment.yaml` | `commentConfig` | 评论系统提供商与连接参数 |
+| `context-menu.yaml` | `contextMenuConfig` | 桌面端右键上下文菜单动作与页面过滤 |
 | `fab.yaml` | `fabConfig` | 悬浮控制按钮位置与功能清单 |
 | `footer.yaml` | `footerConfig` | 页脚自定义 HTML 注入开关 |
 | `footer.html` | `FooterConfig.html` | 页脚自定义 HTML 片段，如工信部备案号 |
