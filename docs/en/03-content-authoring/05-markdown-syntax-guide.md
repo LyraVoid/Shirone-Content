@@ -52,12 +52,13 @@ Standard GitHub alert blockquotes are also fully supported:
 
 ---
 
-## 2. Directory File Trees
+## 2. Directory File Trees and Code Trees
 
-Used to present project file structures and directory trees:
+### Directory File Trees (`:::file-tree`)
+Used to present clear project structures or directory trees, supporting both nested lists and terminal output:
 
 ```markdown
-:::file-tree
+:::file-tree{title="Project Directory Structure" icon="colored"}
 - src/
   - components/
     - atoms/
@@ -71,6 +72,40 @@ Used to present project file structures and directory trees:
 - package.json
 :::
 ```
+
+You can also use fenced code block syntax to display terminal tree output:
+````markdown
+```file-tree title="Build Output Directory" icon="simple"
+dist
+├── assets
+└── index.html
+```
+````
+
+### Multi-File Interactive Code Trees (`:::code-tree`)
+Used to organize multiple code files into an interactive container with left sidebar navigation, file tabs, and full-screen modal expansion:
+
+````markdown
+:::code-tree{title="Component Example" height="420px" entry="Button.svelte"}
+```svelte title="Button.svelte"
+<script>
+  let { label = "Click" } = $props();
+</script>
+
+<button class="btn">{label}</button>
+```
+
+```css title="Button.css"
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+```
+:::
+````
+
+- **Full-Screen Modal Expansion**: Click the full-screen expand button in the top right corner to enter an immersive IDE-style modal with responsive two-column layout and syntax highlighting. Press `Escape` or click the close button to exit;
+- **Local Directory Inclusion**: Use `@[code-tree title="Config Directory" entry="siteConfig.ts"](/src/config)` to parse a local workspace directory directly into a code tree.
 
 ---
 
@@ -132,7 +167,79 @@ Supports Markdown text, images, and code snippets.
 
 ---
 
-## 6. Text Highlighters and Spoilers
+## 6. Field Parameter Cards
+
+Used when documenting APIs, component props, or configuration parameters to present structured, readable cards with type annotations and default values. Statically rendered at build time with zero client JavaScript overhead.
+
+### Multi-Field Group (`:::: field-group`)
+Wrap multiple triple-colon `field` blocks inside a four-colon outer container:
+
+```markdown
+:::: field-group
+
+::: field title
+@type string
+@required
+
+The visible title of the component. Rendered in the page header.
+:::
+
+::: field disabled
+@type boolean
+@default `false`
+@optional
+
+Whether the control starts in a disabled state.
+:::
+
+::: field locale
+@type `'en' | 'zh_CN' | 'ja'`
+@default `'zh_CN'`
+@optional
+
+Locale code used for formatting dates, numbers, and labels.
+:::
+
+::: field legacyMode
+@type boolean
+@deprecated
+
+Legacy compatibility mode switch. New integrations should use unified settings.
+:::
+
+::::
+```
+
+### Standalone Field Card (`::: field`)
+When documenting a single parameter alongside an example or prose:
+
+```markdown
+::: field timeout
+@type number
+@default `5000`
+@optional
+
+Request timeout in milliseconds before triggering retry logic.
+:::
+```
+
+### Metadata Tags Reference
+
+| Tag | Purpose & Format | Rendered Appearance |
+| :--- | :--- | :--- |
+| `@name` | Explicitly sets field name (defaults to name on `field` line) | Card title |
+| `@type` | Parameter data type (e.g. `string`, `boolean`, union types) | Monospace code badge |
+| `@default` | Parameter default value (e.g. `false`, `3000`) | Default value token |
+| `@required` | Marks field as required | Required status badge |
+| `@optional` | Marks field as optional | Optional status badge |
+| `@deprecated` | Marks field as deprecated | Deprecated status badge |
+
+- Metadata tags must appear before the first description paragraph;
+- All prose following metadata tags supports standard Markdown (bold, links, inline code, lists).
+
+---
+
+## 7. Text Highlighters and Spoilers
 
 ### Highlighter Pen Effect
 ```markdown
@@ -146,7 +253,7 @@ The culprit is revealed to be :spoiler[the butler].
 
 ---
 
-## 7. Mathematical Formulas
+## 8. Mathematical Formulas
 
 Full KaTeX math formula rendering:
 
@@ -164,7 +271,7 @@ $$
 
 ---
 
-## 8. Mermaid Diagrams and Flowcharts
+## 9. Mermaid Diagrams and Flowcharts
 
 Supports sequence diagrams, flowcharts, and state diagrams:
 
@@ -179,7 +286,7 @@ flowchart LR
 
 ---
 
-## 9. GitHub Repository Cards
+## 10. GitHub Repository Cards
 
 Embed interactive GitHub repository summary cards:
 
@@ -189,7 +296,7 @@ Embed interactive GitHub repository summary cards:
 
 ---
 
-## 10. Responsive Image Sizing and Gallery Grids
+## 11. Responsive Image Sizing and Gallery Grids
 
 ### Custom Image Width
 ```markdown
@@ -206,7 +313,7 @@ Embed interactive GitHub repository summary cards:
 
 ---
 
-## 11. Code Block Metadata and Highlighting
+## 12. Code Block Metadata and Highlighting
 
 Code blocks support title frames, line highlighting, and diff markers:
 
@@ -222,7 +329,7 @@ export const siteConfig = {
 
 ---
 
-## 12. Video Embed Components
+## 13. Video Embed Components
 
 Shirone provides responsive, lazy-loaded video embedding directives for major platforms and custom video playback:
 
@@ -249,7 +356,7 @@ Ideal for local MP4/WebM videos placed under `public/` or external HTTPS CDN URL
 
 ---
 
-## 13. Inline Audio Reader and Pronunciation Player
+## 14. Inline Audio Reader and Pronunciation Player
 
 Embed lightweight inline audio chips into flowing prose:
 
@@ -259,7 +366,7 @@ Listen to the audio pronunciation sample: :audio-reader[Daily Greeting]{src="/as
 
 ---
 
-## 14. Markdown Includes and Snippet Reuse
+## 15. Markdown Includes and Snippet Reuse
 
 Reuse shared Markdown snippets across articles with support for line ranges and named regions:
 
@@ -276,7 +383,7 @@ Reuse shared Markdown snippets across articles with support for line ranges and 
 
 ---
 
-## 15. Abbreviations and Content Annotations
+## 16. Abbreviations and Content Annotations
 
 ### Abbreviations (Hover tooltip expansion)
 Define abbreviations anywhere in your document (typically at the bottom):

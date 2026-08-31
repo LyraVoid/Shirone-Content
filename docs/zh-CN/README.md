@@ -21,7 +21,7 @@
 ### 第二部分：全站配置
 - [01. 配置覆盖核心原理](./02-configuration/01-overlay-principles.md) —— 最小化覆盖原则、对象层级合并与数组整体替换规则
 - [02. 站点基础与视觉定制](./02-configuration/02-site-and-visuals.md) —— 网站标题、横幅壁纸、多图轮播、打字机动效与背景纹理系统
-- [03. 顶栏导航与侧边栏编排](./02-configuration/03-navbar-and-sidebar.md) —— 导航链接、预设清单、下拉子菜单、侧栏单双栏与组件摆放
+- [03. 顶栏导航与侧边栏编排](./02-configuration/03-navbar-and-sidebar.md) —— 导航链接、预设清单、下拉子菜单、侧栏单双栏、组件摆放与桌面端右键菜单
 - [04. 追番与追剧页面配置](./02-configuration/04-anime-tracking.md) —— 本地手写模式与 Bilibili、Bangumi 数据同步策略
 - [05. 侧栏音乐播放器配置](./02-configuration/05-music-player.md) —— 混合增强模式、本地独立模式、自定义列表与网易云歌单
 - [06. 评论系统配置](./02-configuration/06-comment-system.md) —— 零额外负担原则与 Twikoo 评论系统接入
@@ -34,7 +34,7 @@
 - [02. 动态说说发布指南](./03-content-authoring/02-writing-moments.md) —— 记录日常瞬间、心情图标与多图展示
 - [03. 相册管理指南](./03-content-authoring/03-album-management.md) —— 本地照片相册、网络外链相册与加密相册
 - [04. 页面数据实体维护](./03-content-authoring/04-data-entities.md) —— 个人设备、友情链接、开源项目、技能图谱、时间线与罗盘
-- [05. 扩展排版语法速查](./03-content-authoring/05-markdown-syntax-guide.md) —— 容器指令、代码树、代码标签页、步骤条、数学公式、流程图与 GitHub 卡片
+- [05. 扩展排版语法速查](./03-content-authoring/05-markdown-syntax-guide.md) —— 容器指令、代码树全屏展开、字段参数卡片、代码标签页、步骤条、数学公式、流程图与 GitHub 卡片
 
 ### 第四部分：自动化部署
 - [01. GitHub Actions 跨仓自动构建](./04-deployment/01-github-actions-dispatch.md) —— 推荐方案：推送内容自动通知代码仓完成构建发布

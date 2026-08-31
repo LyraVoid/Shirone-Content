@@ -52,12 +52,13 @@ Shirone 主题内置了一整套遵循 M3E 设计规范的 Markdown 扩展组件
 
 ---
 
-## 2. 代码文件树
+## 2. 目录树与代码树
 
-用于展示清晰的项目结构或目录树：
+### 目录文件树（`:::file-tree`）
+用于展示清晰的项目结构或目录树，支持列表嵌套与终端输出两种形式：
 
 ```markdown
-:::file-tree
+:::file-tree{title="项目目录结构" icon="colored"}
 - src/
   - components/
     - atoms/
@@ -71,6 +72,40 @@ Shirone 主题内置了一整套遵循 M3E 设计规范的 Markdown 扩展组件
 - package.json
 :::
 ```
+
+也可以使用围栏代码块语法展示终端输出的目录结构：
+````markdown
+```file-tree title="编译产物目录" icon="simple"
+dist
+├── assets
+└── index.html
+```
+````
+
+### 多文件交互式代码树（`:::code-tree`）
+用于将多个代码文件组织为带有左侧目录导航、文件切换与顶部标签栏的交互式容器，并支持一键展开为全屏模态框：
+
+````markdown
+:::code-tree{title="组件示例" height="420px" entry="Button.svelte"}
+```svelte title="Button.svelte"
+<script>
+  let { label = "点击" } = $props();
+</script>
+
+<button class="btn">{label}</button>
+```
+
+```css title="Button.css"
+.btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+```
+:::
+````
+
+- **全屏模态展开**：点击代码树右上角的全屏展开按钮即可进入沉浸式全屏模态框，支持自适应双栏布局与语法高亮，按下 `Escape` 键或点击右上角关闭按钮即可退出全屏；
+- **本地目录引入**：支持使用 `@[code-tree title="配置目录" entry="siteConfig.ts"](/src/config)` 直接将本地目录解析为代码树。
 
 ---
 
@@ -132,7 +167,79 @@ print("Hello, Shirone!")
 
 ---
 
-## 6. 文本荧光高亮与剧透黑幕
+## 6. 字段参数卡片
+
+用于在编写开发文档、组件说明或 API 规范时，以结构化、高可读性的卡片形式展示参数字段、类型定义与默认值。组件为纯静态渲染，零客户端脚本负担。
+
+### 多字段组合卡片（`:::: field-group`）
+使用四冒号外层容器包裹多个三冒号 `field` 子块：
+
+```markdown
+:::: field-group
+
+::: field title
+@type string
+@required
+
+组件的主标题文本。将显示在页面顶部标题栏中。
+:::
+
+::: field disabled
+@type boolean
+@default `false`
+@optional
+
+是否将控件置为禁用状态。
+:::
+
+::: field locale
+@type `'en' | 'zh_CN' | 'ja'`
+@default `'zh_CN'`
+@optional
+
+用于格式化日期与展示语言的区域标识代码。
+:::
+
+::: field legacyMode
+@type boolean
+@deprecated
+
+旧版兼容模式开关。新接入建议直接使用统一规范。
+:::
+
+::::
+```
+
+### 单字段独立卡片（`::: field`）
+在正文中需要针对某一个参数单独插入说明时，可以直接使用单卡片语法：
+
+```markdown
+::: field timeout
+@type number
+@default `5000`
+@optional
+
+请求超时等待毫秒数。超时后将自动触发重试逻辑。
+:::
+```
+
+### 字段元数据标签说明
+
+| 元数据标签 | 作用与格式说明 | 渲染表现 |
+| :--- | :--- | :--- |
+| `@name` | 显式指定字段名称（默认自动读取 `field` 后紧跟的名称） | 卡片标题 |
+| `@type` | 参数的数据类型（如 `string`、`boolean`、联合类型等） | 等宽代码徽块 |
+| `@default` | 参数的默认取值（如 `false`、`3000`） | 默认值标记块 |
+| `@required` | 必填字段标识 | 醒目的必填状态徽标 |
+| `@optional` | 可选字段标识 | 可选状态徽标 |
+| `@deprecated` | 已废弃字段标识 | 警示样式的废弃状态徽标 |
+
+- 元数据标签需置于字段正文描述之前；
+- 标签之后的正文完全支持标准 Markdown 语法，包括加粗、超链接、行内代码与列表。
+
+---
+
+## 7. 文本荧光高亮与剧透黑幕
 
 ### 荧光笔高亮
 ```markdown
@@ -146,7 +253,7 @@ print("Hello, Shirone!")
 
 ---
 
-## 7. 数学公式
+## 8. 数学公式
 
 全面支持 KaTeX 数学公式渲染：
 
@@ -164,7 +271,7 @@ $$
 
 ---
 
-## 8. Mermaid 流程图与图表
+## 9. Mermaid 流程图与图表
 
 支持使用 Mermaid 代码块绘制时序图、流程图与状态图：
 
@@ -179,7 +286,7 @@ flowchart LR
 
 ---
 
-## 9. GitHub 仓库名片卡
+## 10. GitHub 仓库名片卡
 
 使用单行指令即可在正文中插入精美的 GitHub 仓库卡片：
 
@@ -189,7 +296,7 @@ flowchart LR
 
 ---
 
-## 10. 图片自适应宽度与画廊网格
+## 11. 图片自适应宽度与画廊网格
 
 ### 控制单张图片展示宽度
 ```markdown
@@ -206,7 +313,7 @@ flowchart LR
 
 ---
 
-## 11. 代码块高级排版与元数据
+## 12. 代码块高级排版与元数据
 
 代码块支持指定文件名、高亮特定行号、新增/删除行标记以及终端框架：
 
@@ -222,7 +329,7 @@ export const siteConfig = {
 
 ---
 
-## 12. 视频嵌入组件
+## 13. 视频嵌入组件
 
 主题内置了常见视频平台嵌入与自建播放器指令，支持懒加载与响应式宽高比适配：
 
@@ -249,7 +356,7 @@ export const siteConfig = {
 
 ---
 
-## 13. 行内语音与音频朗读组件
+## 14. 行内语音与音频朗读组件
 
 支持在正文中插入轻量的行内音频/语音播放器：
 
@@ -259,7 +366,7 @@ export const siteConfig = {
 
 ---
 
-## 14. Markdown 片段包含与复用
+## 15. Markdown 片段包含与复用
 
 支持跨文章引入公共 Markdown 片段或代码示例，支持行号范围与区域选择：
 
@@ -276,7 +383,7 @@ export const siteConfig = {
 
 ---
 
-## 15. 缩略词悬浮解释与内容注解
+## 16. 缩略词悬浮解释与内容注解
 
 ### 缩略词定义（鼠标悬浮提示全称）
 在文章任意位置（通常放于文末）定义缩略词：

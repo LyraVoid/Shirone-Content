@@ -21,7 +21,7 @@ This guide explains how to manage your blog content and theme code in separate r
 ### Part 2: Site Configuration
 - [01. Configuration Overlay Core Principles](./02-configuration/01-overlay-principles.md) — Minimal overlay principle, recursive object merges, and array replacement rules
 - [02. Site Foundation and Visual Customization](./02-configuration/02-site-and-visuals.md) — Site identity, banner wallpaper, carousel, typewriter, and background textures
-- [03. Top Navigation Bar and Sidebar Layout](./02-configuration/03-navbar-and-sidebar.md) — Navigation links, presets, dropdown menus, single/dual column sidebars
+- [03. Top Navigation Bar and Sidebar Layout](./02-configuration/03-navbar-and-sidebar.md) — Navigation links, presets, dropdown menus, single/dual column sidebars, and desktop context menu
 - [04. Anime and Drama Tracking Page Configuration](./02-configuration/04-anime-tracking.md) — Pure local mode, Bilibili and Bangumi synchronization strategies
 - [05. Sidebar Music Player Configuration](./02-configuration/05-music-player.md) — Mixed enhanced mode, pure local mode, custom lists, and NetEase playlists
 - [06. Comment System Configuration](./02-configuration/06-comment-system.md) — Zero Extra Burden principle and Twikoo comment integration
@@ -34,7 +34,7 @@ This guide explains how to manage your blog content and theme code in separate r
 - [02. Moments Publishing Guide](./03-content-authoring/02-writing-moments.md) — Daily updates, mood iconography, and photo grids
 - [03. Photo Album Management Guide](./03-content-authoring/03-album-management.md) — Local photo albums, external CDN albums, and encrypted galleries
 - [04. Page Data Entities Maintenance](./03-content-authoring/04-data-entities.md) — Devices, friend links, projects, skills, timeline, and compass
-- [05. Extended Markdown Syntax Reference](./03-content-authoring/05-markdown-syntax-guide.md) — Callouts, file trees, tabs, steps, KaTeX math, Mermaid diagrams, and GitHub cards
+- [05. Extended Markdown Syntax Reference](./03-content-authoring/05-markdown-syntax-guide.md) — Callouts, file trees, full-screen code trees, field parameter cards, tabs, steps, KaTeX math, Mermaid diagrams, and GitHub cards
 
 ### Part 4: Automated Deployment
 - [01. GitHub Actions Cross-Repo Build Trigger](./04-deployment/01-github-actions-dispatch.md) — Recommended workflow: automated pull, font subsetting, and global static release
