@@ -1,4 +1,4 @@
-# Shirone Content Separation Guide
+﻿# Shirone Content Separation Guide
 
 [简体中文](../zh-CN/README.md) | [Documentation Index](../README.md)
 
@@ -28,6 +28,7 @@ This guide explains how to manage your blog content and theme code in separate r
 - [07. Typography and Global Font Configuration](./02-configuration/07-typography-and-fonts.md) — Custom font packages, system fonts mode, and automated font subsetting pipeline
 - [08. Large Language Models and AI Discovery Configuration](./02-configuration/08-llms-and-ai-search.md) — Static generation of /llms.txt and /llms-full.txt, excerpt truncation, privacy desensitization
 - [09. Umami Analytics Configuration](./02-configuration/09-umami-analytics.md) — Zero Extra Burden principle, site statistics, and public share URL setup
+- [10. Article Permalink Configuration](./02-configuration/10-permalink-configuration.md) — Template-based global URLs, placeholder dictionary, custom root permalinks and aliases
 
 ### Part 3: Content Authoring and Data Management
 - [01. Post Publishing and Typography Guide](./03-content-authoring/01-writing-posts.md) — Article frontmatter metadata, pinned posts, drafts, and encryption

@@ -1,4 +1,4 @@
-# 站点配置覆盖说明
+﻿# 站点配置覆盖说明
 
 本目录下的每个 YAML 文件对应覆盖主题仓库里的一个配置领域。构建阶段由代码仓的同步脚本编译并与主题默认配置进行递归合并。
 
@@ -20,6 +20,7 @@
 | `nav-bar.yaml` | `navBarConfig` | 顶栏导航链接、预设组合与下拉子菜单 |
 | `sidebar.yaml` | `sidebarConfig` | 侧边栏单栏或双栏布局与组件排布 |
 | `post-list.yaml` | `postListConfig` | 文章列表分页大小与排版布局模式 |
+| `permalink.yaml` | `permalinkConfig` | 文章全局固定链接格式模板与启用开关 |
 | `article.yaml` | `articleConfig` | 文章详情页阅读时间、过期提示与推荐阅读 |
 | `comment.yaml` | `commentConfig` | 评论系统提供商与连接参数 |
 | `context-menu.yaml` | `contextMenuConfig` | 桌面端右键上下文菜单动作与页面过滤 |

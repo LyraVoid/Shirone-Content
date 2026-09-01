@@ -1,4 +1,4 @@
-# 文章发布与排版指南
+﻿# 文章发布与排版指南
 
 本篇文档介绍如何在内容仓库中编写与发布技术博客文章、管理文章元数据以及使用文章加密功能。
 
@@ -71,6 +71,14 @@ draft: false
 
 # 是否开启本篇文章的评论互动（默认为 true）
 comment: true
+
+# 自定义根路径固定链接（可选，优先级最高，如 "notes/my-special-page" => /notes/my-special-page/）
+permalink: ""
+
+# 文章别名（可选，生成 /posts/<alias>/ 访问路径）
+alias: ""
+
+
 ---
 ```
 

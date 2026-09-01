@@ -71,6 +71,12 @@ draft: false
 
 # Enable comments on this post (defaults to true)
 comment: true
+
+# Custom root permalink (optional, highest precedence, e.g. "notes/special" => /notes/special/)
+permalink: ""
+
+# Post alias (optional, creates /posts/<alias>/ route)
+alias: ""
 ---
 ```
 

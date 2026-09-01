@@ -1,4 +1,4 @@
-# Shirone 博客内容分离使用指南
+﻿# Shirone 博客内容分离使用指南
 
 [English](../en/README.md) | [文档索引](../README.md)
 
@@ -28,6 +28,7 @@
 - [07. 全站字体与排版配置](./02-configuration/07-typography-and-fonts.md) —— 自定义字体包加载、纯系统字体模式与全自动字体子集裁剪流水线
 - [08. 大模型与 AI 检索端点配置](./02-configuration/08-llms-and-ai-search.md) —— /llms.txt 与 /llms-full.txt 静态生成、摘要截断与私密内容脱敏
 - [09. Umami 网站统计配置](./02-configuration/09-umami-analytics.md) —— 零额外负担原则、访问统计与公开分享链接接入
+- [10. 文章固定链接配置](./02-configuration/10-permalink-configuration.md) —— 全局模板化 URL、占位符清单、自定义 permalink 与 alias 别名
 
 ### 第三部分：内容撰写与数据管理
 - [01. 文章发布与排版指南](./03-content-authoring/01-writing-posts.md) —— 文章元数据字段详解、草稿置顶与加密保护
