@@ -24,7 +24,7 @@
 - [03. 顶栏导航与侧边栏编排](./02-configuration/03-navbar-and-sidebar.md) —— 导航链接、预设清单、下拉子菜单、侧栏单双栏、组件摆放与桌面端右键菜单
 - [04. 追番与追剧页面配置](./02-configuration/04-anime-tracking.md) —— 本地手写模式与 Bilibili、Bangumi 数据同步策略
 - [05. 侧栏音乐播放器配置](./02-configuration/05-music-player.md) —— 混合增强模式、本地独立模式、自定义列表与网易云歌单
-- [06. 评论系统配置](./02-configuration/06-comment-system.md) —— 零额外负担原则与 Twikoo 评论系统接入
+- [06. 评论系统配置](./02-configuration/06-comment-system.md) —— 零额外负担原则与 Twikoo / Giscus 评论系统接入
 - [07. 全站字体与排版配置](./02-configuration/07-typography-and-fonts.md) —— 自定义字体包加载、纯系统字体模式与全自动字体子集裁剪流水线
 - [08. 大模型与 AI 检索端点配置](./02-configuration/08-llms-and-ai-search.md) —— /llms.txt 与 /llms-full.txt 静态生成、摘要截断与私密内容脱敏
 - [09. Umami 网站统计配置](./02-configuration/09-umami-analytics.md) —— 零额外负担原则、访问统计与公开分享链接接入

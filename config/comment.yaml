@@ -5,7 +5,7 @@
 # 是否全局启用评论系统
 enable: false
 
-# 评论服务提供商："none" 不启用，"twikoo"
+# 评论服务提供商："none" 不启用，"twikoo" 或 "giscus" 二选一
 provider: "none"
 
 # 是否开启视口懒加载，滚动至评论区视口时才动态拉取脚本
@@ -16,8 +16,40 @@ twikoo:
   # Twikoo 环境 ID，如私有部署地址或云环境 ID
   envId: ""
   # 前端脚本资源地址
-  scriptUrl: "https://cdn.jsdelivr.net/npm/twikoo@1.7.19/dist/twikoo.min.js"
+  scriptUrl: "https://cdn.jsdelivr.net/npm/twikoo@1.7.20/dist/twikoo.min.js"
   # 语言："auto" 表示跟随站点，或直接指定 "zh-CN"、"en"、"ja"
   lang: "auto"
   # 输入框占位提示文本
   placeholder: "Share your thoughts..."
+
+# Giscus 专有配置，当 provider 为 "giscus" 时填写
+# 基于 GitHub Discussions 存储评论，无需自建后端；仅要求一个开启 Discussions 的公开仓库
+# repo / repoId / categoryId 三者必填（从 https://giscus.app 配置生成器获取），
+# 任一缺失时评论区静默关闭，与未启用完全等价（零额外负担）
+giscus:
+  # 公开 GitHub 仓库，格式 "owner/repo"（需开启 Discussions 并安装 giscus App）
+  repo: ""
+  # 仓库 ID（giscus.app 生成）
+  repoId: ""
+  # Discussion 分类名，推荐 "Announcements"（仅维护者可开新讨论，避免访客误开主题帖）
+  category: "Announcements"
+  # 分类 ID（giscus.app 生成）
+  categoryId: ""
+  # 页面与 Discussion 的映射方式：pathname | url | title | og:title | specific | number
+  mapping: "pathname"
+  # 严格标题匹配（SHA-1 校验），避免 GitHub 模糊搜索误配相似标题
+  strict: false
+  # 是否显示主贴表情反应
+  reactionsEnabled: true
+  # 是否向页面发送 Discussion 元数据（一般保持 false）
+  emitMetadata: false
+  # 评论输入框位置："bottom"（评论框在列表下方）| "top"（评论框在列表上方）
+  inputPosition: "bottom"
+  # 明暗两套 giscus 主题（主题键或自定义主题 CSS URL），自动跟随站点明暗切换
+  theme:
+    light: "light"
+    dark: "dark"
+  # 评论语言："auto" 跟随站点语言，或 giscus 语言码（如 "zh-CN"、"en"）
+  lang: "auto"
+  # giscus client.js 地址；自托管 giscus 时替换为自有地址
+  scriptUrl: "https://giscus.app/client.js"

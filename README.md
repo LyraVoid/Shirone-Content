@@ -132,7 +132,7 @@ pnpm.cmd content:watch
 - `profile.yaml`：博主头像、昵称、签名与社交平台链接
 - `nav-bar.yaml`：顶部导航栏条目清单、预设条目（`LinkPresets`）与下拉子菜单
 - `sidebar.yaml`：侧边栏单栏/双栏布局编排、组件清单与吸顶跟随
-- `comment.yaml`：评论系统服务提供商与 Twikoo 连接参数
+- `comment.yaml`：评论系统服务提供商与 Twikoo / Giscus 连接参数
 - `anime.yaml`：追番追剧页面主数据源与 Bilibili/Bangumi 同步策略
 - `music.yaml`：侧栏音乐播放器模式（混合/本地/自定义/网易云歌单）
 - `font.yaml`：全站中文字体、西文字体与全自动字体子集裁剪流水线
