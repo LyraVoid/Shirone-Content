@@ -1,5 +1,3 @@
-name: Trigger Theme Build
-
 # 启用说明：
 # 本文件默认带有 .example 后缀，以防止在上游模板仓库中产生无意义的构建消耗。
 # 在你自己的独立内容仓库中启用自动化构建：
@@ -7,6 +5,8 @@ name: Trigger Theme Build
 #   2. 在内容仓库 Settings -> Secrets and variables -> Actions 中按需配置密钥：
 #      - 方式一（推荐）：配置 DISPATCH_TOKEN（对主题代码仓授予 Contents: Read and write 权限的 PAT）
 #      - 方式二：配置托管平台部署钩子（如 CLOUDFLARE_DEPLOY_HOOK、EDGEONE_DEPLOY_HOOK、VERCEL_DEPLOY_HOOK 等）
+
+name: Trigger Theme Build
 
 on:
   push:
@@ -41,10 +41,12 @@ jobs:
     steps:
       # 方式一：向主题代码仓派发 repository_dispatch 触发事件
       - name: Dispatch build event to theme repository
-        if: ${{ secrets.DISPATCH_TOKEN != '' }}
+        env:
+          DISPATCH_TOKEN: ${{ secrets.DISPATCH_TOKEN }}
+        if: ${{ env.DISPATCH_TOKEN != '' }}
         uses: peter-evans/repository-dispatch@v4
         with:
-          token: ${{ secrets.DISPATCH_TOKEN }}
+          token: ${{ env.DISPATCH_TOKEN }}
           repository: LyraVoid/Shirone # TODO: 使用者请替换为自己的主题代码仓
           event-type: content-updated
           # 传递当前提交 SHA，使代码仓能精准按版本拉取内容，杜绝连续推送时的版本错乱
@@ -52,21 +54,29 @@ jobs:
 
       # 方式二：触发各托管平台的 Deploy Hook（未配置对应 Secret 时自动跳过）
       - name: Trigger Cloudflare Pages deploy hook
-        if: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK != '' }}
+        env:
+          CLOUDFLARE_DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        if: ${{ env.CLOUDFLARE_DEPLOY_HOOK != '' }}
         run: |
-          curl -s -S -X POST "${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}"
+          curl -s -S -X POST "${{ env.CLOUDFLARE_DEPLOY_HOOK }}"
 
       - name: Trigger Vercel deploy hook
-        if: ${{ secrets.VERCEL_DEPLOY_HOOK != '' }}
+        env:
+          VERCEL_DEPLOY_HOOK: ${{ secrets.VERCEL_DEPLOY_HOOK }}
+        if: ${{ env.VERCEL_DEPLOY_HOOK != '' }}
         run: |
-          curl -s -S -X POST "${{ secrets.VERCEL_DEPLOY_HOOK }}"
+          curl -s -S -X POST "${{ env.VERCEL_DEPLOY_HOOK }}"
 
       - name: Trigger EdgeOne deploy hook
-        if: ${{ secrets.EDGEONE_DEPLOY_HOOK != '' }}
+        env:
+          EDGEONE_DEPLOY_HOOK: ${{ secrets.EDGEONE_DEPLOY_HOOK }}
+        if: ${{ env.EDGEONE_DEPLOY_HOOK != '' }}
         run: |
-          curl -s -S -X POST "${{ secrets.EDGEONE_DEPLOY_HOOK }}"
+          curl -s -S -X POST "${{ env.EDGEONE_DEPLOY_HOOK }}"
 
       - name: Trigger Netlify deploy hook
-        if: ${{ secrets.NETLIFY_DEPLOY_HOOK != '' }}
+        env:
+          NETLIFY_DEPLOY_HOOK: ${{ secrets.NETLIFY_DEPLOY_HOOK }}
+        if: ${{ env.NETLIFY_DEPLOY_HOOK != '' }}
         run: |
-          curl -s -S -X POST "${{ secrets.NETLIFY_DEPLOY_HOOK }}"
+          curl -s -S -X POST "${{ env.NETLIFY_DEPLOY_HOOK }}"
