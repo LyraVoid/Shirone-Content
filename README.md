@@ -41,7 +41,7 @@
 | `content/moments/` | `src/content/moments/` | 生活动态说说与即时随笔 |
 | `content/spec/` | `src/content/spec/` | 关于我与友链申请文案 |
 | `config/` | `src/user/user-config.ts` | 各功能领域的 YAML 覆盖配置（构建期自动生成桥接层） |
-| `data/` | `src/data/` | 设备、友链、项目、技能、时间线、罗盘等结构化数据 |
+| `data/` | `src/data/` | 设备、游戏、友链、项目、技能、时间线、罗盘等结构化数据 |
 | `assets/` | `src/assets/` | 参与构建期优化与 WebP 压缩的本地图片资源 |
 | `public/` | `public/` | 由 Web 服务器直接分发的静态多媒体与自定义相册 |
 | `docs/` | 无（自动排除） | 教程与使用指南，不参与生产构建与同步 |

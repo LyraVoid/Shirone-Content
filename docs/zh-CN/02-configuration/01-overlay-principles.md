@@ -86,6 +86,7 @@ Shirone 内置了严格的格式检查机制。在运行 `pnpm content:validate`
 | `config/post-list.yaml` | 文章列表分页大小、列表或网格排版模式 | 对象递归合并 |
 | `config/article.yaml` | 文章阅读时长、长期未更新提醒、相关文章推荐与海报分享 | 对象递归合并 |
 | `config/devices.yaml` | 个人数码设备展示页分类与筛选规则 | 对象合并（`categories` 数组替换） |
+| `config/games.yaml` | 游戏展示页分类与筛选规则 | 对象合并（`categories` 数组替换） |
 | `config/projects.yaml` | 开源项目展示页分类与阶段筛选规则 | 对象合并（`categories` 数组替换） |
 | `config/skills.yaml` | 技能图谱页分类与熟练度规则 | 对象合并（`categories` 数组替换） |
 | `config/timeline.yaml` | 大事记时间线分类与排序方向 | 对象合并（`categories` 数组替换） |

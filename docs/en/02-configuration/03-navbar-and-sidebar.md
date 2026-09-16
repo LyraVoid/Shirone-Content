@@ -28,6 +28,7 @@ links:
 | `Skills` | `/skills/` | Skills matrix and proficiency ratings |
 | `Projects` | `/projects/` | Open source projects and works |
 | `Devices` | `/devices/` | Personal hardware and desk setup |
+| `Games` | `/games/` | Games showcase and playtime list |
 | `Timeline` | `/timeline/` | Historical milestone timeline |
 | `Albums` | `/albums/` | Photography and gallery albums |
 | `Categories` | `/categories/` | Post category index |
@@ -142,7 +143,7 @@ components:
   - `"secondary"`: Placed in the secondary sidebar (active when `arrangement: "dual"` and screen width $\ge$ 1280px).
 - **Page Filter (`pages`)**:
   - Omitting or supplying an empty array renders the component across all pages;
-  - Supported page identifiers: `"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"post"`, `"rss"`, `"atom"`.
+  - Supported page identifiers: `"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"games"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"post"`, `"rss"`, `"atom"`.
 
 ---
 

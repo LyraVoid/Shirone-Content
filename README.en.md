@@ -41,7 +41,7 @@ The standard path mapping between the content repository and theme code reposito
 | `content/moments/` | `src/content/moments/` | Micro-blogging timeline moments and short essays |
 | `content/spec/` | `src/content/spec/` | About page and friend link application copy |
 | `config/` | `src/user/user-config.ts` | YAML configuration overrides (auto-compiled into bridge layer) |
-| `data/` | `src/data/` | Structured data (devices, friends, projects, skills, timeline, compass) |
+| `data/` | `src/data/` | Structured data (devices, games, friends, projects, skills, timeline, compass) |
 | `assets/` | `src/assets/` | Local images optimized and compressed to WebP during build |
 | `public/` | `public/` | Static media assets and custom photo albums served directly |
 | `docs/` | None (automatically excluded) | Usage guides and documentation; excluded from builds and sync |
