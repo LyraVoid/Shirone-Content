@@ -28,6 +28,7 @@
 | `footer.yaml` | `footerConfig` | 页脚自定义 HTML 注入开关 |
 | `footer.html` | `FooterConfig.html` | 页脚自定义 HTML 片段，如工信部备案号 |
 | `devices.yaml` | `devicesConfig` | 个人设备展示页分类与展示规则 |
+| `games.yaml` | `gamesConfig` | 游戏展示页分类与筛选规则 |
 | `anime.yaml` | `animeConfig` | 追番页面数据源模式与快照拉取策略 |
 | `music.yaml` | `musicConfig` | 侧栏音乐播放器模式与歌单配置 |
 | `projects.yaml` | `projectsConfig` | 开源项目展示页分类与筛选规则 |

@@ -1,6 +1,6 @@
 # 页面数据实体维护
 
-除了常规的文章和说说，博客中还有很多展示特定内容的独立页面（如设备清单、友链、项目、技能、时间线、罗盘、番剧与音乐）。
+除了常规的文章和说说，博客中还有很多展示特定内容的独立页面（如设备清单、游戏清单、友链、项目、技能、时间线、罗盘、番剧与音乐）。
 这些页面的数据全部存放在内容仓库的 `data/` 目录下，采用纯 TypeScript 格式维护，结构简单明了，只需模仿模板填入自己的数据即可。
 
 ---
@@ -193,3 +193,33 @@ export const musicTracks = [
   }
 ];
 ```
+
+---
+
+## 9. 游戏展示清单：`data/games.ts`
+
+对应页面：`/games/`
+
+```typescript
+export const gamesData = [
+  {
+    id: "minecraft",               // 唯一标识（禁用列表按它命中）
+    name: "Minecraft",
+    developer: "Mojang Studios",
+    category: "sandbox",           // 对应 config/games.yaml 中的分类 key
+    status: "playing",             // 状态："playing" | "completed" | "backlog" | "wishlist"
+    icon: "material-symbols:widgets-rounded",  // 无封面时的图标卡片
+    rating: 5,                     // 评分（0–5，支持 0.5 步进）
+    hours: 420,                    // 已游玩时长（小时）
+    platform: "PC",
+    year: "2011",
+    tags: ["Sandbox", "Survival"], // 卡片上的类型标签
+    description: "方块世界沙盒游戏，挖掘、合成与建造。",
+    link: "https://www.minecraft.net/",
+    featured: true                 // Featured 推荐徽章
+  }
+];
+```
+
+封面为可选字段 `cover`：省略时渲染图标卡片；填写时支持三种写法——内容仓 `assets/` 相对路径（参与构建期压缩转码，建议 16:9 或更宽的横屏图）、`/public` 绝对路径与远程 URL。
+

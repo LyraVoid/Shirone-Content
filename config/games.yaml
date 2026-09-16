@@ -1,0 +1,37 @@
+# games.yaml —— 游戏展示页配置
+# 覆盖主题的 src/config/gamesConfig.ts
+# 具体游戏条目清单请在 data/games.ts 中维护
+
+# 页面总开关，关闭后隐藏导航入口并重定向 404
+enable: true
+
+# 游戏分类清单，数组顺序即顶部筛选标签顺序
+# 没有任何条目的分类会自动隐藏，因此可放心保留暂时用不到的分类
+categories:
+  - key: "open-world"
+    label: "开放世界"
+    icon: "material-symbols:explore-outline-rounded"
+    description: "广袤世界的探索与冒险"
+
+  - key: "sandbox"
+    label: "沙盒建造"
+    icon: "material-symbols:widgets-rounded"
+    description: "自由建造与生存创造"
+
+  - key: "rpg"
+    label: "角色扮演"
+    icon: "material-symbols:shield-outline-rounded"
+    description: "剧情驱动的角色扮演"
+
+  - key: "action"
+    label: "动作格斗"
+    icon: "material-symbols:swords-outline-rounded"
+    description: "动作、射击与格斗"
+
+  - key: "casual"
+    label: "休闲派对"
+    icon: "material-symbols:extension-outline-rounded"
+    description: "轻松休闲与聚会游戏"
+
+# 可选临时禁用的游戏 ID 清单
+# disabledIds: []
