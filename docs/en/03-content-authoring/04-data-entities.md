@@ -1,6 +1,6 @@
 # Page Data Entities Maintenance
 
-In addition to regular posts and moments, Shirone includes specialized showcase pages (such as devices, friends, projects, skills, timeline, compass, anime, and music).
+In addition to regular posts and moments, Shirone includes specialized showcase pages (such as devices, games, friends, projects, skills, timeline, compass, anime, and music).
 Data entities for these pages reside in the content repository under `data/`, formatted as clean, strongly typed TypeScript files.
 
 ---
@@ -193,3 +193,33 @@ export const musicTracks = [
   }
 ];
 ```
+
+---
+
+## 9. Games Showcase: `data/games.ts`
+
+Page: `/games/`
+
+```typescript
+export const gamesData = [
+  {
+    id: "minecraft",               // Unique ID (matched by disabledIds)
+    name: "Minecraft",
+    developer: "Mojang Studios",
+    category: "sandbox",           // References a category key from config/games.yaml
+    status: "playing",             // "playing" | "completed" | "backlog" | "wishlist"
+    icon: "material-symbols:widgets-rounded",  // Icon tile when no cover is set
+    rating: 5,                     // Rating (0-5, 0.5 steps)
+    hours: 420,                    // Playtime in hours
+    platform: "PC",
+    year: "2011",
+    tags: ["Sandbox", "Survival"], // Genre chips on the card
+    description: "A blocky sandbox to mine, craft and build.",
+    link: "https://www.minecraft.net/",
+    featured: true                 // Featured badge
+  }
+];
+```
+
+The `cover` field is optional: without it the card renders an icon tile; with it, three forms are accepted — a path relative to the content repo `assets/` (processed by the build-time image pipeline, landscape 16:9 or wider recommended), an absolute `/public` path, or a remote URL.
+

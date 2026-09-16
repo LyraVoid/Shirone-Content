@@ -24,7 +24,7 @@ This guide explains how to manage your blog content and theme code in separate r
 - [03. Top Navigation Bar and Sidebar Layout](./02-configuration/03-navbar-and-sidebar.md) — Navigation links, presets, dropdown menus, single/dual column sidebars, and desktop context menu
 - [04. Anime and Drama Tracking Page Configuration](./02-configuration/04-anime-tracking.md) — Pure local mode, Bilibili and Bangumi synchronization strategies
 - [05. Sidebar Music Player Configuration](./02-configuration/05-music-player.md) — Mixed enhanced mode, pure local mode, custom lists, and NetEase playlists
-- [06. Comment System Configuration](./02-configuration/06-comment-system.md) — Zero Extra Burden principle and Twikoo comment integration
+- [06. Comment System Configuration](./02-configuration/06-comment-system.md) — Zero Extra Burden principle and Twikoo / Giscus comment integration
 - [07. Typography and Global Font Configuration](./02-configuration/07-typography-and-fonts.md) — Custom font packages, system fonts mode, and automated font subsetting pipeline
 - [08. Large Language Models and AI Discovery Configuration](./02-configuration/08-llms-and-ai-search.md) — Static generation of /llms.txt and /llms-full.txt, excerpt truncation, privacy desensitization
 - [09. Umami Analytics Configuration](./02-configuration/09-umami-analytics.md) — Zero Extra Burden principle, site statistics, and public share URL setup

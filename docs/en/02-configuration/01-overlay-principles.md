@@ -81,11 +81,12 @@ All configuration files reside in the content repository's `config/` directory:
 | `config/font.yaml` | CJK fonts, Latin body fonts, monospace fonts, automated font subsetting | Object merge (`fontFamilies` array replaced) |
 | `config/anime.yaml` | Anime tracking data source, Bilibili/Bangumi sync policies | Recursive object merge |
 | `config/music.yaml` | Sidebar music player modes, NetEase playlists, custom tracks | Recursive object merge |
-| `config/comment.yaml` | Comment system provider and Twikoo connection parameters | Recursive object merge |
+| `config/comment.yaml` | Comment system provider and Twikoo / Giscus connection parameters | Recursive object merge |
 | `config/context-menu.yaml` | Desktop context menu actions, ordering, and page filters | Object merge (`actions` array replaced) |
 | `config/post-list.yaml` | Post list pagination size, list or grid presentation modes | Recursive object merge |
 | `config/article.yaml` | Reading time, outdated post warnings, related posts, poster generation | Recursive object merge |
 | `config/devices.yaml` | Personal devices showcase categories and filter rules | Object merge (`categories` array replaced) |
+| `config/games.yaml` | Games showcase categories and filter rules | Object merge (`categories` array replaced) |
 | `config/projects.yaml` | Open source projects showcase categories and phase filters | Object merge (`categories` array replaced) |
 | `config/skills.yaml` | Skills matrix categories and proficiency levels | Object merge (`categories` array replaced) |
 | `config/timeline.yaml` | Milestones timeline categories and chronological ordering | Object merge (`categories` array replaced) |

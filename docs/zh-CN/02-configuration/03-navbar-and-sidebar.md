@@ -28,6 +28,7 @@ links:
 | `Skills` | `/skills/` | 技能图谱与熟练度 |
 | `Projects` | `/projects/` | 开源项目与作品展示 |
 | `Devices` | `/devices/` | 个人数码与桌面设备清单 |
+| `Games` | `/games/` | 游戏展示与游玩清单 |
 | `Timeline` | `/timeline/` | 大事记时间线 |
 | `Albums` | `/albums/` | 摄影与画廊相册 |
 | `Categories` | `/categories/` | 文章分类总览索引 |
@@ -142,7 +143,7 @@ components:
   - `"secondary"`：放置在副侧栏（在 `arrangement: "dual"` 且屏幕宽度 $\ge$ 1280px 时展开）。
 - **页面过滤器 (`pages`)**：
   - 省略或传空数组表示全站所有页面均渲染；
-  - 可填入的页面标识符：`"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"post"`, `"rss"`, `"atom"`。
+  - 可填入的页面标识符：`"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"games"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"post"`, `"rss"`, `"atom"`。
 
 ---
 
