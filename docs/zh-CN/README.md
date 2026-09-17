@@ -1,4 +1,4 @@
-﻿# Shirone 博客内容分离使用指南
+# Shirone 博客内容分离使用指南
 
 [English](../en/README.md) | [文档索引](../README.md)
 

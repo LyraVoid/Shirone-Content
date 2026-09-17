@@ -1,4 +1,4 @@
-﻿# Shirone 官方文档 / Documentation
+# Shirone 官方文档 / Documentation
 
 [简体中文](./zh-CN/README.md) | [English](./en/README.md)
 

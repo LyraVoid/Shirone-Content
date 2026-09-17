@@ -1,4 +1,4 @@
-﻿# Shirone 官方内容模板仓库
+# Shirone 官方内容模板仓库
 
 **简体中文** | [English](./README.en.md) | [文档中心](./docs/README.md)
 

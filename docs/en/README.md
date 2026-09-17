@@ -1,4 +1,4 @@
-﻿# Shirone Content Separation Guide
+# Shirone Content Separation Guide
 
 [简体中文](../zh-CN/README.md) | [Documentation Index](../README.md)
 
