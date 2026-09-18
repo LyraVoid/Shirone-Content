@@ -3,6 +3,8 @@ title: "Markdown 字段参数卡片"
 description: "结构化 API 与组件参数说明卡片排版演示。"
 published: 2026-08-30
 draft: true
+series: "starter-guide"
+seriesOrder: 2
 ---
 
 在编写 API 接口文档、组件属性说明或配置项清单时，使用 `field-group` 容器可将多个相关参数整齐排列。在三冒号首行声明字段名称，紧接着添加元数据标签，随后书写 Markdown 格式的详细说明文字。

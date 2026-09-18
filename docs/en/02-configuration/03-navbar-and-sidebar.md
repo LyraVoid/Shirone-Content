@@ -33,6 +33,7 @@ links:
 | `Albums` | `/albums/` | Photography and gallery albums |
 | `Categories` | `/categories/` | Post category index |
 | `Tags` | `/tags/` | Tag cloud index |
+| `Series` | `/series/` | Serial post series index |
 | `About` | `/about/` | Author profile and introduction |
 | `GitHub` | Source repo URL | External GitHub repository link |
 
@@ -106,26 +107,32 @@ components:
     slot: "sticky"      # "sticky" remains in viewport during page scroll
     collapseAfter: 5    # Shows "Expand" button when exceeding 5 items
 
-  # 5. Tag cloud
+  # 5. Serial post series list (sticky, gated by seriesConfig.enable)
+  - type: "series"
+    enable: true
+    slot: "sticky"
+    collapseAfter: 5
+
+  # 6. Tag cloud
   - type: "tags"
     enable: true
     slot: "sticky"
     collapseAfter: 15
 
-  # 6. Site runtime statistics (placed in secondary column in dual mode)
+  # 7. Site runtime statistics (placed in secondary column in dual mode)
   - type: "stats"
     enable: true
     slot: "top"
     column: "secondary" # "secondary" places in auxiliary column in dual mode
 
-  # 7. Mini monthly post calendar
+  # 8. Mini monthly post calendar
   - type: "calendar"
     enable: true
     slot: "top"
     column: "secondary"
     startOfWeek: "mon"  # First day of week: "mon" (Monday) | "sun" (Sunday)
 
-  # 8. Table of contents (active only on post detail pages with sticky tracking)
+  # 9. Table of contents (active only on post detail pages with sticky tracking)
   - type: "toc"
     enable: true
     slot: "sticky"
@@ -143,7 +150,7 @@ components:
   - `"secondary"`: Placed in the secondary sidebar (active when `arrangement: "dual"` and screen width $\ge$ 1280px).
 - **Page Filter (`pages`)**:
   - Omitting or supplying an empty array renders the component across all pages;
-  - Supported page identifiers: `"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"games"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"post"`, `"rss"`, `"atom"`.
+  - Supported page identifiers: `"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"games"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"series"`, `"post"`, `"rss"`, `"atom"`.
 
 ---
 

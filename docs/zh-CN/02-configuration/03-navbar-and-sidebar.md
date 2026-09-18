@@ -33,6 +33,7 @@ links:
 | `Albums` | `/albums/` | 摄影与画廊相册 |
 | `Categories` | `/categories/` | 文章分类总览索引 |
 | `Tags` | `/tags/` | 文章标签云索引 |
+| `Series` | `/series/` | 系列连载索引与文章组 |
 | `About` | `/about/` | 关于博主与站点介绍 |
 | `GitHub` | 项目源码地址 | 外部开源仓库链接 |
 
@@ -106,26 +107,32 @@ components:
     slot: "sticky"      # "sticky" 表示页面向下滚动时吸附在视口上方
     collapseAfter: 5    # 超出 5 项时显示“展开更多”按钮
 
-  # 5. 标签云
+  # 5. 系列连载列表（粘性吸顶，受 seriesConfig.enable 控制）
+  - type: "series"
+    enable: true
+    slot: "sticky"
+    collapseAfter: 5
+
+  # 6. 标签云
   - type: "tags"
     enable: true
     slot: "sticky"
     collapseAfter: 15
 
-  # 6. 站点运行统计（仅在 dual 双栏模式下放置在副侧栏）
+  # 7. 站点运行统计（仅在 dual 双栏模式下放置在副侧栏）
   - type: "stats"
     enable: true
     slot: "top"
     column: "secondary" # "secondary" 表示放入副侧栏（dual 模式生效）
 
-  # 7. 迷你月度文章历
+  # 8. 迷你月度文章历
   - type: "calendar"
     enable: true
     slot: "top"
     column: "secondary"
     startOfWeek: "mon"  # 周起始日："mon"（周一）| "sun"（周日）
 
-  # 8. 文章目录（仅在文章详情页展示并吸顶跟随）
+  # 9. 文章目录（仅在文章详情页展示并吸顶跟随）
   - type: "toc"
     enable: true
     slot: "sticky"
@@ -143,7 +150,7 @@ components:
   - `"secondary"`：放置在副侧栏（在 `arrangement: "dual"` 且屏幕宽度 $\ge$ 1280px 时展开）。
 - **页面过滤器 (`pages`)**：
   - 省略或传空数组表示全站所有页面均渲染；
-  - 可填入的页面标识符：`"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"games"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"post"`, `"rss"`, `"atom"`。
+  - 可填入的页面标识符：`"home"`, `"archive"`, `"friends"`, `"moments"`, `"anime"`, `"compass"`, `"skills"`, `"projects"`, `"devices"`, `"games"`, `"timeline"`, `"albums"`, `"about"`, `"categories"`, `"tags"`, `"series"`, `"post"`, `"rss"`, `"atom"`。
 
 ---
 

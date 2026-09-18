@@ -39,6 +39,7 @@ The standard path mapping between the content repository and theme code reposito
 | :--- | :--- | :--- |
 | `content/posts/` | `src/content/posts/` | Markdown and MDX long-form blog articles |
 | `content/moments/` | `src/content/moments/` | Micro-blogging timeline moments and short essays |
+| `content/series/` | `src/content/series/` | Serial post series entities (each Markdown file defines one series) |
 | `content/spec/` | `src/content/spec/` | About page and friend link application copy |
 | `config/` | `src/user/user-config.ts` | YAML configuration overrides (auto-compiled into bridge layer) |
 | `data/` | `src/data/` | Structured data (devices, games, friends, projects, skills, timeline, compass) |
@@ -139,6 +140,7 @@ YAML files in `config/` correspond to specific functional domains and follow the
 - `llms.yaml`: LLM discovery endpoints (/llms.txt and /llms-full.txt) and privacy filtering
 - `footer.yaml` & `footer.html`: Custom footer HTML snippet injection
 - `umami.yaml`: Umami public analytics and optional official visit tracking (`websiteId` and `scriptUrl` must be set together)
+- `series.yaml`: Serial post series showcase, index page title/description, and in-post series card position
 
 ---
 

@@ -9,6 +9,8 @@ tags:
   - "博客"
   - "指南"
 pinned: true
+series: "starter-guide"
+seriesOrder: 1
 draft: false
 comment: true
 ---
@@ -29,6 +31,8 @@ comment: true
 - `category`：文章所属分类
 - `tags`：标签列表
 - `pinned`：是否置顶
+- `series`：所属系列 slug，对应 `content/series/<slug>.md`
+- `seriesOrder`：系列内排序序号（整数），缺省时按发布日期排序
 - `draft`：是否为草稿，草稿在生产构建时会被自动过滤
 - `comment`：是否开启本篇文章的评论区
 

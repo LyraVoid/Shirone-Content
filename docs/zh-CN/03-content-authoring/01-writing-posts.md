@@ -72,6 +72,12 @@ draft: false
 # 是否开启本篇文章的评论互动（默认为 true）
 comment: true
 
+# 所属系列 slug（可选，对应 content/series/<slug>.md）
+series: "starter-guide"
+
+# 系列内展示序号（可选整数，缺省时按发布日期升序排序）
+seriesOrder: 1
+
 # 自定义根路径固定链接（可选，优先级最高，如 "notes/my-special-page" => /notes/my-special-page/）
 permalink: ""
 
@@ -122,6 +128,31 @@ hideHomeContent: true
 - 构建期正文内容通过高强度算法加密打包为密文，真实密码绝不会打包进前端静态资源；
 - 访客在进入文章页面时会弹出密码输入框，输入正确密码后由浏览器在本地动态解密渲染；
 - 加密文章会自动被大模型检索端点（`/llms.txt` 与 `/llms-full.txt`）剔除，确保私密安全。
+
+---
+
+## 系列连载关联（Series）
+
+如果某篇文章属于一个多篇连载系列，可以使用 `series` 和 `seriesOrder` 进行关联：
+
+```yaml
+---
+title: "Markdown 字段参数卡片"
+published: 2026-08-30
+category: "使用指南"
+
+# 关联所属系列实体（需对应 content/series/ 下的同名 .md 文件）
+series: "starter-guide"
+
+# 系列内的展示顺序编号（可选整数；未指定时默认按发布日期升序排列）
+seriesOrder: 2
+---
+```
+
+1. **系列实体定义**：在 `content/series/` 目录下创建 `<slug>.md`（例如 `starter-guide.md`），配置系列标题 `title`、状态 `status`（`ongoing` 进行中或 `completed` 已完结）以及可选的 `defaultCategory` 与概述正文；
+2. **文章内系列导航**：声明了 `series` 的文章会在文章页自动渲染系列导航卡片，展示所属系列名、当前阅读进度（例如「第 2/共 3 篇」）以及组内上一篇与下一篇的快速跳转链接；
+3. **布局与位置控制**：卡片位置由 `config/series.yaml` 中的 `cardPosition`（`top` 或 `bottom`）决定；无论常规路由 `/posts/<slug>/` 还是自定义固定链接下均支持完整渲染；
+4. **聚合索引与侧栏组件**：访客可从 `/series/` 页面浏览全部系列概览与文章列表，或通过侧栏 `series` widget 查看最新更新的系列。
 
 ---
 

@@ -99,4 +99,5 @@ Shirone 内置了严格的格式检查机制。在运行 `pnpm content:validate`
 | `config/umami.yaml` | Umami 公开统计与可选访问采集（`websiteId`、`scriptUrl` 成对填写） | 对象递归合并 |
 | `config/footer.yaml` | 页脚自定义 HTML 注入功能总开关 | 对象递归合并 |
 | `config/footer.html` | 页脚自定义 HTML 片段源码 | 原样复制映射 |
+| `config/series.yaml` | 系列连载索引页标题、描述与文章内系列卡展示位置 | 对象递归合并 |
 

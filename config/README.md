@@ -38,4 +38,5 @@
 | `expressive-code.yaml` | `expressiveCodeConfig` | 文章代码块语法高亮主题 |
 | `llms.yaml` | `llmsConfig` | 大语言模型与 AI 检索端点（/llms.txt 与 /llms-full.txt）、排除标签与核心引导页 |
 | `umami.yaml` | `umamiConfig` | Umami 网站访问量与在线访客统计 |
+| `series.yaml` | `seriesConfig` | 系列连载索引页标题、描述与文章内系列卡展示位置 |
 

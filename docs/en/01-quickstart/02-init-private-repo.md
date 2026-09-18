@@ -143,6 +143,7 @@ my-blog-content/
 ├── content/                 # Original posts and moments
 │   ├── posts/               # Markdown / MDX long-form articles
 │   ├── moments/             # Micro-blogging timeline moments
+│   ├── series/              # Serial post series entities (one Markdown file per series)
 │   └── spec/                # About and friends application copy
 ├── data/                    # Structured data entities (devices, friends, projects, skills)
 ├── public/                  # Custom photo albums and static media assets

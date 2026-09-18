@@ -39,6 +39,7 @@
 | :--- | :--- | :--- |
 | `content/posts/` | `src/content/posts/` | Markdown 与 MDX 格式的长篇博客文章 |
 | `content/moments/` | `src/content/moments/` | 生活动态说说与即时随笔 |
+| `content/series/` | `src/content/series/` | 系列连载实体（每篇 Markdown 对应一个系列，含标题、状态与总览） |
 | `content/spec/` | `src/content/spec/` | 关于我与友链申请文案 |
 | `config/` | `src/user/user-config.ts` | 各功能领域的 YAML 覆盖配置（构建期自动生成桥接层） |
 | `data/` | `src/data/` | 设备、游戏、友链、项目、技能、时间线、罗盘等结构化数据 |
@@ -139,6 +140,7 @@ pnpm.cmd content:watch
 - `llms.yaml`：大语言模型与 AI 检索端点（/llms.txt 与 /llms-full.txt）及私密内容脱敏
 - `footer.yaml` 与 `footer.html`：页脚自定义 HTML 片段注入
 - `umami.yaml`：Umami 公开统计读取，以及可选的官方访问采集（`websiteId` 与 `scriptUrl` 必须同时填写）
+- `series.yaml`：系列连载展示、索引页标题描述与文章内系列卡位置
 
 ---
 

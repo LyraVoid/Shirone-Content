@@ -143,6 +143,7 @@ my-blog-content/
 ├── content/                 # 原创文章与生活动态
 │   ├── posts/               # Markdown / MDX 格式博客长文
 │   ├── moments/             # 动态生活说说
+│   ├── series/              # 系列连载实体（每篇 Markdown 对应一个系列）
 │   └── spec/                # 关于与友链申请文案
 ├── data/                    # 结构化数据实体（设备、友链、项目、技能等）
 ├── public/                  # 自定义相册照片与静态多媒体资源

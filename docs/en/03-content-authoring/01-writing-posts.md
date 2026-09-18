@@ -72,6 +72,12 @@ draft: false
 # Enable comments on this post (defaults to true)
 comment: true
 
+# Associated series slug (optional, matches content/series/<slug>.md)
+series: "starter-guide"
+
+# Sequential index within the series (optional integer; falls back to published date)
+seriesOrder: 1
+
 # Custom root permalink (optional, highest precedence, e.g. "notes/special" => /notes/special/)
 permalink: ""
 
@@ -120,6 +126,31 @@ hideHomeContent: true
 - Article bodies are encrypted into ciphertexts during build time; plain passwords are never bundled into client assets;
 - When visitors open an encrypted article, a prompt requests the password, which the client browser decrypts dynamically in memory;
 - Encrypted posts are automatically excluded from LLM discovery endpoints (`/llms.txt` and `/llms-full.txt`).
+
+---
+
+## Serial Post Series Linking (Series)
+
+When a post is part of an ongoing or completed article series, link it with `series` and `seriesOrder`:
+
+```yaml
+---
+title: "Markdown Field Cards"
+published: 2026-08-30
+category: "Guides"
+
+# Associated series slug (must match content/series/<slug>.md)
+series: "starter-guide"
+
+# Ordering index inside the series (optional integer; defaults to published date ascending)
+seriesOrder: 2
+---
+```
+
+1. **Series Entity Definition**: Create `<slug>.md` under `content/series/` (e.g., `starter-guide.md`), specifying the series `title`, `status` (`ongoing` or `completed`), optional `defaultCategory`, and overview Markdown body;
+2. **In-Post Series Card**: Posts declaring `series` render an in-post series block displaying the series title, reading progress (e.g. "Part 2 of 3"), and direct links to the previous and next articles in the series;
+3. **Layout & Placement**: The block position is determined by `cardPosition` in `config/series.yaml` (`top` or `bottom`); rendered seamlessly across standard routes and permalinks;
+4. **Index Page and Sidebar**: Readers can browse all series on the `/series/` showcase page and `/series/<slug>/` detail view, or via the `series` sidebar widget.
 
 ---
 
