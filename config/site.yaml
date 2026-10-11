@@ -1,124 +1,149 @@
-# site.yaml —— 站点全局基础配置
+# site.yaml —— 站点全局基础配置 Site global base configuration
 # 覆盖主题的 src/config/siteConfig.ts。只写想覆盖的项，未写的项沿用主题默认值。
+# Overrides src/config/siteConfig.ts. Only specify items you want to override; unspecified items use theme defaults.
 
-# 站点发布地址，必须以斜杠结尾
+# 站点发布地址，必须以斜杠结尾 / Site URL, must end with a slash
 site: "https://shirone.mysqil.com/"
 
 # 站点子路径，若部署在根目录保持 "/" 即可
+# Site base path; keep "/" if deployed at root
 base: "/"
 
-# 站点标题与副标题
+# 站点标题与副标题 / Site title and subtitle
 title: "Shirone"
 subtitle: "A Material 3 anime blog"
 
-# 站点语言代码，例如 zh_CN、en、ja
+# 站点语言代码 / Site language code
+# E.g. zh_CN、en、ja / e.g. zh_CN, en, ja
 lang: "zh_CN"
 
-# 站点时区（IANA 时区名称，例如 Asia/Shanghai、Asia/Tokyo、America/New_York）
+# 站点时区（IANA 时区名称） / Site timezone (IANA timezone name)
+# E.g. Asia/Shanghai、Asia/Tokyo、America/New_York / e.g. Asia/Shanghai, Asia/Tokyo, America/New_York
 # 用于解析文章精确发布时间（publishedAt / updatedAt）并统一文章排序与归档日期，独立于 lang
+# Used to parse exact post publish times (publishedAt/updatedAt) and unify post sorting and archive dates; independent of lang
 timeZone: "Asia/Shanghai"
 
-# 顶栏对齐排版
+# 顶栏对齐排版 / Top app bar alignment
 topAppBar:
-  # 电脑端顶栏标题与导航内容区域对齐方式："left" 靠左对齐，"center" 居中对齐
+  # 电脑端顶栏标题与导航内容区域对齐方式
+  # Desktop top bar title and navigation content alignment
+  # "left" 靠左对齐，"center" 居中对齐 / "left" or "center"
   contentAlign: "center"
 
 # 显示设置面板：控制前端访客可调节的显示偏好开关
+# Display settings panel: controls visitor-adjustable display preferences
 displaySettings:
-  colorStyle: true       # 配色风格九宫格选择器
-  colorSpec: true        # 配色规范切换
-  wallpaperMode: true    # 页面背景模式切换
-  layoutMode: true       # 文章列表布局切换
-  reduceMotion: true     # 减弱动效切换
-  texture: true          # 背景纹理切换
+  colorStyle: true       # 配色风格九宫格选择器 / Color style grid selector
+  colorSpec: true        # 配色规范切换 / Color spec toggle
+  wallpaperMode: true    # 页面背景模式切换 / Page background mode toggle
+  layoutMode: true       # 文章列表布局切换 / Post list layout toggle
+  reduceMotion: true     # 减弱动效切换 / Reduce motion toggle
+  texture: true          # 背景纹理切换 / Background texture toggle
 
-# 主题配色系统
+# 主题配色系统 / Theme color system
 themeColor:
   # 默认主题色相，范围 0 到 360，默认 315 为粉紫色
+  # Default theme hue, range 0-360; 315 is pink-purple
   hue: 315
   # 是否对访客固定主题色，设为 true 则隐藏前台取色器
+  # Fix theme color for visitors; true hides the color picker
   fixed: false
-  # 配色风格模式：tonalSpot | vibrant | content | expressive | rainbow | fruitSalad | monochrome | neutral | fidelity
+  # 配色风格模式 / Color style mode
+  # tonalSpot | vibrant | content | expressive | rainbow | fruitSalad | monochrome | neutral | fidelity
   style: "tonalSpot"
-  # 设计规范版本："2021" | "2025"
+  # 设计规范版本 / Design spec version
+  # "2021" | "2025"
   spec: "2025"
 
-# 默认背景模式
+# 默认背景模式 / Default wallpaper mode
 wallpaperMode:
-  # 初始默认背景："banner" 显示横幅壁纸，"none" 仅使用纯色背景
+  # 初始默认背景 / Initial default background
+  # "banner" 显示横幅壁纸，"none" 仅使用纯色背景
+  # "banner" shows banner wallpaper, "none" uses solid color only
   defaultMode: "banner"
 
-# 页面背景纹理系统
+# 页面背景纹理系统 / Page background texture system
 texture:
-  # 是否启用背景纹理系统
+  # 是否启用背景纹理系统 / Enable background texture system
   enable: true
-  # 默认纹理预设："none" | "starlight" | "cyber-dots" | "topography" | "geometric" | "sakura"
+  # 默认纹理预设 / Default texture preset
+  # "none" | "starlight" | "cyber-dots" | "topography" | "geometric" | "sakura"
   defaultPreset: "starlight"
   # 默认纹理浓度，建议范围 0.05 到 0.25
+  # Default texture opacity, recommended range 0.05-0.25
   defaultOpacity: 0.12
   # 是否启用背景微动效，开启减弱动效时会自动保持静止
+  # Enable background subtle motion; stays still when reduce motion is on
   allowMotion: true
 
-# 横幅壁纸配置
+# 横幅壁纸配置 / Banner wallpaper configuration
 banner:
   # 图片列表，支持相对路径、绝对路径与外部网络链接
+  # Image list; supports relative paths, absolute paths, and external URLs
   src:
     desktop:
       - "assets/images/banner/desktop/1.webp"
     mobile:
       - "assets/images/banner/mobile/1.webp"
-  # 图片裁切焦点："top" | "center" | "bottom"
+  # 图片裁切焦点 / Image crop focus
+  # "top" | "center" | "bottom"
   position: "center"
   # 遮罩配置，覆盖微暗层以提升前景文字对比度
+  # Dim overlay to improve foreground text contrast
   dim:
     enable: true
     opacity: 0.24
-  # 首页横幅文字
+  # 首页横幅文字 / Home page banner text
   homeText:
     enable: true
     title: "Shirone"
     # 副标题列表，支持配置多条用于打字机切换
+    # Subtitle list; multiple entries cycle with typewriter effect
     subtitle:
       - "特別なことはないけど、君がいると十分です"
       - "今でもあなたは私の光"
       - "君ってさ、知らないうちに私の毎日になってたよ"
       - "君と話すと、なんか毎日がちょっと楽しくなるんだ"
       - "今日はなんでもない日。でも、ちょっとだけいい日"
-    # 打字机动效
+    # 打字机动效 / Typewriter animation
     typewriter:
       enable: true
-      speed: 100         # 单字键入间隔，单位毫秒
-      deleteSpeed: 50     # 反向删除间隔，单位毫秒
-      pauseTime: 2000     # 键入完成后停留时长，单位毫秒
-      loop: true          # 是否循环播放
+      speed: 100         # 单字键入间隔，单位毫秒 / Typing interval per character, in ms
+      deleteSpeed: 50     # 反向删除间隔，单位毫秒 / Backspace interval, in ms
+      pauseTime: 2000     # 键入完成后停留时长，单位毫秒 / Pause after typing complete, in ms
+      loop: true          # 是否循环播放 / Loop playback
   # 多图自动轮播
+  # Auto carousel for multiple images
   carousel:
     enable: true
-    interval: 6000        # 切换间隔，单位毫秒，最小 3000
-    fadeDuration: 1200    # 淡入淡出过渡时长，单位毫秒
-    # 运镜动效："ken-burns" | "zoom-in" | "zoom-out" | "pan-left" | "pan-right" | "none"
+    interval: 6000        # 切换间隔，单位毫秒，最小 3000 / Switch interval, in ms (minimum 3000)
+    fadeDuration: 1200    # 淡入淡出过渡时长，单位毫秒 / Fade transition duration, in ms
+    # 运镜动效 / Camera animation effect
+    # "ken-burns" | "zoom-in" | "zoom-out" | "pan-left" | "pan-right" | "none"
     animation: "ken-burns"
-  # 底部动态波浪
+  # 底部动态波浪 / Animated waves at bottom
   waves:
     enable: true
 
-# 图片优化规则
+# 图片优化规则 / Image optimization rules
 imageOptimization:
   # 需要绕过防盗链的域名列表，会自动添加无引用头属性
+  # Domains requiring hotlink bypass; adds referrer="no-referrer" attribute automatically
   noReferrerDomains:
     - "*.hdslb.com"
 
-# 文章目录
+# 文章目录 / Table of contents
 toc:
   enable: true
-  depth: 2               # 最大目录展示深度，范围 1 到 3
+  depth: 2 # 最大目录展示深度，范围 1 到 3 / Max TOC display depth, range 1-3
 
-# 页面顶部加载进度条
+# 页面顶部加载进度条 / Loading progress bar at top of page
 progressIndicator:
   # 进度条样式："dual" 双向扫描，"single" 单向扫描
+  # Progress bar style: "dual" bidirectional scan, "single" unidirectional scan
   style: "dual"
 
-# 站点图标，留空则使用主题默认图标
+# 站点图标，留空则使用主题默认图标 / Site favicon; leave empty for theme default
 favicon: []
 #  - src: "/favicon/icon-light.png"
 #    theme: "light"

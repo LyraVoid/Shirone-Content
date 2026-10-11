@@ -1,20 +1,25 @@
-# umami.yaml —— Umami 网站统计配置
+# umami.yaml —— Umami 网站统计配置 Umami website analytics configuration
 # 覆盖主题的 src/config/umamiConfig.ts
+# Overrides src/config/umamiConfig.ts
 # 遵循零额外负担原则：关闭时不产生外部网络请求、零额外 DOM 占位与零包体积
+# Zero-overhead principle: no external requests, DOM, or bundle size when disabled
 
-# 是否全局启用 Umami 统计
+# 是否全局启用 Umami 统计 / Enable Umami analytics globally
 enable: false
 
-# Umami 分享链接（启用时必填）
+# Umami 分享链接（启用时必填） / Umami share URL (required when enabled)
 # 支持格式：
+# Supported formats:
 # - https://umami.example.com/share/<shareId>
 # - https://cloud.umami.is/analytics/us/share/<shareId>
 # - https://umami.example.com/analytics/share/<shareId>
 shareUrl: ""
 
 # 可选：只有需要让站点向 Umami 上报访问时，才同时填写以下两项。
+# Optional: fill both below only if the site should report visits to Umami.
 # 两项都留空时，仍可通过上方 shareUrl 读取公开统计；只填写其中一项不会加载采集脚本。
+# When both are empty, public stats can still be read via shareUrl; one alone won't load the tracker.
 # Umami Website ID
 # websiteId: "your-website-id"
-# Umami 采集脚本地址
+# Umami 采集脚本地址 / Umami tracker script URL
 # scriptUrl: "https://your-umami-instance.com/script.js"

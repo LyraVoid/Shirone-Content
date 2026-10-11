@@ -1,11 +1,14 @@
-# skills.yaml —— 技能图谱页配置
+# skills.yaml —— 技能图谱页配置 Skills map page configuration
 # 覆盖主题的 src/config/skillsConfig.ts
+# Overrides src/config/skillsConfig.ts
 # 具体技能条目清单请在 data/skills.ts 中维护
+# Maintain the actual skill entries in data/skills.ts
 
-# 页面总开关
+# 页面总开关 / Page master switch
 enable: true
 
 # 技能分类清单，数组顺序即顶部筛选标签顺序
+# Skill category list; array order determines top filter tab order
 categories:
   - key: "frontend"
     label: "前端"
@@ -19,5 +22,5 @@ categories:
     label: "工具"
     icon: "material-symbols:construction-rounded"
 
-# 可选临时禁用的技能名称清单
+# 可选临时禁用的技能名称清单 / Optional list of temporarily disabled skill names
 # disabledNames: []

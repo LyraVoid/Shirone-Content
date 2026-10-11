@@ -1,16 +1,18 @@
-# announcement.yaml —— 首页公告栏配置
+# announcement.yaml —— 首页公告栏配置 / Homepage announcement bar configuration
 # 覆盖主题的 src/config/announcementConfig.ts
+# Overrides the theme's src/config/announcementConfig.ts
 
 # 公告标题，留空时使用本地化语言文件默认标题
+# Announcement title; leave empty to use default from localization files
 title: ""
 
-# 公告正文内容
+# 公告正文内容 / Announcement body content
 content: "The only way to do great work is to love what you do."
 
-# 是否允许访客手动关闭公告
+# 是否允许访客手动关闭公告 / Allow visitors to manually dismiss the announcement
 closable: true
 
-# 公告附加链接
+# 公告附加链接 / Announcement link
 link:
   enable: true
   text: "GitHub"

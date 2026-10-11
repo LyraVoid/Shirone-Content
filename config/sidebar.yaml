@@ -1,24 +1,38 @@
 # sidebar.yaml —— 侧边栏布局与组件编排配置
+# Sidebar layout and component orchestration configuration
 # 覆盖主题的 src/config/sidebarConfig.ts
+# Overrides src/config/sidebarConfig.ts
 
 # 是否全局启用侧栏
+# Enable sidebar globally
 enable: true
 
 # 侧栏编排模式：
+# Sidebar arrangement mode:
 # - "single"：单栏模式，所有组件放入主侧栏，紧凑布局
+# - "single": single column, all components in main sidebar, compact layout
 # - "dual"：双栏模式，副栏组件在宽屏展开于屏幕另一侧
+# - "dual": dual column, secondary column expands on the other side on wide screens
 arrangement: "dual"
 
 # 主侧栏物理位置："left" 左侧，"right" 右侧
+# Main sidebar position: "left" or "right"
 side: "left"
 
 # 侧边栏组件清单，按数组顺序自上而下渲染
+# Sidebar component list, rendered top to bottom in array order
 # 属性说明：
+# Properties:
 # - type: 组件类型 ("profile" | "music" | "announcement" | "categories" | "tags" | "stats" | "calendar" | "toc")
+# - type: component type
 # - slot: 放置位置 ("top" 固定在顶部 | "sticky" 滚动吸顶跟随)
+# - slot: placement ("top" fixed at top | "sticky" scroll-following)
 # - column: 所在栏位 ("primary" 主栏 | "secondary" 副栏，仅在 dual 模式生效)
+# - column: column ("primary" | "secondary", only in dual mode)
 # - pages: 可见页面范围过滤，省略时全页面生效
+# - pages: visibility filter; omit for all pages
 # - collapseAfter: 折叠阈值，超出条数显示展开按钮
+# - collapseAfter: collapse threshold; shows expand button when exceeded
 components:
   - type: "profile"
     enable: true

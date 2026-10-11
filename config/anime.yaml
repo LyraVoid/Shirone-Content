@@ -1,62 +1,77 @@
-# anime.yaml —— 追番与追剧页面配置
+# anime.yaml —— 追番与追剧页面配置 Anime and drama tracking page configuration
 # 覆盖主题的 src/config/animeConfig.ts
+# Overrides src/config/animeConfig.ts
 
 # 页面总开关，开启后开放 /anime/ 页面入口与数据渲染
+# Page master switch; opens /anime/ page entry and data rendering when enabled
 enable: true
 
-# 主数据源配置
+# 主数据源配置 / Primary data source configuration
 source:
-  # 数据源模式：
+  # 数据源模式 / Data source mode:
   # - "local"：读取 data/anime.ts 本地数据，零外部依赖，稳定可控
+  #            reads local data from data/anime.ts, zero external dependencies
   # - "snapshot"：读取同步生成的本地脱敏快照文件
+  #               reads locally generated anonymized snapshot files
   kind: "local"
 
-  # 快照提供方，当 kind 为 "snapshot" 时指定："bangumi" | "bilibili"
+  # 快照提供方，当 kind 为 "snapshot" 时指定
+  # Snapshot provider when kind is "snapshot"
+  # "bangumi" | "bilibili"
   # provider: "bangumi"
 
-  # 快照文件名，如 "bangumi.json" 或 "bilibili.json"
+  # 快照文件名 / Snapshot filename
+  # E.g. "bangumi.json" | "bilibili.json"
   # file: "bangumi.json"
 
   # 开发调试时是否允许读取最新快照
+  # Allow reading latest snapshot during development
   fetchOnDev: true
 
 # 降级回退策略，当快照文件不存在或同步失败时触发
+# Fallback strategy when snapshot files are missing or sync fails
 fallback:
   # - "local"：静默回退至 data/anime.ts 本地数据，确保页面正常渲染不白屏
+  #            silently falls back to local data, ensuring page renders without blank screen
   # - "empty"：渲染空状态提示
+  #            renders empty state message
   kind: "local"
 
-# 外部数据源提供方配置
+# 外部数据源提供方配置 / External data provider configuration
 providers:
-  # Bangumi 数据同步
+  # Bangumi 数据同步 / Bangumi data sync
   bangumi:
-    # 是否启用 Bangumi 同步能力
+    # 是否启用 Bangumi 同步能力 / Enable Bangumi sync
     enable: false
-    # 用户 ID 或个性化域名
+    # 用户 ID 或个性化域名 / User ID or custom domain
     userId: ""
     # 网络请求调优选项
     request:
-      pageSize: 30       # 单页抓取数量
-      maxItems: 300      # 最大抓取条目上限
-      minDelayMs: 300    # 请求限流节流间隔，单位毫秒
+      pageSize: 30       # 单页抓取数量 / Items per page
+      maxItems: 300      # 最大抓取条目上限 / Maximum items to fetch
+      minDelayMs: 300    # 请求限流节流间隔，单位毫秒 / Request throttling interval, in ms
 
-  # Bilibili 数据同步
+  # Bilibili 数据同步 / Bilibili data sync
   bilibili:
-    # 是否启用 Bilibili 追番同步能力
+    # 是否启用 Bilibili 追番同步能力 / Enable Bilibili anime sync
     enable: false
-    # 用户数字 UID
+    # 用户数字 UID / User numeric UID
     vmid: ""
     # 存放登录凭据的环境变量名称，私密凭证严禁提交至代码仓库
+    # Environment variable name for login credentials; never commit secrets to repo
     sessdataEnv: "BILI_SESSDATA"
-    # 封面处理策略
+    # 封面处理策略 / Cover image handling strategy
     cover:
       # - "local"：下载封面至本地静态目录，零第三方外链请求
+      #            downloads covers to local static directory, no third-party image requests
       # - "remote"：直接加载远端图片链接
+      #             loads remote image URLs directly
       # - "none"：不使用封面，卡片呈现主题渐变占位
+      #           no covers, cards show theme gradient placeholder
       mode: "local"
-      # 可选封面镜像加速前缀
+      # 可选封面镜像加速前缀 / Optional cover image CDN prefix
       mirror: ""
-      # 是否使用 WebP 图片压缩格式
+      # 是否使用 WebP 图片压缩格式 / Use WebP image compression format
       useWebp: true
     # 网络请求调优选项
     request:
@@ -64,11 +79,13 @@ providers:
       maxItems: 300
       minDelayMs: 300
 
-# 快照存储与健康度策略
+# 快照存储与健康度策略 / Snapshot storage and health strategy
 snapshot:
-  # 快照保存目录路径
+  # 快照保存目录路径 / Snapshot save directory
   directory: "src/data/anime-snapshots"
   # 快照过期告警天数，仅在构建日志提示，不发起运行期自动请求
+  # Days after which snapshot is considered stale; builds log warning but no runtime requests
   staleAfterDays: 30
   # 外部拉取失败时是否保留上一次成功的有效快照
+  # Keep last valid snapshot when external fetch fails
   keepLastValid: true

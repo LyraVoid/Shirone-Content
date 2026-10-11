@@ -1,11 +1,15 @@
-# devices.yaml —— 个人设备展示页配置
+# devices.yaml —— 个人设备展示页配置 Personal devices showcase page configuration
 # 覆盖主题的 src/config/devicesConfig.ts
+# Overrides src/config/devicesConfig.ts
 # 具体设备条目清单请在 data/devices.ts 中维护
+# Maintain the actual device entries in data/devices.ts
 
 # 页面总开关，关闭后隐藏导航入口并重定向 404
+# Page master switch; hiding nav entry and redirecting to 404 when disabled
 enable: true
 
 # 设备分类清单，数组顺序即顶部筛选标签顺序
+# Device category list; array order determines top filter tab order
 categories:
   - key: "desk"
     label: "桌面工作站"
@@ -28,4 +32,5 @@ categories:
     description: "键盘、鼠标与桌面配件"
 
 # 可选临时禁用的设备 ID 清单
+# Optional list of temporarily disabled device IDs
 # disabledIds: []
