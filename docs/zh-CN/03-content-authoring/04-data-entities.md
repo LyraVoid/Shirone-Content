@@ -141,7 +141,7 @@ export const compassData = [
         label: "GitHub",
         href: "https://github.com",
         note: "全球领先的开源代码托管平台",
-        icon: "fa6-brands:github"
+        icon: "fa7-brands:github"
       },
       {
         label: "MDN Web Docs",
@@ -222,4 +222,3 @@ export const gamesData = [
 ```
 
 封面为可选字段 `cover`：省略时渲染图标卡片；填写时支持三种写法——内容仓 `assets/` 相对路径（参与构建期压缩转码，建议 16:9 或更宽的横屏图）、`/public` 绝对路径与远程 URL。
-
