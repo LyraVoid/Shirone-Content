@@ -45,15 +45,15 @@ twikoo:
   # 输入框占位提示文本 | Input placeholder text
   placeholder: "Share your thoughts..."
 
-# Giscus 专有配置，当 provider 为 "giscus" 时填写。
-# 基于 GitHub Discussions 存储评论，无需自建后端，仅需开启 Discussions 的公开仓库。
-# repo、repoId、categoryId 三者必填（从 https://giscus.app 获取）；
-# 任一缺失时评论区静默关闭，等价于未启用（零额外负担）
-#
-# Giscus settings; fill in when provider is "giscus".
-# Comments are stored via GitHub Discussions; no backend required.
-# repo, repoId, and categoryId are required (from https://giscus.app).
-# If any are missing, comments silently disable (zero overhead)
+# ┌─ ⚠️ Giscus 前置要求与注意事项 | Requirements & Notice ──
+# │ 基于 GitHub Discussions 存储评论，无需自建后端，仅需开启 Discussions 的公开仓库。
+# │ repo、repoId、categoryId 三者必填（从 https://giscus.app 配置生成器获取）；
+# │ 任一缺失时评论区静默关闭，等价于未启用（零额外负担）。
+# │
+# │ Comments are stored via GitHub Discussions; no backend required.
+# │ repo, repoId, and categoryId are required (from https://giscus.app).
+# │ If any are missing, comments silently disable (zero overhead).
+# └──────────────────────────────────────────────────────────
 giscus:
   # 公开 GitHub 仓库，格式 "owner/repo"（需开启 Discussions 并安装 giscus App）
   #

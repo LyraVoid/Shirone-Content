@@ -11,6 +11,8 @@
 # Page master switch; opens /anime/ page entry and data rendering when enabled
 enable: true
 
+# ── 数据源与降级策略 | Data Source & Fallback ──────────────
+
 # 主数据源配置 | Primary data source configuration
 source:
   # 数据源模式
@@ -46,6 +48,8 @@ fallback:
   # └─ empty : Render empty-state message
   kind: "local"
 
+# ── 外部数据源同步 | External Provider Sync ───────────────
+
 # 外部数据源提供方配置 | External data provider configuration
 providers:
   # Bangumi 数据同步 | Bangumi data sync
@@ -69,9 +73,11 @@ providers:
     enable: false
     # 用户数字 UID | User numeric UID
     vmid: ""
-    # 存放登录凭据的环境变量名称，私密凭证严禁提交至代码仓库
-    #
-    # Environment variable name for login credentials; never commit secrets to repo
+    # ┌─ ⚠️ 凭据安全说明 | Security Notice ───────────────────
+    # │ 存放登录凭据的环境变量名称；私密凭证严禁提交至代码仓库！
+    # │
+    # │ Environment variable name for credentials; NEVER commit secrets!
+    # └───────────────────────────────────────────────────────
     sessdataEnv: "BILI_SESSDATA"
     # 封面处理策略 | Cover image handling strategy
     cover:
@@ -94,6 +100,8 @@ providers:
       pageSize: 30
       maxItems: 300
       minDelayMs: 300
+
+# ── 快照存储与健康度 | Snapshot Storage & Health ──────────
 
 # 快照存储与健康度策略 | Snapshot storage and health strategy
 snapshot:

@@ -8,6 +8,8 @@
 # │ Unspecified items retain theme defaults
 # └──────────────────────────────────────────────────────────
 
+# ── 站点全局基础信息 | Global Site Metadata ───────────────
+
 # 站点发布地址，必须以斜杠结尾 | Site URL, must end with a slash
 site: "https://shirone.mysqil.com/"
 
@@ -28,6 +30,8 @@ lang: "zh_CN"
 #
 # Used to parse post times (publishedAt, updatedAt) and unify post sorting and archives
 timeZone: "Asia/Shanghai"
+
+# ── 顶栏排版与显示设置 | Top Bar & Display Settings ────────
 
 # 顶栏对齐排版 | Top app bar alignment
 topAppBar:
@@ -50,6 +54,8 @@ displaySettings:
   layoutMode: true       # 列表布局切换 | Post list layout toggle
   reduceMotion: true     # 减弱动效切换 | Reduce motion toggle
   texture: true          # 背景纹理切换 | Background texture toggle
+
+# ── 主题色彩与背景纹理 | Theme Color & Texture ─────────────
 
 # 主题配色系统 | Theme color system
 themeColor:
@@ -93,6 +99,8 @@ texture:
   #
   # Enable background subtle motion; stays still when reduce motion is on
   allowMotion: true
+
+# ── 首页横幅与动效编排 | Home Banner & Animations ──────────
 
 # 横幅壁纸配置 | Banner wallpaper configuration
 banner:
@@ -146,6 +154,8 @@ banner:
   # 底部动态波浪 | Animated waves at bottom
   waves:
     enable: true
+
+# ── 性能优化与界面细节 | Performance & UI Details ──────────
 
 # 图片优化规则 | Image optimization rules
 imageOptimization:

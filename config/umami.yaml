@@ -18,11 +18,13 @@ enable: false
 # - https://umami.example.com/analytics/share/<shareId>
 shareUrl: ""
 
-# 可选：仅当需要向 Umami 上报访问时，才同时填写以下两项。
-# 两项均留空时，仍可通过 shareUrl 读取公开统计；仅填写一项不会加载采集脚本
-#
-# Optional: fill both below only if reporting visits to Umami.
-# When empty, public stats remain readable via shareUrl; one alone won't load the tracker
+# ┌─ 💡 数据上报说明 | Tracking Notice ──────────────────────
+# │ 仅当需要向 Umami 上报访问时，才同时填写以下两项。
+# │ 两项均留空时，仍可通过上方 shareUrl 读取公开统计；仅填写其中一项不会加载采集脚本。
+# │
+# │ Fill both below ONLY if you want to report visits to Umami.
+# │ When empty, public stats remain readable via shareUrl; filling one alone won't load the tracker.
+# └──────────────────────────────────────────────────────────
 
 # Umami 站点 ID | Umami website ID
 # websiteId: "your-website-id"

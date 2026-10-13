@@ -6,6 +6,8 @@
 # │ Overrides: src/config/sidebarConfig.ts
 # └──────────────────────────────────────────────────────────
 
+# ── 布局与编排模式 | Layout & Mode ─────────────────────────
+
 # 是否全局启用侧栏 | Enable sidebar globally
 enable: true
 
@@ -27,21 +29,18 @@ arrangement: "dual"
 # └─ right : Right
 side: "left"
 
+# ── 组件清单编排 | Component Orchestration ─────────────────
+
 # 侧边栏组件清单，按数组顺序自上而下渲染
-# 属性说明：
-# - type: 组件类型（profile, music, announcement, categories, tags, stats, calendar, toc）
-# - slot: 放置位置（"top" 顶部固定 | "sticky" 滚动吸顶）
-# - column: 所在栏位（"primary" 主栏 | "secondary" 副栏，仅 dual 模式生效）
-# - pages: 可见页面过滤，省略时全页面生效
-# - collapseAfter: 折叠阈值，超出条数显示展开按钮
 #
-# Sidebar component list, rendered top to bottom in array order.
-# Properties:
-# - type: component type (profile, music, announcement, categories, tags, stats, calendar, toc)
-# - slot: placement ("top" at top | "sticky" follows scrolling)
-# - column: column ("primary" or "secondary", dual mode only)
-# - pages: visibility filter; omit for all pages
-# - collapseAfter: collapse threshold; shows expand button when exceeded
+# 组件属性速查表 | Component Properties:
+# 属性 / Property    说明 / Description         候选值 / Options
+# ───────────────── ────────────────────────── ──────────────────────────────────
+# type            : 组件类型                 profile, music, categories, ...
+# slot            : 放置位置                 "top"(顶部固定) | "sticky"(吸顶跟随)
+# column          : 所在栏位 (仅 dual 模式)  "primary"(主栏) | "secondary"(副栏)
+# pages           : 页面过滤                 省略时全站所有页面生效
+# collapseAfter   : 折叠阈值                 超出条数显示展开按钮
 components:
   - type: "profile"
     enable: true
