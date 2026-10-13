@@ -44,5 +44,5 @@ links:
       # 3. 自定义外部链接示例 / Custom external link example
       - name: "GitHub 源码"
         url: "https://github.com/LyraVoid/Shirone"
-        icon: "fa6-brands:github"
+        icon: "fa7-brands:github"
         external: true

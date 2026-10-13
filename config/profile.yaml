@@ -14,15 +14,15 @@ bio: "The rain remembers what the sky forgot to say."
 
 # 社交平台链接列表
 # Social platform links
-# 图标支持 Iconify 图标库名称，例如 fa6-brands:xxx、simple-icons:xxx、material-symbols:xxx
-# Icons support Iconify library names, e.g. fa6-brands:xxx, simple-icons:xxx, material-symbols:xxx
+# 图标支持 Iconify 图标库名称，例如 fa7-brands:xxx、simple-icons:xxx、material-symbols:xxx
+# Icons support Iconify library names, e.g. fa7-brands:xxx, simple-icons:xxx, material-symbols:xxx
 links:
   - name: "Twitter"
-    icon: "fa6-brands:twitter"
+    icon: "fa7-brands:twitter"
     url: "https://twitter.com"
   - name: "Steam"
-    icon: "fa6-brands:steam"
+    icon: "fa7-brands:steam"
     url: "https://store.steampowered.com"
   - name: "GitHub"
-    icon: "fa6-brands:github"
+    icon: "fa7-brands:github"
     url: "https://github.com/LyraVoid/Shirone"

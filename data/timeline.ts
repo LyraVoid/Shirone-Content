@@ -41,7 +41,7 @@ export const timelineData: TimelineItem[] = [
 			{
 				label: "主题源码",
 				url: "https://github.com/LyraVoid/Shirone",
-				icon: "fa6-brands:github",
+				icon: "fa7-brands:github",
 			},
 		],
 		icon: "material-symbols:rocket-launch-rounded",
