@@ -1,6 +1,6 @@
 # Shirone Official Content Template Repository
 
-[简体中文](./README.md) | **English** | [Documentation](./docs/README.md)
+[简体中文](./README.md) | **English** | [Documentation](./docs/en/README.md)
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Theme](https://img.shields.io/badge/Theme-Shirone-pink.svg)](https://github.com/LyraVoid/Shirone)

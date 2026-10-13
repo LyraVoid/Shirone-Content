@@ -1,6 +1,6 @@
 # Shirone Content Separation Guide
 
-[简体中文](../zh-CN/README.md) | [Documentation Index](../README.md)
+[简体中文](../zh-CN/README.md) | [Documentation Index](../README.md) | [Repository Home](../../README.en.md)
 
 Welcome to the Shirone Content Separation Documentation.
 

@@ -1,6 +1,6 @@
 # Shirone 官方内容模板仓库
 
-**简体中文** | [English](./README.en.md) | [文档中心](./docs/README.md)
+**简体中文** | [English](./README.en.md) | [文档中心](./docs/zh-CN/README.md)
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Theme](https://img.shields.io/badge/Theme-Shirone-pink.svg)](https://github.com/LyraVoid/Shirone)

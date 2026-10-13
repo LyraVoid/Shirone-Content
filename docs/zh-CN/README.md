@@ -1,6 +1,6 @@
 # Shirone 博客内容分离使用指南
 
-[English](../en/README.md) | [文档索引](../README.md)
+[English](../en/README.md) | [文档索引](../README.md) | [仓库首页](../../README.md)
 
 欢迎查阅 Shirone 博客主题的内容分离使用文档。
 
