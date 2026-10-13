@@ -9,14 +9,22 @@
 # 是否全局启用侧栏 | Enable sidebar globally
 enable: true
 
-# 侧栏编排模式 | Sidebar arrangement mode
-# single : 单栏模式（全部组件放入主侧栏，紧凑布局）| Single column (all in main sidebar, compact)
-# dual   : 双栏模式（副栏组件在宽屏展开于另一侧）| Dual column (secondary expands on wide screens)
+# 侧栏编排模式
+# ├─ single : 单栏模式（全部组件放入主侧栏，紧凑布局）
+# └─ dual   : 双栏模式（副栏组件在宽屏展开于另一侧）
+#
+# Sidebar arrangement mode
+# ├─ single : Single column (all in main sidebar, compact)
+# └─ dual   : Dual column (secondary expands on wide screens)
 arrangement: "dual"
 
-# 主侧栏物理位置 | Main sidebar position
-# left  : 靠左 | Left
-# right : 靠右 | Right
+# 主侧栏物理位置
+# ├─ left  : 靠左
+# └─ right : 靠右
+#
+# Main sidebar position
+# ├─ left  : Left
+# └─ right : Right
 side: "left"
 
 # 侧边栏组件清单，按数组顺序自上而下渲染

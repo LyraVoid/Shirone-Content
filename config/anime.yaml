@@ -13,12 +13,13 @@ enable: true
 
 # 主数据源配置 | Primary data source configuration
 source:
-  # 数据源模式 | Data source mode
-  # - "local"：读取 data/anime.ts 本地数据，零外部依赖，稳定可控
-  # - "snapshot"：读取同步生成的本地脱敏快照文件
+  # 数据源模式
+  # ├─ local    : 读取 data/anime.ts 本地数据，零外部依赖
+  # └─ snapshot : 读取同步生成的本地脱敏快照文件
   #
-  # - "local": reads data/anime.ts, zero external dependencies
-  # - "snapshot": reads locally generated anonymized snapshot files
+  # Data source mode
+  # ├─ local    : Reads data/anime.ts, zero external dependencies
+  # └─ snapshot : Reads locally generated anonymized snapshot files
   kind: "local"
 
   # 快照提供方，当 kind 为 "snapshot" 时指定 | Snapshot provider when kind is "snapshot"
@@ -36,9 +37,13 @@ source:
 #
 # Fallback strategy when snapshot files are missing or sync fails
 fallback:
-  # 降级模式 | Fallback mode
-  # local : 静默回退至 data/anime.ts 本地数据（不白屏）| Silently fall back to data/anime.ts
-  # empty : 渲染空状态提示 | Render empty-state message
+  # 降级模式
+  # ├─ local : 静默回退至 data/anime.ts 本地数据（不白屏）
+  # └─ empty : 渲染空状态提示
+  #
+  # Fallback mode
+  # ├─ local : Silently fall back to data/anime.ts
+  # └─ empty : Render empty-state message
   kind: "local"
 
 # 外部数据源提供方配置 | External data provider configuration
@@ -70,10 +75,15 @@ providers:
     sessdataEnv: "BILI_SESSDATA"
     # 封面处理策略 | Cover image handling strategy
     cover:
-      # 封面模式 | Cover mode
-      # local  : 下载至本地静态目录（零第三方外链请求）| Download locally (no third-party requests)
-      # remote : 直接加载远端图片链接 | Load remote image URLs directly
-      # none   : 不使用封面，呈现主题渐变占位 | No covers, theme gradient placeholders
+      # 封面模式
+      # ├─ local  : 下载至本地静态目录（零第三方外链请求）
+      # ├─ remote : 直接加载远端图片链接
+      # └─ none   : 不使用封面，呈现主题渐变占位
+      #
+      # Cover mode
+      # ├─ local  : Download locally (no third-party requests)
+      # ├─ remote : Load remote image URLs directly
+      # └─ none   : No covers, theme gradient placeholders
       mode: "local"
       # 可选封面镜像加速前缀 | Optional cover image CDN prefix
       mirror: ""

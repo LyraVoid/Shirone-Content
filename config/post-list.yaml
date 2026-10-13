@@ -11,18 +11,31 @@ pageSize: 8
 
 # 文章列表排版布局 | Post list layout
 layout:
-  # 初始排版模式 | Initial layout mode
-  # list : 单列列表 | Single-column list
-  # grid : 多列卡片 | Multi-column cards
+  # 初始排版模式
+  # ├─ list : 单列列表
+  # └─ grid : 多列卡片
+  #
+  # Initial layout mode
+  # ├─ list : Single-column list
+  # └─ grid : Multi-column cards
   mode: "list"
 
-  # 封面图片放置方向 | Cover image position
-  # left  : 靠左 | Left
-  # right : 靠右 | Right
+  # 封面图片放置方向
+  # ├─ left  : 靠左
+  # └─ right : 靠右
+  #
+  # Cover image position
+  # ├─ left  : Left
+  # └─ right : Right
   cover: "right"
 
-  # 网格卡片宽度档位，仅在 mode: "grid" 时生效 | Grid card width tier, only applies when mode is "grid"
-  # compact : 紧凑卡片（最小 20rem，高密度）| Compact (min 20rem, high-density)
-  # regular : 标准卡片（最小 24rem，默认推荐）| Regular (min 24rem, recommended)
-  # relaxed : 宽松大卡（最小 28rem，突出大图）| Relaxed (min 28rem, large image focus)
+  # 网格卡片宽度档位（仅 mode: "grid" 生效）
+  # ├─ compact : 紧凑卡片（最小 20rem，高密度）
+  # ├─ regular : 标准卡片（最小 24rem，默认推荐）
+  # └─ relaxed : 宽松大卡（最小 28rem，突出大图）
+  #
+  # Grid card width tier (only applies when mode is "grid")
+  # ├─ compact : Compact (min 20rem, high-density)
+  # ├─ regular : Regular (min 24rem, recommended)
+  # └─ relaxed : Relaxed (min 28rem, large image focus)
   cardWidth: "regular"

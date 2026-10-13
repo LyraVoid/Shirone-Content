@@ -31,9 +31,13 @@ timeZone: "Asia/Shanghai"
 
 # 顶栏对齐排版 | Top app bar alignment
 topAppBar:
-  # 电脑端顶栏标题与导航内容区域对齐方式 | Desktop top bar title and navigation content alignment
-  # left   : 靠左对齐 | Left
-  # center : 居中对齐 | Center
+  # 电脑端顶栏标题与导航内容区域对齐方式
+  # ├─ left   : 靠左对齐
+  # └─ center : 居中对齐
+  #
+  # Desktop top bar title and navigation content alignment
+  # ├─ left   : Left
+  # └─ center : Center
   contentAlign: "center"
 
 # 显示设置面板：控制前端访客可调节的显示偏好开关
@@ -67,9 +71,13 @@ themeColor:
 
 # 默认背景模式 | Default wallpaper mode
 wallpaperMode:
-  # 初始默认背景 | Initial default background
-  # banner : 横幅壁纸 | Banner wallpaper
-  # none   : 纯色背景 | Solid color only
+  # 初始默认背景
+  # ├─ banner : 横幅壁纸
+  # └─ none   : 纯色背景
+  #
+  # Initial default background
+  # ├─ banner : Banner wallpaper
+  # └─ none   : Solid color only
   defaultMode: "banner"
 
 # 页面背景纹理系统 | Page background texture system
@@ -155,9 +163,13 @@ toc:
 
 # 页面顶部加载进度条 | Loading progress bar at top of page
 progressIndicator:
-  # 进度条样式 | Progress bar style
-  # dual   : 双向扫描 | Bidirectional scan
-  # single : 单向扫描 | Unidirectional scan
+  # 进度条样式
+  # ├─ dual   : 双向扫描
+  # └─ single : 单向扫描
+  #
+  # Progress bar style
+  # ├─ dual   : Bidirectional scan
+  # └─ single : Unidirectional scan
   style: "dual"
 
 # 站点图标，留空则使用主题默认图标 | Site favicon; leave empty for theme default

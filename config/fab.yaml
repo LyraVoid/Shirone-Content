@@ -9,9 +9,13 @@
 # 是否启用右下角悬浮控制按钮 | Enable floating control button in bottom-right corner
 enable: true
 
-# 按钮对齐位置 | Button alignment
-# start : 靠左 | Left
-# end   : 靠右 | Right
+# 按钮对齐位置
+# ├─ start : 靠左
+# └─ end   : 靠右
+#
+# Button alignment
+# ├─ start : Left
+# └─ end   : Right
 align: "end"
 
 # 按钮尺寸 | Button size
@@ -23,12 +27,19 @@ offset:
   bottom: "var(--m3e-space-8)"
   right: "var(--m3e-space-6)"
 
-# 操作按钮清单，按数组顺序自上而下渲染 | Action buttons list, rendered top-to-bottom in array order
-# 按钮类型 | Button types:
-# top     : 返回顶部按钮（滚过横幅后浮现）| Back-to-top button (appears after scrolling past banner)
-# toc     : 文章目录抽屉按钮 | Table of contents drawer button
-# comment : 直达评论区按钮 | Jump to comments button
-# home    : 返回首页按钮（可设仅子页面显示）| Home button (can be limited to subpages)
+# 操作按钮清单，按数组顺序自上而下渲染
+# 按钮类型：
+# ├─ top     : 返回顶部按钮（滚过横幅后浮现）
+# ├─ toc     : 文章目录抽屉按钮
+# ├─ comment : 直达评论区按钮
+# └─ home    : 返回首页按钮（可设仅子页面显示）
+#
+# Action buttons list, rendered top-to-bottom in array order
+# Button types:
+# ├─ top     : Back-to-top button (appears after scrolling past banner)
+# ├─ toc     : Table of contents drawer button
+# ├─ comment : Jump to comments button
+# └─ home    : Home button (can be limited to subpages)
 items:
   - type: "top"
     enable: true

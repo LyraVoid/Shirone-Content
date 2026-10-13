@@ -11,10 +11,15 @@
 # 是否全局启用评论系统 | Globally enable the comment system
 enable: false
 
-# 评论服务提供商 | Comment provider
-# none   : 不启用 | Disabled
-# twikoo : 使用 Twikoo | Use Twikoo
-# giscus : 使用 Giscus | Use Giscus
+# 评论服务提供商
+# ├─ none   : 不启用
+# ├─ twikoo : 使用 Twikoo
+# └─ giscus : 使用 Giscus
+#
+# Comment provider
+# ├─ none   : Disabled
+# ├─ twikoo : Use Twikoo
+# └─ giscus : Use Giscus
 provider: "none"
 
 # 是否开启视口懒加载，滚动至评论区视口时才动态拉取脚本
@@ -76,9 +81,13 @@ giscus:
   #
   # Send Discussion metadata to the page (usually keep false)
   emitMetadata: false
-  # 评论输入框位置 | Comment input position
-  # bottom : 列表下方 | Below list
-  # top    : 列表上方 | Above list
+  # 评论输入框位置
+  # ├─ bottom : 列表下方
+  # └─ top    : 列表上方
+  #
+  # Comment input position
+  # ├─ bottom : Below list
+  # └─ top    : Above list
   inputPosition: "bottom"
   # 明暗两套 giscus 主题（主题键或自定义主题 CSS URL），自动跟随站点明暗切换
   #

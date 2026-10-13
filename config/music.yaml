@@ -9,25 +9,31 @@
 # 是否启用侧栏音乐播放器组件 | Enable sidebar music player component
 enable: true
 
-# 播放器工作模式 | Player mode
-# - "local"：本地模式，读取 data/music.ts 曲目列表，零外部请求，首屏极速加载
-# - "custom"：自定义模式，直接在下方 tracks 字段中编写曲目清单
-# - "meting"：云端歌单模式，通过 Meting 接口按需加载网易云或 QQ 音乐歌单
-# - "mixed"：混合模式，同时加载本地曲目与云端歌单，首屏立即可播且支持网络降级
+# 播放器工作模式
+# ├─ local  : 本地模式，读取 data/music.ts，零外部请求
+# ├─ custom : 自定义模式，直接在下方 tracks 字段配置
+# ├─ meting : 云端歌单模式，按需拉取网易云/QQ音乐歌单
+# └─ mixed  : 混合模式，首屏本地可播 + 云端网络降级
 #
-# - "local": reads data/music.ts playlist, zero external requests, instant first load
-# - "custom": write track list directly in the tracks field below
-# - "meting": loads NetEase or QQ Music playlists via Meting API on demand
-# - "mixed": loads both local tracks and cloud playlists; instant play with network fallback
+# Player mode
+# ├─ local  : Local mode (reads data/music.ts, zero requests)
+# ├─ custom : Custom mode (configured directly in tracks field)
+# ├─ meting : Cloud playlist mode (Meting API for playlists)
+# └─ mixed  : Mixed mode (instant local play with network fallback)
 provider: "mixed"
 
 # 默认音量，范围 0.0 到 1.0 | Default volume, range 0.0-1.0
 defaultVolume: 0.7
 
-# 默认播放循环模式 | Default playback loop mode
-# sequence : 顺序播放 | Sequential
-# loop     : 单曲循环 | Single track repeat
-# random   : 随机播放 | Shuffle
+# 默认播放循环模式
+# ├─ sequence : 顺序播放
+# ├─ loop     : 单曲循环
+# └─ random   : 随机播放
+#
+# Default playback loop mode
+# ├─ sequence : Sequential
+# ├─ loop     : Single track repeat
+# └─ random   : Shuffle
 defaultMode: "sequence"
 
 # 云端歌单配置，用于 meting 与 mixed 模式

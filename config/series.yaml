@@ -24,7 +24,11 @@ title: "$t:series"
 # When empty, system auto-generates dynamic stats (e.g. "x series · y posts")
 description: ""
 
-# 文章详情页中系列卡片的渲染位置 | Series card position in post detail page
-# top    : 顶部元信息区下方 | Below post header metadata
-# bottom : 正文底部与延伸阅读之后（默认）| Below post content and related reading (default)
+# 文章详情页中系列卡片的渲染位置
+# ├─ top    : 顶部元信息区下方
+# └─ bottom : 正文底部与延伸阅读之后（默认）
+#
+# Series card position in post detail page
+# ├─ top    : Below post header metadata
+# └─ bottom : Below post content and related reading (default)
 cardPosition: "bottom"

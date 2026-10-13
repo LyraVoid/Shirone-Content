@@ -29,9 +29,13 @@ categories:
     label: "生活"
     icon: "material-symbols:favorite-rounded"
 
-# 排序方向 | Sort direction
-# desc : 最新在前（默认）| Newest first (default)
-# asc  : 最早在前 | Oldest first
+# 排序方向
+# ├─ desc : 时间倒序，最新在前（默认）
+# └─ asc  : 时间正序，最早在前
+#
+# Sort direction
+# ├─ desc : Newest first (default)
+# └─ asc  : Oldest first
 order: "desc"
 
 # 可选临时禁用的事件标题清单 | Optional list of temporarily disabled event titles

@@ -6,9 +6,13 @@
 # │ Overrides: src/config/fontConfig.ts
 # └──────────────────────────────────────────────────────────
 
-# 字体构建模式 | Font build mode
-# custom : 自定义字体（加载下方 fontFamilies 配置的字体）| Custom fonts (loads font packages configured below)
-# system : 纯系统字体（不打包任何字体，依赖访客设备）| System fonts (no bundled fonts, minimal bandwidth)
+# 字体构建模式
+# ├─ custom : 自定义字体（加载下方 fontFamilies 配置的字体）
+# └─ system : 纯系统字体（不打包任何字体，依赖访客设备）
+#
+# Font build mode
+# ├─ custom : Custom fonts (loads font packages configured below)
+# └─ system : System fonts (no bundled fonts, minimal bandwidth)
 mode: "custom"
 
 # 字体角色清单，覆盖 body、cjk、mono 三大角色 | Font role list covering body, cjk, and mono
