@@ -1,24 +1,25 @@
-# series.yaml —— 系列连载配置 Series configuration
-# 覆盖主题的 src/config/seriesConfig.ts
-# Overrides src/config/seriesConfig.ts
+# 系列连载配置 | Series configuration
+# 覆盖配置 | Overrides: src/config/seriesConfig.ts
 
-# 页面与功能总开关：关闭后系列页返回 404、导航/侧栏系列入口隐藏、文章内系列卡不渲染（零额外负担）
-# Master switch: when disabled, series page returns 404, nav/sidebar entries hide, and in-post series cards don't render
+# 页面与功能总开关：关闭后系列页返回 404，导航/侧栏入口隐藏，文章内系列卡不渲染（零额外负担）
+#
+# Master switch: when disabled, series page returns 404,
+# nav/sidebar entries hide, and post series cards are omitted (zero overhead)
 enable: true
 
-# 系列索引页标题：$t: 前缀表示提取 i18n 多语言词条，普通字符串为字面量覆盖
-# Series index page title: $t: prefix extracts i18n translation key, plain string is literal override
+# 系列索引页标题：$t: 前缀提取 i18n 词条，普通字符串为字面量覆盖
+#
+# Series index page title: $t: extracts i18n key, plain string overrides literally
 title: "$t:series"
 
-# 系列索引页描述（SEO meta 摘要）：$t: 前缀提取 i18n 词条，普通字符串为字面量覆盖；
-# Series index page description (SEO meta): $t: prefix extracts i18n key, plain string is literal override;
+# 系列索引页描述（SEO meta 摘要）：$t: 前缀提取 i18n 词条，普通字符串为字面量覆盖。
 # 保持空字符串时，系统自动生成动态统计描述（例如「x 个系列 · y 篇文章」）
-# when empty, system auto-generates dynamic stats description (e.g. "x series · y posts")
+#
+# Series page description (SEO meta): $t: extracts i18n key, plain string overrides.
+# When empty, system auto-generates dynamic stats (e.g. "x series · y posts")
 description: ""
 
-# 文章详情页中系列卡片的渲染位置 / Series card position in post detail page
-# - "top": 放置在文章顶部元信息区下方
-# - "top": below post header metadata
-# - "bottom": 放置在文章正文底部与延伸阅读之后（默认）
-# - "bottom": below post content and related reading (default)
+# 文章详情页中系列卡片的渲染位置 | Series card position in post detail page
+# top    : 顶部元信息区下方 | Below post header metadata
+# bottom : 正文底部与延伸阅读之后（默认）| Below post content and related reading (default)
 cardPosition: "bottom"

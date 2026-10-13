@@ -1,13 +1,11 @@
-# timeline.yaml —— 大事记时间线页配置 Timeline page configuration
-# 覆盖主题的 src/config/timelineConfig.ts
-# Overrides src/config/timelineConfig.ts
-# 具体时间线节点清单请在 data/timeline.ts 中维护
-# Maintain the actual timeline entries in data/timeline.ts
+# 大事记时间线页配置 | Timeline page configuration
+# 覆盖配置 | Overrides: src/config/timelineConfig.ts
+# 具体时间线节点清单请在 data/timeline.ts 中维护 | Maintain actual timeline entries in data/timeline.ts
 
-# 页面总开关 / Page master switch
+# 页面总开关 | Page master switch
 enable: true
 
-# 时间线分类清单 / Timeline category list
+# 时间线分类清单 | Timeline category list
 categories:
   - key: "milestone"
     label: "里程碑"
@@ -25,11 +23,10 @@ categories:
     label: "生活"
     icon: "material-symbols:favorite-rounded"
 
-# 排序方向 / Sort direction
-# "desc" 时间倒序，最新在前，默认；"asc" 时间正序
-# "desc" newest first (default), "asc" oldest first
+# 排序方向 | Sort direction
+# desc : 最新在前（默认）| Newest first (default)
+# asc  : 最早在前 | Oldest first
 order: "desc"
 
-# 可选临时禁用的事件标题清单
-# Optional list of temporarily disabled event titles
+# 可选临时禁用的事件标题清单 | Optional list of temporarily disabled event titles
 # disabledTitles: []

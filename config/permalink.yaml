@@ -1,35 +1,34 @@
-# ==============================================================================
-# 文章固定链接配置 (Permalink Config) Permalink configuration
-# 全局文章 URL 格式模板与启用开关
-# Global post URL format template and enable switch
-# ==============================================================================
+# 文章固定链接配置 | Permalink configuration
+# 覆盖配置 | Overrides: src/config/permalinkConfig.ts
+# 全局文章 URL 格式模板与启用开关 | Global post URL format template and master switch
 
 # 是否开启全局固定链接（默认 false，关闭时文章链接为 /posts/<slug>/）
+#
 # Enable global permalinks (default false; post links are /posts/<slug>/ when disabled)
 enable: false
 
 # 全局固定链接格式模板（仅在 enable 为 true 时生效）
-# Global permalink format template (only applies when enable is true)
-# 可用占位符 / Available placeholders:
-#   - %year%          : 4 位年份 (例如: 2024) 4-digit year
-#   - %monthnum%      : 2 位月份 (例如: 01-12) 2-digit month
-#   - %day%           : 2 位日期 (例如: 01-31) 2-digit day
-#   - %hour%          : 2 位小时 (例如: 00-23) 2-digit hour
-#   - %minute%        : 2 位分钟 (例如: 00-59) 2-digit minute
-#   - %second%        : 2 位秒数 (例如: 00-59) 2-digit second
-#   - %post_id%       : 按发布时间升序排列的递增序号（排除草稿，从 1 开始）
-#                     Incremental ID by publish date (excludes drafts, starts at 1)
-#   - %postname%      : 文章文件名 slug（全小写） Post filename slug (lowercase)
-#   - %raw_postname%  : 保留大小写的原始文件名 Original filename with case preserved
-#   - %category%      : 文章分类名称（无分类时为 "uncategorized"）
-#                     Category name ("uncategorized" if none)
 #
-# 常见格式示例 / Common format examples:
+# Global permalink format template (only applies when enable is true)
+# 可用占位符 | Available placeholders:
+#   - %year%          : 4 位年份 | 4-digit year (2024)
+#   - %monthnum%      : 2 位月份 | 2-digit month (01–12)
+#   - %day%           : 2 位日期 | 2-digit day (01–31)
+#   - %hour%          : 2 位小时 | 2-digit hour (00–23)
+#   - %minute%        : 2 位分钟 | 2-digit minute (00–59)
+#   - %second%        : 2 位秒数 | 2-digit second (00–59)
+#   - %post_id%       : 递增数字序号（排除草稿，自 1 开始）| Incremental ID (from 1, excludes drafts)
+#   - %postname%      : 文章文件名 slug（全小写）| Post filename slug (lowercase)
+#   - %raw_postname%  : 原始文件名（保留大小写）| Original filename (case preserved)
+#   - %category%      : 分类名（无分类为 uncategorized）| Category name (uncategorized if none)
+#
+# 示例 | Examples:
 #   - "%year%/%monthnum%/%day%/%postname%"  => "/2024/12/01/my-post/"
 #   - "%year%-%monthnum%-%postname%"        => "/2024-12-my-post/"
 #   - "%post_id%-%postname%"                => "/42-my-post/"
 #   - "%category%/%postname%"               => "/tech/my-post/"
 #
 # 路径首尾的多余 "/" 会自动规范化，也可在单篇文章 frontmatter 中用 permalink 字段覆盖
+#
 # Extra leading/trailing "/" are auto-normalized; can be overridden in post frontmatter
 format: "%postname%"

@@ -1,19 +1,21 @@
-# nav-bar.yaml —— 顶部导航栏配置 / Top navigation bar configuration
-# 覆盖主题的 src/config/navBarConfig.ts 中的 links 列表，采用整体替换模式
-# Replaces the links list in src/config/navBarConfig.ts entirely
-# 支持使用主题内置预设、自定义链接以及包含子菜单的下拉分组
-# Supports theme presets, custom links, and dropdown groups with submenus
+# 顶部导航栏配置 | Top navigation bar configuration
+# 覆盖配置 | Overrides: src/config/navBarConfig.ts
+# 采用整体替换模式；支持主题预设、自定义链接与下拉分组
+#
+# Entirely replaces links list; supports presets, custom links, and dropdowns
 
-# 常用预设名称 / Common preset names
-# Home, Archive, Friends, Moments, Anime, Compass, Skills, Projects, Devices, Timeline, Albums, Categories, Tags, About
+# 常用预设名称 | Common preset names
+# Home, Archive, Friends, Moments, Anime, Compass, Skills,
+# Projects, Devices, Timeline, Albums, Categories, Tags, About
 
 links:
   # 1. 基础预设项，自动使用内置的多语言名称与标准图标
-  #    Basic presets, automatically use built-in i18n names and standard icons
+  #
+  # Built-in presets using localized titles and icons
   - preset: Home
   - preset: Archive
 
-  # 2. 下拉子菜单分组 / Dropdown submenu groups
+  # 2. 下拉子菜单分组 | Dropdown submenu groups
   - name: "链接"
     icon: "material-symbols:link-rounded"
     children:
@@ -41,7 +43,7 @@ links:
     children:
       - preset: Categories
       - preset: Tags
-      # 3. 自定义外部链接示例 / Custom external link example
+      # 3. 自定义外部链接示例 | Custom external link example
       - name: "GitHub 源码"
         url: "https://github.com/LyraVoid/Shirone"
         icon: "fa7-brands:github"

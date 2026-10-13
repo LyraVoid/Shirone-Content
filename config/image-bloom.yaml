@@ -1,15 +1,16 @@
-# image-bloom.yaml —— 图片色调辉光占位配置 Image color bloom placeholder configuration
-# 覆盖主题的 src/config/imageBloomConfig.ts
-# Overrides src/config/imageBloomConfig.ts
+# 图片色调辉光占位配置 | Image color bloom placeholder configuration
+# 覆盖配置 | Overrides: src/config/imageBloomConfig.ts
 
-# 是否开启图片加载时的色彩辉光防抖占位 / Enable color bloom debounced placeholder while images load
+# 是否开启图片加载时的色彩辉光防抖占位
+#
+# Enable color bloom placeholder while images load
 enable: true
 
-# 模糊半径，单位像素 / Blur radius in pixels
+# 模糊半径（px）| Blur radius (px)
 blurRadius: 20
 
-# 辉光不透明度，范围 0.0 到 1.0 / Bloom opacity, range 0.0 to 1.0
+# 辉光不透明度（0.0–1.0）| Bloom opacity (0.0–1.0)
 opacity: 0.7
 
-# 过渡动画时长，单位毫秒 / Transition animation duration in ms
+# 过渡动画时长（ms）| Transition animation duration (ms)
 transitionDuration: 300

@@ -1,19 +1,16 @@
-# font.yaml —— 全站字体配置 / Site-wide font configuration
-# 覆盖主题的 src/config/fontConfig.ts
-# Overrides src/config/fontConfig.ts
+# 全站字体配置 | Site-wide font configuration
+# 覆盖配置 | Overrides: src/config/fontConfig.ts
 
-# 字体构建模式 / Font build mode
-# - "custom"：启用自定义字体，加载下方 fontFamilies 中配置的字体包与本地字体
-#             enables custom fonts, loads font packages and local fonts configured below
-# - "system"：纯系统字体模式，不打包任何字体文件，完全依赖访客设备，极省流量
-#             system fonts only, no bundled font files, minimal bandwidth
+# 字体构建模式 | Font build mode
+# custom : 自定义字体（加载下方 fontFamilies 配置的字体）| Custom fonts (loads font packages configured below)
+# system : 纯系统字体（不打包任何字体，依赖访客设备）| System fonts (no bundled fonts, minimal bandwidth)
 mode: "custom"
 
-# 字体角色清单，覆盖 body、cjk、mono 三大角色
-# Font role list covering body, cjk, and mono
+# 字体角色清单，覆盖 body、cjk、mono 三大角色 | Font role list covering body, cjk, and mono
 fontFamilies:
   # 1. 基础正文字体，覆盖英文字母、数字与基础标点
-  #    Base body font for Latin letters, digits, and basic punctuation
+  #
+  # Base body font for Latin letters, digits, and basic punctuation
   - id: "outfit-body"
     family: "Outfit"
     role: "body"
@@ -36,7 +33,8 @@ fontFamilies:
     preload: false
 
   # 2. 中日韩字体，覆盖汉字、日文假名与韩文字符
-  #    CJK font for Chinese characters, Japanese kana, and Korean Hangul
+  #
+  # CJK font for Chinese characters, Japanese kana, and Korean Hangul
   - id: "yozai-cjk"
     family: "Yozai Medium"
     role: "cjk"
@@ -52,7 +50,8 @@ fontFamilies:
     preload: false
 
   # 3. 等宽代码字体，用于代码块、行内代码与终端排版
-  #    Monospace code font for code blocks, inline code, and terminal layout
+  #
+  # Monospace code font for code blocks, inline code, and terminal layout
   - id: "jetbrains-mono"
     family: "JetBrains Mono"
     role: "mono"
