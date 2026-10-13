@@ -141,7 +141,7 @@ export const compassData = [
         label: "GitHub",
         href: "https://github.com",
         note: "Global open-source code hosting platform",
-        icon: "fa6-brands:github"
+        icon: "fa7-brands:github"
       },
       {
         label: "MDN Web Docs",
@@ -222,4 +222,3 @@ export const gamesData = [
 ```
 
 The `cover` field is optional: without it the card renders an icon tile; with it, three forms are accepted — a path relative to the content repo `assets/` (processed by the build-time image pipeline, landscape 16:9 or wider recommended), an absolute `/public` path, or a remote URL.
-
