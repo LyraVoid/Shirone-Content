@@ -1,6 +1,12 @@
-# 技能图谱页配置 | Skills map page configuration
-# 覆盖配置 | Overrides: src/config/skillsConfig.ts
-# 具体技能条目清单请在 data/skills.ts 中维护 | Maintain actual skill entries in data/skills.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 技能图谱页配置
+# │ 覆盖配置：src/config/skillsConfig.ts
+# │ 具体技能条目清单请在 data/skills.ts 中维护
+# │
+# │ Skills map page configuration
+# │ Overrides: src/config/skillsConfig.ts
+# │ Maintain actual skill entries in data/skills.ts
+# └──────────────────────────────────────────────────────────
 
 # 页面总开关 | Page master switch
 enable: true

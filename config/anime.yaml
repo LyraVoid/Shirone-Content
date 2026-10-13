@@ -1,5 +1,10 @@
-# 追番与追剧页面配置 | Anime and drama tracking page configuration
-# 覆盖配置 | Overrides: src/config/animeConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 追番与追剧页面配置
+# │ 覆盖配置：src/config/animeConfig.ts
+# │
+# │ Anime and drama tracking page configuration
+# │ Overrides: src/config/animeConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 页面总开关，开启后开放 /anime/ 页面入口与数据渲染
 #

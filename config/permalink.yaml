@@ -1,6 +1,12 @@
-# 文章固定链接配置 | Permalink configuration
-# 覆盖配置 | Overrides: src/config/permalinkConfig.ts
-# 全局文章 URL 格式模板与启用开关 | Global post URL format template and master switch
+# ┌──────────────────────────────────────────────────────────
+# │ 文章固定链接配置
+# │ 覆盖配置：src/config/permalinkConfig.ts
+# │ 全局文章 URL 格式模板与启用开关
+# │
+# │ Permalink configuration
+# │ Overrides: src/config/permalinkConfig.ts
+# │ Global post URL format template and master switch
+# └──────────────────────────────────────────────────────────
 
 # 是否开启全局固定链接（默认 false，关闭时文章链接为 /posts/<slug>/）
 #

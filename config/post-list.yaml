@@ -1,5 +1,10 @@
-# 文章列表页布局配置 | Post list page layout configuration
-# 覆盖配置 | Overrides: src/config/postListConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 文章列表页布局配置
+# │ 覆盖配置：src/config/postListConfig.ts
+# │
+# │ Post list page layout configuration
+# │ Overrides: src/config/postListConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 每页展示文章数量 | Posts per page
 pageSize: 8

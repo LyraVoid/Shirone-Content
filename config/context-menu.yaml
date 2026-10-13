@@ -1,5 +1,10 @@
-# 桌面端右键上下文菜单配置 | Desktop right-click context menu configuration
-# 覆盖配置 | Overrides: src/config/contextMenuConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 桌面端右键上下文菜单配置
+# │ 覆盖配置：src/config/contextMenuConfig.ts
+# │
+# │ Desktop right-click context menu configuration
+# │ Overrides: src/config/contextMenuConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 主开关：是否启用桌面端自定义右键上下文菜单
 # 设为 false 时零 DOM、零脚本、零网络请求

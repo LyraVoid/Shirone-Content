@@ -1,8 +1,12 @@
-# 评论系统配置 | Comment system configuration
-# 覆盖配置 | Overrides: src/config/commentConfig.ts
-# 遵循零额外负担原则：关闭时不产生外部网络请求、零额外 DOM 占位与零包体积
-#
-# Zero-overhead principle: when disabled, no external requests, zero extra DOM, zero bundle size
+# ┌──────────────────────────────────────────────────────────
+# │ 评论系统配置
+# │ 覆盖配置：src/config/commentConfig.ts
+# │ 遵循零额外负担原则：关闭时不产生外部网络请求、零额外 DOM 占位与零包体积
+# │
+# │ Comment system configuration
+# │ Overrides: src/config/commentConfig.ts
+# │ Zero-overhead principle: no external requests, DOM, or bundle size when disabled
+# └──────────────────────────────────────────────────────────
 
 # 是否全局启用评论系统 | Globally enable the comment system
 enable: false

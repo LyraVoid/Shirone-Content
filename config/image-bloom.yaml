@@ -1,5 +1,10 @@
-# 图片色调辉光占位配置 | Image color bloom placeholder configuration
-# 覆盖配置 | Overrides: src/config/imageBloomConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 图片色调辉光占位配置
+# │ 覆盖配置：src/config/imageBloomConfig.ts
+# │
+# │ Image color bloom placeholder configuration
+# │ Overrides: src/config/imageBloomConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 是否开启图片加载时的色彩辉光防抖占位
 #

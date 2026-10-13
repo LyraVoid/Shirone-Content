@@ -1,5 +1,10 @@
-# 侧边栏布局与组件编排 | Sidebar layout and components
-# 覆盖配置 | Overrides: src/config/sidebarConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 侧边栏布局与组件编排
+# │ 覆盖配置：src/config/sidebarConfig.ts
+# │
+# │ Sidebar layout and components
+# │ Overrides: src/config/sidebarConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 是否全局启用侧栏 | Enable sidebar globally
 enable: true

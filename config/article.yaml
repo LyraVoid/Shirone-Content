@@ -1,5 +1,10 @@
-# 文章详情页配置 | Article detail page configuration
-# 覆盖配置 | Overrides: src/config/articleConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 文章详情页配置
+# │ 覆盖配置：src/config/articleConfig.ts
+# │
+# │ Article detail page configuration
+# │ Overrides: src/config/articleConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 文章最后更新提示 | Article last-updated notice
 lastUpdated:

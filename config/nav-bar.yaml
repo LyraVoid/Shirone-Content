@@ -1,8 +1,12 @@
-# 顶部导航栏配置 | Top navigation bar configuration
-# 覆盖配置 | Overrides: src/config/navBarConfig.ts
-# 采用整体替换模式；支持主题预设、自定义链接与下拉分组
-#
-# Entirely replaces links list; supports presets, custom links, and dropdowns
+# ┌──────────────────────────────────────────────────────────
+# │ 顶部导航栏配置
+# │ 覆盖配置：src/config/navBarConfig.ts
+# │ 采用整体替换模式；支持主题预设、自定义链接与下拉分组
+# │
+# │ Top navigation bar configuration
+# │ Overrides: src/config/navBarConfig.ts
+# │ Entirely replaces links list; supports presets, custom links, and dropdowns
+# └──────────────────────────────────────────────────────────
 
 # 常用预设名称 | Common preset names
 # Home, Archive, Friends, Moments, Anime, Compass, Skills,

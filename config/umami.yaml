@@ -1,8 +1,12 @@
-# Umami 网站统计配置 | Umami website analytics configuration
-# 覆盖配置 | Overrides: src/config/umamiConfig.ts
-# 遵循零额外负担原则：关闭时不产生外部网络请求、零额外 DOM 占位与零包体积
-#
-# Zero-overhead principle: no external requests, DOM, or bundle size when disabled
+# ┌──────────────────────────────────────────────────────────
+# │ Umami 网站统计配置
+# │ 覆盖配置：src/config/umamiConfig.ts
+# │ 遵循零额外负担原则：关闭时不产生外部网络请求、零额外 DOM 占位与零包体积
+# │
+# │ Umami website analytics configuration
+# │ Overrides: src/config/umamiConfig.ts
+# │ Zero-overhead principle: no external requests, DOM, or bundle size when disabled
+# └──────────────────────────────────────────────────────────
 
 # 是否全局启用 Umami 统计 | Enable Umami analytics globally
 enable: false

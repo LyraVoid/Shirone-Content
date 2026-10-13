@@ -1,5 +1,10 @@
-# 系列连载配置 | Series configuration
-# 覆盖配置 | Overrides: src/config/seriesConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 系列连载配置
+# │ 覆盖配置：src/config/seriesConfig.ts
+# │
+# │ Series configuration
+# │ Overrides: src/config/seriesConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 页面与功能总开关：关闭后系列页返回 404，导航/侧栏入口隐藏，文章内系列卡不渲染（零额外负担）
 #

@@ -1,5 +1,10 @@
-# 全站字体配置 | Site-wide font configuration
-# 覆盖配置 | Overrides: src/config/fontConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 全站字体配置
+# │ 覆盖配置：src/config/fontConfig.ts
+# │
+# │ Site-wide font configuration
+# │ Overrides: src/config/fontConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 字体构建模式 | Font build mode
 # custom : 自定义字体（加载下方 fontFamilies 配置的字体）| Custom fonts (loads font packages configured below)

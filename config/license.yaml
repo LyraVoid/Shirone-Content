@@ -1,5 +1,10 @@
-# 文章版权协议配置 | Article copyright license configuration
-# 覆盖配置 | Overrides: src/config/licenseConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 文章版权协议配置
+# │ 覆盖配置：src/config/licenseConfig.ts
+# │
+# │ Article copyright license configuration
+# │ Overrides: src/config/licenseConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 是否在文章底部展示版权声明卡片 | Display copyright notice card at the bottom of articles
 enable: true

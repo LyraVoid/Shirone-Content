@@ -1,6 +1,12 @@
-# 站点全局基础配置 | Site global base configuration
-# 覆盖配置 | Overrides: src/config/siteConfig.ts
-# 未配置的项自动沿用主题默认值 | Unspecified items retain theme defaults
+# ┌──────────────────────────────────────────────────────────
+# │ 站点全局基础配置
+# │ 覆盖配置：src/config/siteConfig.ts
+# │ 未配置的项自动沿用主题默认值
+# │
+# │ Site global base configuration
+# │ Overrides: src/config/siteConfig.ts
+# │ Unspecified items retain theme defaults
+# └──────────────────────────────────────────────────────────
 
 # 站点发布地址，必须以斜杠结尾 | Site URL, must end with a slash
 site: "https://shirone.mysqil.com/"

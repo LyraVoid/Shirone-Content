@@ -1,6 +1,12 @@
-# 游戏展示页配置 | Games showcase page configuration
-# 覆盖配置 | Overrides: src/config/gamesConfig.ts
-# 具体游戏条目清单请在 data/games.ts 中维护 | Maintain actual game entries in data/games.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 游戏展示页配置
+# │ 覆盖配置：src/config/gamesConfig.ts
+# │ 具体游戏条目清单请在 data/games.ts 中维护
+# │
+# │ Games showcase page configuration
+# │ Overrides: src/config/gamesConfig.ts
+# │ Maintain actual game entries in data/games.ts
+# └──────────────────────────────────────────────────────────
 
 # 页面总开关，关闭后隐藏导航入口并返回 404
 #

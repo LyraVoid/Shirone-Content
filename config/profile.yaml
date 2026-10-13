@@ -1,5 +1,10 @@
-# 博主个人资料配置 | Blogger profile configuration
-# 覆盖配置 | Overrides: src/config/profileConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 博主个人资料配置
+# │ 覆盖配置：src/config/profileConfig.ts
+# │
+# │ Blogger profile configuration
+# │ Overrides: src/config/profileConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 头像路径，支持以 "/" 开头的绝对路径、相对路径或外部网络链接
 #

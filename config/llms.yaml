@@ -1,8 +1,12 @@
-# LLMs 文本端点配置 | LLMs text endpoint configuration
-# 覆盖配置 | Overrides: src/config/llmsConfig.ts
-# 只写想改的键，其余保持主题默认值；契约说明见 docs/content-separation.md
-#
-# Only specify keys to change; others use defaults. See docs/content-separation.md
+# ┌──────────────────────────────────────────────────────────
+# │ LLMs 文本端点配置
+# │ 覆盖配置：src/config/llmsConfig.ts
+# │ 只写想改的键，其余保持主题默认值；契约说明见 docs/content-separation.md
+# │
+# │ LLMs text endpoint configuration
+# │ Overrides: src/config/llmsConfig.ts
+# │ Only specify keys to change; others use defaults. See docs/content-separation.md
+# └──────────────────────────────────────────────────────────
 
 # 是否启用 /llms.txt 与 /llms-full.txt 静态端点生成（默认为 true）
 #

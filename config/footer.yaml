@@ -1,5 +1,10 @@
-# 页脚自定义内容配置 | Footer custom content configuration
-# 覆盖配置 | Overrides: src/config/footerConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 页脚自定义内容配置
+# │ 覆盖配置：src/config/footerConfig.ts
+# │
+# │ Footer custom content configuration
+# │ Overrides: src/config/footerConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 是否在页脚版权上方注入自定义 HTML 内容，开启后读取当前目录下的 footer.html
 #

@@ -1,5 +1,10 @@
-# 代码高亮主题配置 | Code highlighting theme configuration
-# 覆盖配置 | Overrides: src/config/expressiveCodeConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 代码高亮主题配置
+# │ 覆盖配置：src/config/expressiveCodeConfig.ts
+# │
+# │ Code highlighting theme configuration
+# │ Overrides: src/config/expressiveCodeConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 代码块默认高亮主题 | Default code block highlighting theme
 theme: "github-dark"

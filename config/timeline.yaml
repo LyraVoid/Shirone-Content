@@ -1,6 +1,12 @@
-# 大事记时间线页配置 | Timeline page configuration
-# 覆盖配置 | Overrides: src/config/timelineConfig.ts
-# 具体时间线节点清单请在 data/timeline.ts 中维护 | Maintain actual timeline entries in data/timeline.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 大事记时间线页配置
+# │ 覆盖配置：src/config/timelineConfig.ts
+# │ 具体时间线节点清单请在 data/timeline.ts 中维护
+# │
+# │ Timeline page configuration
+# │ Overrides: src/config/timelineConfig.ts
+# │ Maintain actual timeline entries in data/timeline.ts
+# └──────────────────────────────────────────────────────────
 
 # 页面总开关 | Page master switch
 enable: true

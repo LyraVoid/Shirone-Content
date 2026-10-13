@@ -1,5 +1,10 @@
-# 首页公告栏配置 | Homepage announcement bar configuration
-# 覆盖配置 | Overrides: src/config/announcementConfig.ts
+# ┌──────────────────────────────────────────────────────────
+# │ 首页公告栏配置
+# │ 覆盖配置：src/config/announcementConfig.ts
+# │
+# │ Homepage announcement bar configuration
+# │ Overrides: src/config/announcementConfig.ts
+# └──────────────────────────────────────────────────────────
 
 # 公告标题，留空时使用本地化语言文件默认标题
 #
