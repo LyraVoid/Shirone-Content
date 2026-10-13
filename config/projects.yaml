@@ -1,11 +1,14 @@
-# projects.yaml —— 开源项目页配置
+# projects.yaml —— 开源项目页配置 Open source projects page configuration
 # 覆盖主题的 src/config/projectsConfig.ts
+# Overrides src/config/projectsConfig.ts
 # 具体项目条目清单请在 data/projects.ts 中维护
+# Maintain the actual project entries in data/projects.ts
 
-# 页面总开关
+# 页面总开关 / Page master switch
 enable: true
 
 # 项目分类清单，数组顺序即顶部筛选标签顺序
+# Project category list; array order determines top filter tab order
 categories:
   - key: "theme"
     label: "主题"
@@ -19,5 +22,5 @@ categories:
     label: "工具"
     icon: "material-symbols:build-outline-rounded"
 
-# 可选临时禁用的项目 Key 清单
+# 可选临时禁用的项目 Key 清单 / Optional list of temporarily disabled project keys
 # disabledKeys: []

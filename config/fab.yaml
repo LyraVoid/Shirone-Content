@@ -1,26 +1,34 @@
-# fab.yaml —— 悬浮操作按钮栏配置
+# fab.yaml —— 悬浮操作按钮栏配置 / Floating action button bar configuration
 # 覆盖主题的 src/config/fabConfig.ts
+# Overrides src/config/fabConfig.ts
 
-# 是否启用右下角悬浮控制按钮
+# 是否启用右下角悬浮控制按钮 / Enable floating control button in bottom-right corner
 enable: true
 
-# 按钮对齐位置："start" 靠左，"end" 靠右
+# 按钮对齐位置 / Button alignment
+# "start" 靠左，"end" 靠右 / "start" = left, "end" = right
 align: "end"
 
-# 按钮尺寸规格："small", "regular", "large"
+# 按钮尺寸 / Button size
+# "small", "regular", "large"
 size: "regular"
 
-# 边距偏移量
+# 边距偏移量 / Margin offsets
 offset:
   bottom: "var(--m3e-space-8)"
   right: "var(--m3e-space-6)"
 
 # 操作按钮清单，按数组顺序自上而下渲染
-# 按钮类型说明：
+# Action buttons list, rendered top-to-bottom in array order
+# 按钮类型 / Button types:
 # - "top"：返回顶部按钮，滚过横幅后自动浮现
+#          Back-to-top button, appears after scrolling past banner
 # - "toc"：文章目录抽屉按钮
+#          Table of contents drawer button
 # - "comment"：直达评论区按钮
+#              Jump to comments button
 # - "home"：返回首页按钮，onlySubPages: true 表示仅在子页面显示
+#           Back to home; onlySubPages: true shows only on subpages
 items:
   - type: "top"
     enable: true

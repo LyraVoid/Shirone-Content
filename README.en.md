@@ -20,14 +20,8 @@ When content is pushed, automated workflows trigger a rebuild with your latest c
 
 Documentation is available in the `docs/` directory (excluded from builds and synchronization):
 
-| Section | Link | Summary |
-| :--- | :--- | :--- |
-| **Quickstart** | [01-quickstart/](./docs/en/01-quickstart/01-concepts.md) | Concepts, `content:eject` decoupling migration, local preview, and CLI workflows |
-| **Configuration** | [02-configuration/](./docs/en/02-configuration/01-overlay-principles.md) | Minimal overlay principle, site foundation, navigation, music, fonts, and comments |
-| **Content Authoring** | [03-content-authoring/](./docs/en/03-content-authoring/01-writing-posts.md) | Post publishing, moments, album management, data entities, and Markdown extensions |
-| **Deployment** | [04-deployment/](./docs/en/04-deployment/01-github-actions-dispatch.md) | GitHub Actions cross-repo trigger, hosting platform deploy hooks, and troubleshooting |
-| **English Docs** | [English Guide](./docs/en/README.md) | Full English documentation overview and chapters |
-| **Chinese Docs** | [中文文档](./docs/zh-CN/README.md) | Complete documentation in Simplified Chinese |
+- [English Documentation](./docs/en/README.md) — Complete guide covering quickstart, configuration, content authoring, and deployment
+- [中文文档](./docs/zh-CN/README.md) — Complete documentation in Simplified Chinese
 
 ---
 

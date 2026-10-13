@@ -20,14 +20,8 @@
 
 本仓库内置了完整的使用文档，存放在 `docs/` 目录下（该目录已被构建与同步排除）：
 
-| 教程模块 | 入口链接 | 核心内容说明 |
-| :--- | :--- | :--- |
-| **快速入门** | [01-quickstart/](./docs/zh-CN/01-quickstart/01-concepts.md) | 概念理解、`content:eject` 一键解耦迁出、本地预览与 CLI 工作流 |
-| **全站配置** | [02-configuration/](./docs/zh-CN/02-configuration/01-overlay-principles.md) | 最小化配置覆盖原理、站点基础、导航侧栏、追番音乐、字体与评论 |
-| **内容撰写** | [03-content-authoring/](./docs/zh-CN/03-content-authoring/01-writing-posts.md) | 文章发布、动态说说、相册管理、数据实体维护与 Markdown 扩展排版语法 |
-| **自动部署** | [04-deployment/](./docs/zh-CN/04-deployment/01-github-actions-dispatch.md) | GitHub Actions 跨仓自动构建、云平台 Deploy Hook 与常见问题排查 |
-| **中文全景** | [中文教程全景](./docs/zh-CN/README.md) | 所有模块的全景导览与速查索引 |
-| **English** | [English Docs](./docs/en/README.md) | Complete documentation in English |
+- [中文教程全景](./docs/zh-CN/README.md) —— 快速入门、全站配置、内容撰写与自动部署的完整指南
+- [English Documentation](./docs/en/README.md) —— Complete guide in English
 
 ---
 
