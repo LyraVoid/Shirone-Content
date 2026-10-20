@@ -2,10 +2,11 @@
 
 Shirone 遵循**零额外负担原则**：当评论系统未启用（`enable: false` 或省略）时，系统绝不发起任何外部网络请求，客户端不加载任何第三方 JS 脚本，保持纯净性能。
 
-本篇文档介绍如何通过 `config/comment.yaml` 接入评论系统。当前支持两个 Provider：
+本篇文档介绍如何通过 `config/comment.yaml` 接入评论系统。当前支持三个 Provider：
 
 - [Twikoo](https://twikoo.js.org/)：需要自建或托管后端（Vercel、Railway、腾讯云开发、独立服务器等）；
-- [Giscus](https://giscus.app/)：基于 GitHub Discussions，**零后端**，评论数据存储在你自己的公开仓库中。
+- [Giscus](https://giscus.app/)：基于 GitHub Discussions，**零后端**，评论数据存储在你自己的公开仓库中；
+- [Waline](https://waline.js.org/)：需要自建或托管服务端（Vercel、Deta、Railway、独立服务器等），支持匿名评论、登录、表情与文章表情反应。
 
 评论系统在文章底部的展示效果：
 
@@ -103,6 +104,72 @@ giscus:
   # giscus client.js 地址；自托管 giscus 时替换为自有地址
   scriptUrl: "https://giscus.app/client.js"
 ```
+
+---
+
+## 接入 Waline
+
+Waline 的评论区沿用主题为 Twikoo 设计的线条样式，评论框中的表情会显示为图标，文章顶部可显示表情反应。
+
+### 第一步：部署 Waline 服务端
+
+参考 [Waline 官方文档](https://waline.js.org/guide/get-started/) 部署服务端（支持 Vercel、Deta、Railway 或独立服务器），记下服务端地址（例如 `https://comments.example.com`）。
+
+### 第二步：修改 `config/comment.yaml`
+
+```yaml
+enable: true
+provider: "waline"
+
+waline:
+  # 第一步得到的服务端地址，必须是 http(s) 地址
+  serverURL: "https://comments.example.com"
+```
+
+`serverURL` **必填**：留空或不是 http(s) 地址时评论区静默关闭（与全局未启用完全等价，不报错、零额外负担）。客户端的 JS 与 CSS 只在评论区进入视口后加载，默认使用 jsDelivr 上的 `@waline/client@3.16.1`。
+
+### 可选参数
+
+```yaml
+waline:
+  # ...必填字段同上...
+  # 客户端脚本与样式地址；自托管或升级时两者须保持同一版本
+  scriptUrl: "https://cdn.jsdelivr.net/npm/@waline/client@3.16.1/dist/waline.umd.js"
+  styleUrl: "https://cdn.jsdelivr.net/npm/@waline/client@3.16.1/dist/waline.css"
+  # 语言："auto" 跟随文章/站点语言（未内置的语言回退 "en"），或 Waline 语言码（如 "zh-CN"、"en"、"jp"）
+  lang: "auto"
+  # 文案覆盖；省略的字段沿用当前语言的默认文案
+  locale:
+    placeholder: "欢迎留下你的想法与评论..."
+  # 表情：true 使用 Waline 默认表情包，false 关闭，也可填写表情包地址列表
+  emoji: true
+  # 评论排序：latest | oldest | hottest
+  commentSorting: "latest"
+  # 评论者信息字段与其中的必填项；requiredMeta 为空数组时允许匿名评论
+  meta: ["nick", "mail", "link"]
+  requiredMeta: []
+  # 登录模式：enable（可登录也可匿名）| disable（不显示登录）| force（必须登录）
+  login: "enable"
+  # 评论字数限制，0 为不限制
+  wordLimit: 0
+  # 每页评论条数
+  pageSize: 10
+  # 图片上传、代码高亮与 TeX 只接受 true / false
+  imageUploader: true
+  highlighter: true
+  texRenderer: false
+  # 隐藏页脚版权信息 / RSS 订阅链接
+  noCopyright: false
+  noRss: true
+  # 人机验证密钥，留空不启用
+  recaptchaV3Key: ""
+  turnstileKey: ""
+  # 文章表情反应：true 显示，false 隐藏，也可填写自定义表情图片地址列表
+  reaction: true
+```
+
+> [!NOTE]
+> 配置以 JSON 形式写入页面，因此 `imageUploader`、`highlighter`、`texRenderer` 不支持 Waline 原生的自定义函数，填写函数会在构建时报错。主题不采集浏览量（Waline 的 `pageview` 始终关闭）。
 
 ---
 
