@@ -14,12 +14,14 @@ enable: false
 # 评论服务提供商
 # ├─ none   : 不启用
 # ├─ twikoo : 使用 Twikoo
-# └─ giscus : 使用 Giscus
+# ├─ giscus : 使用 Giscus
+# └─ waline : 使用 Waline
 #
 # Comment provider
 # ├─ none   : Disabled
 # ├─ twikoo : Use Twikoo
-# └─ giscus : Use Giscus
+# ├─ giscus : Use Giscus
+# └─ waline : Use Waline
 provider: "none"
 
 # 是否开启视口懒加载，滚动至评论区视口时才动态拉取脚本
@@ -104,3 +106,82 @@ giscus:
   #
   # giscus client.js URL; replace with your own if self-hosting
   scriptUrl: "https://giscus.app/client.js"
+
+# ┌─ ⚠️ Waline 前置要求与注意事项 | Requirements & Notice ──
+# │ 需要先部署 Waline 服务端（https://waline.js.org/guide/get-started/）。
+# │ serverURL 必填且必须是 http(s) 地址；留空或协议不对时评论区静默关闭（零额外负担）。
+# │ 客户端 JS 与 CSS 在评论区进入视口后才加载，升级或自托管时两者须保持同一版本。
+# │ 选项以 JSON 写入页面，imageUploader / highlighter / texRenderer 只接受 true / false，
+# │ 不支持自定义函数。主题不采集浏览量（pageview 始终关闭）。
+# │
+# │ Deploy a Waline server first (https://waline.js.org/guide/get-started/).
+# │ serverURL is required and must be an http(s) URL; otherwise comments silently disable.
+# │ The client JS and CSS load when the comment section enters the viewport;
+# │ keep both on the same version when upgrading or self-hosting.
+# │ Options reach the browser as JSON: imageUploader / highlighter / texRenderer accept
+# │ only true / false, never custom functions. Page views are never collected.
+# └──────────────────────────────────────────────────────────
+waline:
+  # Waline 服务端地址（必填），如 "https://comments.example.com"
+  #
+  # Waline server URL (required), e.g. "https://comments.example.com"
+  serverURL: ""
+  # 客户端脚本地址（完整 UMD 构建） | Client script URL (full UMD build)
+  scriptUrl: "https://cdn.jsdelivr.net/npm/@waline/client@3.16.1/dist/waline.umd.js"
+  # 客户端样式地址，须与 scriptUrl 同版本 | Client stylesheet URL, same version as scriptUrl
+  styleUrl: "https://cdn.jsdelivr.net/npm/@waline/client@3.16.1/dist/waline.css"
+  # 语言 | Language
+  # "auto" 跟随文章/站点语言（未内置的语言回退 "en"），或指定 Waline 语言码，如 "zh-CN"、"en"、"jp"
+  #
+  # "auto" follows the post/site language (unsupported languages fall back to "en"),
+  # or specify a Waline language code such as "zh-CN", "en", "jp"
+  lang: "auto"
+  # 文案覆盖；省略的字段沿用当前语言的 Waline 默认文案
+  #
+  # Text overrides; omitted keys keep Waline's defaults for the current language
+  locale:
+    # 评论输入框提示，空字符串不显示 | Input placeholder; empty string hides it
+    placeholder: "Share your thoughts..."
+  # 表情：true 使用 Waline 默认表情包，false 关闭；也可填写表情包地址列表
+  #
+  # Emoji: true uses Waline's default pack, false disables; a list of pack URLs also works
+  emoji: true
+  # 评论排序 | Comment sorting
+  # latest, oldest, hottest
+  commentSorting: "latest"
+  # 评论者信息字段 | Commenter info fields
+  # 可选 nick, mail, link | Choose from nick, mail, link
+  meta: ["nick", "mail", "link"]
+  # 必填的信息字段；空数组允许匿名评论
+  #
+  # Required info fields; an empty list allows anonymous comments
+  requiredMeta: []
+  # 登录模式 | Login mode
+  # ├─ enable  : 可登录也可匿名 | Login available, anonymous allowed
+  # ├─ disable : 不显示登录 | Hide login
+  # └─ force   : 必须登录 | Login required
+  login: "enable"
+  # 评论字数限制，0 为不限制 | Word limit, 0 for unlimited
+  wordLimit: 0
+  # 每页评论条数 | Comments per page
+  pageSize: 10
+  # 图片上传：true 由 Waline 将图片编码为 Base64 随评论提交，false 关闭
+  #
+  # Image upload: true lets Waline embed images as Base64, false disables
+  imageUploader: true
+  # 代码高亮：true 使用 Waline 内置高亮器 | Code highlighting with Waline's built-in highlighter
+  highlighter: true
+  # TeX：true 在预览中提示不支持 TeX，false 不解析 | TeX: true shows an unsupported hint in preview, false ignores TeX
+  texRenderer: false
+  # 隐藏页脚版权信息 | Hide the footer copyright
+  noCopyright: false
+  # 隐藏 RSS 订阅链接 | Hide the RSS subscription links
+  noRss: true
+  # reCAPTCHA v3 站点密钥，留空不启用 | reCAPTCHA v3 site key, empty to disable
+  recaptchaV3Key: ""
+  # Cloudflare Turnstile 站点密钥，留空不启用 | Cloudflare Turnstile site key, empty to disable
+  turnstileKey: ""
+  # 文章表情反应：true 显示，false 隐藏，也可填写自定义表情图片地址列表
+  #
+  # Article reactions: true shows them, false hides them; a list of image URLs also works
+  reaction: true
