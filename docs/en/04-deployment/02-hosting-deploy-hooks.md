@@ -42,7 +42,8 @@ In the setup wizard or under **Settings** -> **Environment variables**, configur
 
 | Variable Name | Recommended Value | Purpose |
 | :--- | :--- | :--- |
-| `NODE_VERSION` | `22` | **Required**, specifies Node.js 22 runtime |
+| `NODE_VERSION` | `26` | **Required**, specifies the Node.js 26 runtime |
+| `PNPM_VERSION` | `11.28.2` | **Recommended**, matches the theme repo's `packageManager` pin |
 | `GIT_TERMINAL_PROMPT` | `0` | **Required**, disables interactive Git prompts |
 | `CONTENT_REPO_URL` | `https://x-access-token:YOUR_PAT@github.com/user/content-repo.git` | **Required for private content repo**, authenticated clone URL |
 | `BILI_SESSDATA` | `YOUR_CREDENTIAL` | *Optional*, for Bilibili private anime sync |
@@ -77,13 +78,15 @@ In the setup wizard or under **Settings** -> **Environment variables**, configur
 3. Set build command to `pnpm run build` and output directory to `dist`.
 
 ### Step 2: Set Build Environment Variables
-Under **Environment Variables**, add:
+First, under **Settings** -> **General** -> **Node.js Version**, select `26.x`. Vercel does not read a `NODE_VERSION` environment variable; Node comes from project settings or `package.json` `engines.node`.
+
+Then add under **Environment Variables**:
 
 | Variable Name | Recommended Value | Purpose |
 | :--- | :--- | :--- |
-| `NODE_VERSION` | `22` | Specifies Node.js runtime version |
 | `GIT_TERMINAL_PROMPT` | `0` | Prevents interactive prompt hangs |
 | `CONTENT_REPO_URL` | `https://x-access-token:YOUR_PAT@github.com/user/content-repo.git` | **Required for private content repo** |
+| `CONTENT_REPO_REF` | `main` | *Optional*, pin a branch or tag |
 | `BILI_SESSDATA` | `YOUR_CREDENTIAL` | *Optional* |
 
 ### Step 3: Create Deploy Hook
@@ -106,7 +109,7 @@ In your content repository under **Settings** -> **Secrets and variables** -> **
 3. Set build command to `pnpm run build` and output directory to `dist`.
 
 ### Step 2: Set Environment Variables
-Add `NODE_VERSION`, `GIT_TERMINAL_PROMPT`, and `CONTENT_REPO_URL` in build settings.
+Select Node.js `24` (EdgeOne's highest selectable version; Shirone builds correctly on it). Add `GIT_TERMINAL_PROMPT=0` and `CONTENT_REPO_URL`, plus `CONTENT_REPO_REF=main` if you need to pin a branch.
 
 ### Step 3: Create Deploy Hook Trigger
 1. Go to application **Triggers** settings;
@@ -131,7 +134,7 @@ In your content repository under **Settings** -> **Secrets and variables** -> **
 3. Configure build command as `pnpm run build` and output directory as `dist`.
 
 ### Step 2: Set Environment Variables
-Under **Site configuration** -> **Environment variables**, add `NODE_VERSION`, `GIT_TERMINAL_PROMPT`, and `CONTENT_REPO_URL`.
+Under **Site configuration** -> **Environment variables**, add `NODE_VERSION=26`, `GIT_TERMINAL_PROMPT=0`, and `CONTENT_REPO_URL`.
 
 ### Step 3: Create Build Hook
 1. Open **Site configuration** -> **Build & deploy** -> **Continuous deployment**;

@@ -53,9 +53,13 @@ The project was created under Worker mode or configured with `npx wrangler deplo
 Build logs indicate unsupported ES module syntax, parsing errors, or warnings about Node.js version.
 
 ### Solution
-Many hosting platform build runners default to Node.js 18 or earlier. Specify Node.js 22 in your platform's **Environment Variables**:
-- Variable Name: `NODE_VERSION`
-- Value: `22`
+Many hosting platform build runners default to an older Node.js. Choose per platform:
+
+- **Cloudflare Pages / Netlify**: set `NODE_VERSION=26` in environment variables. On Cloudflare, also set `PNPM_VERSION=11.28.2`.
+- **Vercel**: do not set `NODE_VERSION`; it has no effect. Select `26.x` under **Settings** -> **General** -> **Node.js Version**, or rely on `package.json` `engines.node`.
+- **EdgeOne Pages**: select Node.js `24` (the highest selectable version; 24 builds fine). Do not enter 26.
+
+Node.js 26 no longer bundles corepack. Install pnpm manually with `npm i -g pnpm@11.28.2`; a bare `corepack enable` will fail.
 
 ---
 
