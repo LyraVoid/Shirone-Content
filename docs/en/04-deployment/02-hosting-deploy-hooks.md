@@ -78,9 +78,11 @@ In the setup wizard or under **Settings** -> **Environment variables**, configur
 3. Set build command to `pnpm run build` and output directory to `dist`.
 
 ### Step 2: Set Build Environment Variables
-First, under **Settings** -> **General** -> **Node.js Version**, select `26.x`. Vercel does not read a `NODE_VERSION` environment variable; Node comes from project settings or `package.json` `engines.node`.
+On the import screen, expand **Environment Variables** to add variables directly. You can also add them later under **Settings** -> **Environment Variables**.
 
-Then add under **Environment Variables**:
+The Node.js version is not part of the import form. After the project is created, go to **Settings** -> **General** -> **Node.js Version** and select `26.x`. Vercel does not read a `NODE_VERSION` environment variable; Node comes from project settings or `package.json` `engines.node`.
+
+Add these variables:
 
 | Variable Name | Recommended Value | Purpose |
 | :--- | :--- | :--- |
@@ -88,6 +90,18 @@ Then add under **Environment Variables**:
 | `CONTENT_REPO_URL` | `https://x-access-token:YOUR_PAT@github.com/user/content-repo.git` | **Required for private content repo** |
 | `CONTENT_REPO_REF` | `main` | *Optional*, pin a branch or tag |
 | `BILI_SESSDATA` | `YOUR_CREDENTIAL` | *Optional* |
+
+You can add environment variables directly on the import screen:
+
+![Adding environment variables on the Vercel import screen](../../images/04-deploy/02-hook/13-vercel-import-env.png)
+
+After deployment, open **Deployments** from the project sidebar:
+
+![Vercel project overview](../../images/04-deploy/02-hook/14-vercel-project-overview.png)
+
+Then open **Environments** to add or update variables:
+
+![Vercel Environments](../../images/04-deploy/02-hook/15-vercel-environments.png)
 
 ### Step 3: Create Deploy Hook
 1. Go to project **Settings** -> **Git**;

@@ -78,9 +78,11 @@ sequenceDiagram
 3. 构建命令填入 `pnpm run build`，输出目录填入 `dist`。
 
 ### 第二步：配置构建环境变量
-先在 **Settings** -> **General** -> **Node.js Version** 选择 `26.x`。Vercel 不读取 `NODE_VERSION` 环境变量，Node 版本由项目设置或 `package.json` 的 `engines.node` 决定。
+导入项目时可以展开 **Environment Variables** 直接填写变量，也可以等部署完成后再进入 **Settings** -> **Environment Variables** 添加。
 
-再在 **Environment Variables** 设置中添加：
+Node.js 版本不在导入表单里。项目创建后进入 **Settings** -> **General** -> **Node.js Version** 选择 `26.x`。Vercel 不读取 `NODE_VERSION` 环境变量，Node 版本由项目设置或 `package.json` 的 `engines.node` 决定。
+
+需要添加的变量：
 
 | 环境变量名 | 推荐值 | 说明 |
 | :--- | :--- | :--- |
@@ -88,6 +90,18 @@ sequenceDiagram
 | `CONTENT_REPO_URL` | `https://x-access-token:你的令牌@github.com/用户名/内容仓名.git` | **私有仓必填** |
 | `CONTENT_REPO_REF` | `main` | *可选*，需要固定分支/标签时设置 |
 | `BILI_SESSDATA` | `你的凭证` | *可选* |
+
+导入项目时可以直接填写环境变量：
+
+![Vercel 导入页面填写环境变量](../../images/04-deploy/02-hook/13-vercel-import-env.png)
+
+部署完成后，从项目左侧进入 **Deployments**：
+
+![Vercel 项目概览](../../images/04-deploy/02-hook/14-vercel-project-overview.png)
+
+再打开 **Environments** 补充或修改变量：
+
+![Vercel Environments](../../images/04-deploy/02-hook/15-vercel-environments.png)
 
 ### 第三步：创建 Deploy Hook
 1. 进入项目 **Settings** -> **Git**；
