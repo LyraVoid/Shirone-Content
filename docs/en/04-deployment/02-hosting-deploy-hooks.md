@@ -78,7 +78,7 @@ In the setup wizard or under **Settings** -> **Environment variables**, configur
 3. Set build command to `pnpm run build` and output directory to `dist`.
 
 ### Step 2: Set Build Environment Variables
-On the import screen, expand **Environment Variables** to add variables directly. You can also add them later under **Settings** -> **Environment Variables**.
+On the import screen, expand **Environment Variables** to add variables directly. You can also add them later under **Deployments** -> **Environments**.
 
 The Node.js version is not part of the import form. After the project is created, go to **Settings** -> **General** -> **Node.js Version** and select `26.x`. Vercel does not read a `NODE_VERSION` environment variable; Node comes from project settings or `package.json` `engines.node`.
 

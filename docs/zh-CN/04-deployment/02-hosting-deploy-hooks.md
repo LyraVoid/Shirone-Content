@@ -78,7 +78,7 @@ sequenceDiagram
 3. 构建命令填入 `pnpm run build`，输出目录填入 `dist`。
 
 ### 第二步：配置构建环境变量
-导入项目时可以展开 **Environment Variables** 直接填写变量，也可以等部署完成后再进入 **Settings** -> **Environment Variables** 添加。
+导入项目时可以展开 **Environment Variables** 直接填写变量，也可以等部署完成后再进入 **Deployments** -> **Environments** 添加。
 
 Node.js 版本不在导入表单里。项目创建后进入 **Settings** -> **General** -> **Node.js Version** 选择 `26.x`。Vercel 不读取 `NODE_VERSION` 环境变量，Node 版本由项目设置或 `package.json` 的 `engines.node` 决定。
 
