@@ -6,7 +6,7 @@
 
 ## 1. 推送内容后，网站没有更新？
 
-请按照以下顺序逐步排查：
+按以下顺序排查：
 
 ### 排查 A：检查 GitHub Actions 运行记录与令牌权限
 1. 打开你的**内容仓库**的 **Actions** 标签页；
@@ -53,9 +53,13 @@ Caught error rendering /about: Error: Failed to prerender ...: __dirname is not 
 在云平台构建时提示不支持某些 ES 模块语法、语法解析失败或直接警告 Node 版本过低。
 
 ### 解决方法
-许多托管平台的构建机默认采用 Node.js 18 或更早版本。请在平台的**环境变量**设置中明确指定 Node 版本：
-- 变量名：`NODE_VERSION`
-- 变量值：`22`
+许多托管平台的构建机默认采用较旧的 Node.js。请按平台选择：
+
+- **Cloudflare Pages / Netlify**：在环境变量中设置 `NODE_VERSION=26`。Cloudflare 另建议设置 `PNPM_VERSION=11.28.2`。
+- **Vercel**：不要设 `NODE_VERSION`，它不生效。到 **Settings** -> **General** -> **Node.js Version** 选择 `26.x`，或依赖 `package.json` 的 `engines.node`。
+- **EdgeOne Pages**：Node.js 版本选择 `24`（当前最高可选，24 可以正常构建），不要填 26。
+
+Node.js 26 已不再内置 corepack。需要手动安装 pnpm 时用 `npm i -g pnpm@11.28.2`，不要只写 `corepack enable`。
 
 ---
 

@@ -27,7 +27,7 @@ sequenceDiagram
 
 ### 第一步：导入项目与构建设置
 1. 登录 [Cloudflare 控制台](https://dash.cloudflare.com/)；
-2. 进入 **Compute (Workers & Pages)** -> **Create** -> 选择 **Pages** 选项卡（**严禁选择 Worker 模式**）；
+2. 进入 **Compute (Workers & Pages)** -> **Create** -> 选择 **Pages** 选项卡（**不要选择 Worker 模式**）；
 3. 连接你的 GitHub 账号，并选择你的主题代码仓库（例如 `Shirone`）；
 4. 配置构建设置：
    - **Framework preset**：选择 **None** 或 **Astro**；
@@ -42,7 +42,8 @@ sequenceDiagram
 
 | 环境变量名 | 推荐值 | 说明 |
 | :--- | :--- | :--- |
-| `NODE_VERSION` | `22` | **必填**，指定 Node.js 22 运行环境 |
+| `NODE_VERSION` | `26` | **必填**，指定 Node.js 26 运行环境 |
+| `PNPM_VERSION` | `11.28.2` | **推荐**，与主题仓 `packageManager` 保持一致 |
 | `GIT_TERMINAL_PROMPT` | `0` | **必填**，防止 Git 产生终端交互等待 |
 | `CONTENT_REPO_URL` | `https://x-access-token:你的令牌@github.com/用户名/内容仓名.git` | **私有内容仓必填**，附带访问令牌的克隆地址 |
 | `BILI_SESSDATA` | `你的凭证` | *可选*，用于追番私密列表同步 |
@@ -77,13 +78,15 @@ sequenceDiagram
 3. 构建命令填入 `pnpm run build`，输出目录填入 `dist`。
 
 ### 第二步：配置构建环境变量
-在 **Environment Variables** 设置中添加：
+先在 **Settings** -> **General** -> **Node.js Version** 选择 `26.x`。Vercel 不读取 `NODE_VERSION` 环境变量，Node 版本由项目设置或 `package.json` 的 `engines.node` 决定。
+
+再在 **Environment Variables** 设置中添加：
 
 | 环境变量名 | 推荐值 | 说明 |
 | :--- | :--- | :--- |
-| `NODE_VERSION` | `22` | 指定 Node 运行版本 |
 | `GIT_TERMINAL_PROMPT` | `0` | 防止终端交互等待 |
 | `CONTENT_REPO_URL` | `https://x-access-token:你的令牌@github.com/用户名/内容仓名.git` | **私有仓必填** |
+| `CONTENT_REPO_REF` | `main` | *可选*，需要固定分支/标签时设置 |
 | `BILI_SESSDATA` | `你的凭证` | *可选* |
 
 ### 第三步：创建 Deploy Hook
@@ -106,7 +109,7 @@ sequenceDiagram
 3. 构建命令填入 `pnpm run build`，产物目录填入 `dist`。
 
 ### 第二步：配置环境变量
-在构建设置中添加 `NODE_VERSION`、`GIT_TERMINAL_PROMPT` 与 `CONTENT_REPO_URL`。
+Node.js 版本选择 `24`（EdgeOne 当前最高可选版本，Node.js 24 可以正常构建 Shirone）。再添加 `GIT_TERMINAL_PROMPT=0`、`CONTENT_REPO_URL`，需要固定分支时加 `CONTENT_REPO_REF=main`。
 
 ### 第三步：创建部署钩子触发器
 1. 进入应用的 **触发器** 设置页面；
@@ -131,7 +134,7 @@ sequenceDiagram
 3. 配置构建命令为 `pnpm run build`，输出目录为 `dist`。
 
 ### 第二步：配置构建环境变量
-在 **Site configuration** -> **Environment variables** 中添加 `NODE_VERSION`、`GIT_TERMINAL_PROMPT` 与 `CONTENT_REPO_URL`。
+在 **Site configuration** -> **Environment variables** 中添加 `NODE_VERSION=26`、`GIT_TERMINAL_PROMPT=0` 与 `CONTENT_REPO_URL`。
 
 ### 第三步：创建 Build Hook
 1. 进入项目的 **Site configuration** -> **Build & deploy** -> **Continuous deployment**；
