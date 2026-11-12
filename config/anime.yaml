@@ -70,8 +70,8 @@ providers:
       # ├─ remote : Load remote image URLs directly (default)
       # └─ none   : No covers, theme gradient placeholders
       mode: "remote"
-      # 可选封面镜像加速前缀（仅 remote 模式生效）
-      # Optional cover CDN prefix (remote mode only)
+      # 可选封面镜像前缀，与完整封面 URL 直接拼接（仅 remote 模式生效）
+      # Optional cover mirror prefix, concatenated with the full URL (remote mode only)
       mirror: ""
     # 网络请求调优 | Request tuning
     request:
@@ -106,7 +106,8 @@ providers:
       # ├─ remote : Load remote image URLs directly
       # └─ none   : No covers, theme gradient placeholders
       mode: "local"
-      # 可选封面镜像加速前缀 | Optional cover image CDN prefix
+      # 可选封面镜像前缀，与完整封面 URL 直接拼接（路径式反代或查询式代理均可）
+      # Optional cover mirror prefix, concatenated with the full cover URL
       mirror: ""
       # 是否使用 WebP 图片压缩格式 | Use WebP image compression format
       useWebp: true
