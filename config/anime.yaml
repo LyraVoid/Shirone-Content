@@ -58,6 +58,21 @@ providers:
     enable: false
     # 用户 ID 或个性化域名 | User ID or custom domain
     userId: ""
+    # 封面处理策略 | Cover image handling strategy
+    cover:
+      # 封面模式（默认 remote：bgm.tv 图床无防盗链，直链可直接展示）
+      # ├─ local  : 下载至本地静态目录（零第三方外链请求）
+      # ├─ remote : 直接加载远端图片链接（默认）
+      # └─ none   : 不使用封面，呈现主题渐变占位
+      #
+      # Cover mode (default remote: bgm.tv has no hotlink protection)
+      # ├─ local  : Download locally (no third-party requests)
+      # ├─ remote : Load remote image URLs directly (default)
+      # └─ none   : No covers, theme gradient placeholders
+      mode: "remote"
+      # 可选封面镜像加速前缀（仅 remote 模式生效）
+      # Optional cover CDN prefix (remote mode only)
+      mirror: ""
     # 网络请求调优 | Request tuning
     request:
       # 单页抓取数量 | Items per page
