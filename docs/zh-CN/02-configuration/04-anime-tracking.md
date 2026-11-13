@@ -26,6 +26,7 @@
 
 ```yaml
 enable: true
+pageSize: 12            # 页面每页条数，省略或无效值回退 12
 
 source:
   kind: "local"         # 直接读取 data/anime.ts 中的数据
@@ -55,8 +56,16 @@ providers:
   bangumi:
     enable: true
     userId: "你的Bangumi用户ID或个性域名"
+    # 封面图处理策略：
+    # - "remote"：直接加载 bgm.tv 外链（默认，图床无防盗链）
+    # - "local"：同步时下载到本地静态目录
+    # - "none"：不使用封面，呈现主题渐变占位
+    cover:
+      mode: "remote"
+      # 可选镜像前缀，与完整封面 URL 直接拼接（仅 remote 模式生效）
+      mirror: ""
     request:
-      pageSize: 30       # 单页拉取数量
+      pageSize: 30       # 单次请求拉取数量
       maxItems: 300      # 最大抓取条目数上限
       minDelayMs: 300    # 请求节流间隔，单位毫秒
 ```
@@ -108,3 +117,21 @@ providers:
 *图 1-3：浏览器 Cookie 中获取 SESSDATA 凭证*
 
 > 安全提醒：如果你的 B 站追番列表设置为私密，你需要在 GitHub Actions 的 Secrets 或本地环境变量中设置 `BILI_SESSDATA`。**绝对不要将任何 Cookie 凭据直接写在 YAML 配置文件中**。
+
+---
+
+## 页面分页与同步批量
+
+`pageSize` 会出现在两个地方，别搞混：
+
+| 配置 | 作用 | 默认 |
+| --- | --- | --- |
+| 顶层 `pageSize` | `/anime/` 页面每页展示的番剧数量 | `12` |
+| `providers.<provider>.request.pageSize` | 同步脚本单次向平台请求的条数 | Bangumi `50` / Bilibili `30` |
+
+```yaml
+enable: true
+pageSize: 12            # 页面每页条数，正整数；省略、0、负数或小数都会回退 12
+```
+
+列表超过一页时底部会出现分页器。搜索词、状态和页码都会写进地址栏（`?q=` / `?status=` / `?page=`），刷新或分享链接不会丢状态；换搜索词或状态时会回到第 1 页。

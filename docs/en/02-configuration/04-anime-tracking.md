@@ -26,6 +26,7 @@ Best for maintaining watchlists manually with zero external dependencies and gua
 
 ```yaml
 enable: true
+pageSize: 12            # Items per page; omitted or invalid values fall back to 12
 
 source:
   kind: "local"         # Reads directly from data/anime.ts
@@ -55,8 +56,16 @@ providers:
   bangumi:
     enable: true
     userId: "your_bangumi_username_or_id"
+    # Cover image handling mode:
+    # - "remote": Load direct bgm.tv links (default; the image host has no hotlink protection)
+    # - "local": Download covers into the local static directory during sync
+    # - "none": Disable covers and use theme gradient placeholders
+    cover:
+      mode: "remote"
+      # Optional mirror prefix concatenated directly with the full cover URL (remote mode only)
+      mirror: ""
     request:
-      pageSize: 30       # Items fetched per page
+      pageSize: 30       # Items fetched per request
       maxItems: 300      # Upper limit of fetched items
       minDelayMs: 300    # Rate limiting delay in milliseconds
 ```
@@ -108,3 +117,21 @@ Locate the stored Cookie entry in your browser's Developer Tools:
 *Figure 1-3: Retrieving SESSDATA credential from browser cookies*
 
 > Security Notice: If your Bilibili watchlist is set to private, configure `BILI_SESSDATA` in GitHub Actions Secrets or your local environment. **Never commit raw cookie credentials into YAML configuration files.**
+
+---
+
+## Page Pagination vs. Sync Batch Size
+
+`pageSize` shows up in two places—don't mix them up:
+
+| Setting | Purpose | Default |
+| --- | --- | --- |
+| Top-level `pageSize` | Anime entries rendered per page on `/anime/` | `12` |
+| `providers.<provider>.request.pageSize` | Entries requested per sync batch | Bangumi `50` / Bilibili `30` |
+
+```yaml
+enable: true
+pageSize: 12            # Items per page; positive integer. Omitted, 0, negative or fractional values fall back to 12
+```
+
+A pager appears once the list spans more than one page. Search, status and page number are written into the URL (`?q=` / `?status=` / `?page=`), so a refresh or a shared link keeps the same view; changing the search or status jumps back to page 1.

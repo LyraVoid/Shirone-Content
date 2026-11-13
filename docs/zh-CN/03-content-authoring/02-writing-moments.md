@@ -39,6 +39,11 @@ pinned: false
 # 是否为草稿（默认为 false）
 draft: false
 
+# 是否加密（可选；设置非空 password 即启用，无需同时写 true）
+encrypted: false
+password: ""
+passwordHint: ""
+
 # 随动态展示的九宫格图片列表（可选，支持多张）
 images:
   - src: "https://example.com/photo1.webp"
@@ -67,3 +72,26 @@ images:
 - 专注投入：`material-symbols:sentiment-neutral-outline-rounded`
 - 疲惫困顿：`material-symbols:sentiment-sad-outline-rounded`
 - 灵感迸发：`material-symbols:lightbulb-outline-rounded`
+
+---
+
+## 加密说说
+
+用法和文章一样：`password` 填一个非空值就会加密，`encrypted: true` 只是把意图写明白。只写了 `true` 却忘了给密码，构建会直接报 `Encrypted moments require a non-empty password`。
+
+```yaml
+---
+published: 2026-09-02 21:00:00
+encrypted: true
+password: "your-super-secret-password"
+passwordHint: "我最喜欢的一部番剧名称"
+tags: ["日记"]
+---
+
+解锁后才能看到这段正文。
+```
+
+- **加密范围**：正文、位置、心情、展示标签和图片清单（引用关系）。
+- **公开信息**：发布时间、置顶、密码提示，以及给筛选栏用的 `filterTags`；标签仍然看得到。
+- **图片不加密**：图片文件还在 `public/` 下，知道地址就能直接打开，敏感图片别用加密说说放。
+- **解锁不缓存**：刷新或重新进入 `/moments/` 都要再输一次密码；文章和相册会在当前标签页里记住。

@@ -11,6 +11,13 @@
 # Page master switch; opens /anime/ page entry and data rendering when enabled
 enable: true
 
+# 页面每页展示条数（正整数，默认 12；省略或无效值回退 12）
+# 注意：与 providers.*.request.pageSize（同步批量大小）互不影响
+#
+# Anime entries per page (positive integer, default 12; invalid values fall back to 12)
+# Note: independent from providers.*.request.pageSize (sync batch size)
+pageSize: 12
+
 # ── 数据源与降级策略 | Data Source & Fallback ──────────────
 
 # 主数据源配置 | Primary data source configuration
